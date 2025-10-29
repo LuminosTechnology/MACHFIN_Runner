@@ -88,6 +88,19 @@ InitTestScene*.unity*
 # files in platform-specific subfolders, for example:
 # /Assets/AddressableAssetsData/OSX/addressables_content_state.bin
 /[Aa]ssets/AddressableAssetsData/*/*.bin*
+# Ignorar pastas de build (cache de bundles) do Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/[Aa]ndroid/
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/[Ii]OS/
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/[Mm]acOS/
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/[Ww]indows/
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/[Ww]ebGL/
+
+# Ignorar arquivos binários de cache temporário (que causam erro de nome longo)
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/addressables_content_state.bin
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/addressables_content_state.bin.meta
+
+# Excluir o cache principal (que também estava na sua lista)
+/[Ll]ibrary/
 
 # Visual Scripting auto-generated files
 /[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
