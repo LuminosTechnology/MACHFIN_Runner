@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Characters
   m_GUID: 0ee8914add8bf184eb2669a5f9b6f538
   m_SerializeEntries:
+  - m_GUID: 0fc3a0a5267831449adfae749fc2e59e
+    m_Address: Robot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1c8b4e674120cad47a3fc249308e5af3
     m_Address: Assets/Prefabs/UI/AddMissionButton.prefab
     m_ReadOnly: 0

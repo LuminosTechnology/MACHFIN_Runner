@@ -548,6 +548,7 @@ public class TrackManager : MonoBehaviour
 
     public void SpawnObstacle(TrackSegment segment)
     {
+        if (!segment.hasObstacles) return;
         if (segment.possibleObstacles.Length != 0)
         {
             for (int i = 0; i < segment.obstaclePositions.Length; ++i)
