@@ -30954,6 +30954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce47d421cd0db864a9139849f62dedeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputEnvironment: 1
   trackManager: {fileID: 1958487560}
   character: {fileID: 0}
   characterCollider: {fileID: 1144878499}
