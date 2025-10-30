@@ -247,10 +247,15 @@ public class LoadoutState : AState
             GameObject newChar = null;
             while (newChar == null)
             {
-                Character c = CharacterDatabase.GetCharacter(PlayerData.instance.characters[PlayerData.instance.usedCharacter]);
 
+                Character c = CharacterDatabase.GetCharacter(PlayerData.instance.characters[PlayerData.instance.usedCharacter]);
+                if (c == null)
+                {
+                    Debug.LogWarning("Fuck");
+                }
                 if (c != null)
                 {
+                    Debug.Log(c.characterName);
                     m_OwnedAccesories.Clear();
                     for (int i = 0; i < c.accessories.Length; ++i)
                     {

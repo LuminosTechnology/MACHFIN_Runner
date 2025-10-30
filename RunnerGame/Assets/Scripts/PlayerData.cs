@@ -92,6 +92,7 @@ public class PlayerData
     public void AddCharacter(string name)
     {
         characters.Add(name);
+        Debug.Log($"Now i have {characters.Count} characters");
     }
 
     public void AddTheme(string theme)

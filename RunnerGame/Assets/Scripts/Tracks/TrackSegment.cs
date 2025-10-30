@@ -14,8 +14,9 @@ public class TrackSegment : MonoBehaviour
     public TrackManager manager;
 
 	public Transform objectRoot;
-	public Transform collectibleTransform;
+    public Transform collectibleTransform;
 
+    public bool hasObstacles; 
     public AssetReference[] possibleObstacles; 
 
     [HideInInspector]

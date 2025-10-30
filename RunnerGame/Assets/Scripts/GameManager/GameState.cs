@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using Unity.VisualScripting;
 
 #if UNITY_ADS
 using UnityEngine.Advertisements;
@@ -121,6 +122,14 @@ public class GameState : AState
         wholeUI.gameObject.SetActive(true);
         pauseButton.gameObject.SetActive(!trackManager.isTutorial);
         gameOverPopup.SetActive(false);
+
+        //Changes
+        coinText.transform.parent.gameObject.SetActive(false);
+        premiumText.transform.parent.gameObject.SetActive(false);
+        distanceText.transform.gameObject.SetActive(false);
+        scoreText.transform.parent.gameObject.SetActive(false);
+        
+
 
         sideSlideTuto.SetActive(false);
         upSlideTuto.SetActive(false);
