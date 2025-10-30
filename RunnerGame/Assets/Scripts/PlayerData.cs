@@ -244,11 +244,14 @@ public class PlayerData
         m_Instance.coins = 0;
         m_Instance.premium = 0;
 
-		m_Instance.characters.Add("Trash Cat");
+        // m_Instance.characters.Add("Trash Cat");
+        m_Instance.characters.Add("Robot");
 		m_Instance.themes.Add("Day");
 
         m_Instance.ftueLevel = 0;
         m_Instance.rank = 0;
+
+        Debug.Log("New Save");
 
         m_Instance.CheckMissionsCount();
 
