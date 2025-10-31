@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
 
@@ -73,6 +73,7 @@ public class CharacterInputController : MonoBehaviour
 
 	protected const int k_StartingLane = 1;
 	protected const float k_GroundingSpeed = 80f;
+
 	protected const float k_ShadowRaycastDistance = 100f;
 	protected const float k_ShadowGroundOffset = 0.01f;
 	protected const float k_TrackSpeedToJumpAnimSpeedRatio = 0.6f;
@@ -369,6 +370,17 @@ public class CharacterInputController : MonoBehaviour
 			character.animator.SetBool(s_SlidingHash, true);
 			m_Audio.PlayOneShot(slideSound);
 			m_Sliding = true;
+			if (PlayerData.instance.usedCharacter == PlayerData.instance.characters.IndexOf("Robot"))
+			{
+				// Debug.Log("Robot Sliding");
+				Transform robotChar = character.transform.GetChild(0);
+				robotChar.transform.rotation = Quaternion.Euler(0, 45, 0);
+				robotChar.transform.position = new Vector3(
+					robotChar.transform.position.x,
+				 	robotChar.transform.position.y - 0.3f,
+				  	robotChar.transform.position.z);
+			}
+
 
 			characterCollider.Slide(true);
 		}
@@ -380,6 +392,18 @@ public class CharacterInputController : MonoBehaviour
 		{
 			character.animator.SetBool(s_SlidingHash, false);
 			m_Sliding = false;
+
+
+			if (PlayerData.instance.usedCharacter == PlayerData.instance.characters.IndexOf("Robot"))
+			{
+				// Debug.Log("Robot Sliding");
+				Transform robotChar = character.transform.GetChild(0);
+				robotChar.transform.rotation = Quaternion.Euler(0, 0, 0);
+				robotChar.transform.position = new Vector3(
+					robotChar.transform.position.x,
+				 	robotChar.transform.position.y + 0.3f,
+				  	robotChar.transform.position.z);
+			}
 
 			characterCollider.Slide(false);
 		}
