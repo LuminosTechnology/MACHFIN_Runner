@@ -247,7 +247,7 @@ public class PlayerData
 
         // m_Instance.characters.Add("Trash Cat");
         m_Instance.characters.Add("Robot");
-		m_Instance.themes.Add("Day");
+		m_Instance.themes.Add("Feira");
 
         m_Instance.ftueLevel = 0;
         m_Instance.rank = 0;

@@ -58,6 +58,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a9e6c05e148489e419ddb5eb080e7446
+    m_Address: Assets/Bundles/Themes/Feira/Obstacles/ObstacleHighBarrier.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: abafe3707f9235b4ab7cdfd1333295c3
     m_Address: Assets/Prefabs/UI/ItemEntry.prefab
     m_ReadOnly: 0
@@ -65,6 +70,21 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ac361d43768a861498da8046b83b94f5
     m_Address: Assets/Prefabs/UI/Score.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5b35865369384d4e8c522f98c6d3597
+    m_Address: Assets/Bundles/Themes/Feira/Obstacles/ObstacleRat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb9d2c01d5264664bbef3269bf781410
+    m_Address: Assets/Bundles/Themes/Feira/Obstacles/ObstacleRoadworksCone.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eec1acc59e96374418cfb825b4ed4fbd
+    m_Address: Assets/Bundles/Themes/Feira/Obstacles/ObstacleBin.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

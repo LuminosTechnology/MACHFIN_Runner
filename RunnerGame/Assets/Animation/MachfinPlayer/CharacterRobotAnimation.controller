@@ -27,6 +27,18 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &-1106752162914837564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e198564a2fc769459ec89e176b442ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -628,7 +640,7 @@ AnimatorStateMachine:
     m_Position: {x: 120, y: -250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000012658168066}
-    m_Position: {x: 600, y: -324, z: 0}
+    m_Position: {x: 600, y: -320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102000011308476110}
     m_Position: {x: 384, y: 48, z: 0}
@@ -771,9 +783,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
+  m_TransitionDuration: 0.058006223
   m_TransitionOffset: 0
-  m_ExitTime: 0.93697476
+  m_ExitTime: 0.8423514
   m_HasExitTime: 0
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
@@ -968,11 +980,12 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sliding
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101000014190310320}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -1106752162914837564}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
