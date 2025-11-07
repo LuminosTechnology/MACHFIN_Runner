@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Duplicate Asset Isolation1
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Duplicate Asset Isolation1
+  m_GUID: 77801787db84c23469a018f67795245e
+  m_SerializeEntries:
+  - m_GUID: 06fd29260038fb34ea2c8a58e5777c39
+    m_Address: Assets/Models/Daytime/RoadWorksBarrierHigh.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1214424ed6edba644b0349af9404557e
+    m_Address: Assets/Models/Daytime/StreetLight.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1309a94d5e777ec4bb4d7810c59ba8a3
+    m_Address: Assets/Models/Feira/lona05_tex.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 237f389f7f4fe2a45af01d35d56d6a51
+    m_Address: Assets/Models/Daytime/WoodFence02.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34841599ea11fe941b5fb0ba17678873
+    m_Address: Assets/Models/Feira/pera_tex.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46b7604e855164f4c9cd5c79b844f586
+    m_Address: Assets/Models/Feira/Mat_Pera.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c16f1ed19bd8cc44ad546cbbd8508f3
+    m_Address: Assets/Models/Daytime/House03.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5dfda1f5d21ec9a4783456e3d1a3dbcc
+    m_Address: Assets/Models/Daytime/RoadWorksBarrierLow.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ec413b99382db94bbf1c5a9e2d3f414
+    m_Address: Assets/Models/Feira/01 - Barraca v2.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 69545bdc7d53b984eaf418ae488a0f02
+    m_Address: Assets/Models/Feira/Barraca v2-SemFrutas.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 833a1538bfebe88499e444c1f2a0886e
+    m_Address: Assets/Models/Feira/Mat_Lona05.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9b1b721f688c0a042946515cfa9ebccb
+    m_Address: Assets/Models/Feira/lona03_tex.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9faf52271ae1e29419d44d872fe7eba0
+    m_Address: Assets/Models/Feira/Mat_Batata.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0185ad56917f424ba8da69c34290d86
+    m_Address: Assets/Models/Feira/Mat_Lona03.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b14d256161df0db4b852e2613dd25acf
+    m_Address: Assets/Models/Feira/batata_tex.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b73697bb416ade2438c2bca5fae0023f
+    m_Address: Assets/Models/Daytime/PlasteredWall01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c454785640559784eb50c5a7f33a7e67
+    m_Address: Assets/Models/Feira/lona04_tex.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c5b4e6cbf5e8cd645a2c8ac01816bd24
+    m_Address: Assets/Models/Daytime/Tree01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d692798dd6e05324fb141ecfd3a448ad
+    m_Address: Assets/Models/Feira/Mat_Lona04.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 735e874f947d0e143a6b4e83f8a7283a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8b06698a615f688488260a6bbce6bd46, type: 2}
+    - {fileID: 11400000, guid: 7f1ea33cde95f8f49b4d88670bb2b502, type: 2}

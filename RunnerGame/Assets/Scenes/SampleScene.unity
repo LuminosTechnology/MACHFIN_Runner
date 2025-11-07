@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &91965423
+--- !u!1001 &164855085
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -127,66 +127,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: a0806011c0a3e914c8d06a043d8ffd6b,
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.92381
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a0806011c0a3e914c8d06a043d8ffd6b,
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.74
+      value: 0.6878689
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a0806011c0a3e914c8d06a043d8ffd6b,
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.91
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a0806011c0a3e914c8d06a043d8ffd6b,
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a0806011c0a3e914c8d06a043d8ffd6b,
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a0806011c0a3e914c8d06a043d8ffd6b,
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a0806011c0a3e914c8d06a043d8ffd6b,
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a0806011c0a3e914c8d06a043d8ffd6b,
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a0806011c0a3e914c8d06a043d8ffd6b,
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: a0806011c0a3e914c8d06a043d8ffd6b,
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: a0806011c0a3e914c8d06a043d8ffd6b,
+    - target: {fileID: 919132149155446097, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
         type: 3}
       propertyPath: m_Name
-      value: 01 - Barraca EXP Gr
+      value: 01 - Barraca PEQ 03 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a0806011c0a3e914c8d06a043d8ffd6b, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 7bc40cf669dbd814ab3fb613f284aeb1, type: 3}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +324,76 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1001 &342115639
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 3bb5ad30756add543925afd4f33d1c1c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.931
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3bb5ad30756add543925afd4f33d1c1c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.68786883
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3bb5ad30756add543925afd4f33d1c1c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.662
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3bb5ad30756add543925afd4f33d1c1c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3bb5ad30756add543925afd4f33d1c1c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3bb5ad30756add543925afd4f33d1c1c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3bb5ad30756add543925afd4f33d1c1c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3bb5ad30756add543925afd4f33d1c1c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3bb5ad30756add543925afd4f33d1c1c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3bb5ad30756add543925afd4f33d1c1c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3bb5ad30756add543925afd4f33d1c1c,
+        type: 3}
+      propertyPath: m_Name
+      value: 01 - Barraca MED 03
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 6392640984092538050, guid: 3bb5ad30756add543925afd4f33d1c1c, type: 3}
+    - {fileID: 3310215085716591975, guid: 3bb5ad30756add543925afd4f33d1c1c, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bb5ad30756add543925afd4f33d1c1c, type: 3}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +521,76 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1001 &684217906
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.97390556
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6878689
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.0174294
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7bc40cf669dbd814ab3fb613f284aeb1,
+        type: 3}
+      propertyPath: m_Name
+      value: 01 - Barraca PEQ 03
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 6392640984092538050, guid: 7bc40cf669dbd814ab3fb613f284aeb1, type: 3}
+    - {fileID: 3310215085716591975, guid: 7bc40cf669dbd814ab3fb613f284aeb1, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7bc40cf669dbd814ab3fb613f284aeb1, type: 3}
 --- !u!1001 &747390599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -695,74 +835,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1389920663
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 830baca46f28642469806aefbeeeaf80,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.40125
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 830baca46f28642469806aefbeeeaf80,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.683
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 830baca46f28642469806aefbeeeaf80,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.08015
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 830baca46f28642469806aefbeeeaf80,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 830baca46f28642469806aefbeeeaf80,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 830baca46f28642469806aefbeeeaf80,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 830baca46f28642469806aefbeeeaf80,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 830baca46f28642469806aefbeeeaf80,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 830baca46f28642469806aefbeeeaf80,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 830baca46f28642469806aefbeeeaf80,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 830baca46f28642469806aefbeeeaf80,
-        type: 3}
-      propertyPath: m_Name
-      value: 01 - Barraca EXP Peq
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 830baca46f28642469806aefbeeeaf80, type: 3}
 --- !u!1001 &1627361331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -846,6 +918,76 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 729832d8112dfd74f9a84d057349a8da, type: 3}
+--- !u!1001 &1639809410
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 60b152ea76a4e9540909747e4e9ad0fb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.567
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 60b152ea76a4e9540909747e4e9ad0fb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.68786883
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 60b152ea76a4e9540909747e4e9ad0fb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.422
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 60b152ea76a4e9540909747e4e9ad0fb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 60b152ea76a4e9540909747e4e9ad0fb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 60b152ea76a4e9540909747e4e9ad0fb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 60b152ea76a4e9540909747e4e9ad0fb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 60b152ea76a4e9540909747e4e9ad0fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 60b152ea76a4e9540909747e4e9ad0fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 60b152ea76a4e9540909747e4e9ad0fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 60b152ea76a4e9540909747e4e9ad0fb,
+        type: 3}
+      propertyPath: m_Name
+      value: 01 - Barraca MED 02
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 6392640984092538050, guid: 60b152ea76a4e9540909747e4e9ad0fb, type: 3}
+    - {fileID: 3310215085716591975, guid: 60b152ea76a4e9540909747e4e9ad0fb, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 60b152ea76a4e9540909747e4e9ad0fb, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -856,5 +998,7 @@ SceneRoots:
   - {fileID: 1304665716}
   - {fileID: 747390599}
   - {fileID: 1627361331}
-  - {fileID: 91965423}
-  - {fileID: 1389920663}
+  - {fileID: 1639809410}
+  - {fileID: 342115639}
+  - {fileID: 684217906}
+  - {fileID: 164855085}
