@@ -1791,7 +1791,7 @@ Transform:
   - {fileID: 4000011762511560}
   - {fileID: 4000012608270146}
   - {fileID: 4000011521972562}
-  - {fileID: 7442238718000266162}
+  - {fileID: 90401415027651726}
   m_Father: {fileID: 4000012287858964}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1000014109139258
@@ -2063,7 +2063,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &4343785124506507333
+--- !u!1001 &6436507841548777573
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2071,89 +2071,69 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4000011665640402}
     m_Modifications:
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
+    - target: {fileID: 2441215440479890909, guid: d385e588814398240ba82948ea388770,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
+      propertyPath: m_Name
+      value: BarracaVazia_Prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
+    - target: {fileID: 6346198991804140779, guid: d385e588814398240ba82948ea388770,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.47
+      value: 6.62
       objectReference: {fileID: 0}
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
+    - target: {fileID: 6346198991804140779, guid: d385e588814398240ba82948ea388770,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.17
+      value: 1.2
       objectReference: {fileID: 0}
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
+    - target: {fileID: 6346198991804140779, guid: d385e588814398240ba82948ea388770,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.799
+      value: 2.99
       objectReference: {fileID: 0}
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
+    - target: {fileID: 6346198991804140779, guid: d385e588814398240ba82948ea388770,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
+    - target: {fileID: 6346198991804140779, guid: d385e588814398240ba82948ea388770,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
+    - target: {fileID: 6346198991804140779, guid: d385e588814398240ba82948ea388770,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
+    - target: {fileID: 6346198991804140779, guid: d385e588814398240ba82948ea388770,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
+    - target: {fileID: 6346198991804140779, guid: d385e588814398240ba82948ea388770,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
+    - target: {fileID: 6346198991804140779, guid: d385e588814398240ba82948ea388770,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
+    - target: {fileID: 6346198991804140779, guid: d385e588814398240ba82948ea388770,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852978561620679080, guid: 0102591478e99e64887ce65b3775fde9,
-        type: 3}
-      propertyPath: m_Name
-      value: BarracaGrande_Prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0102591478e99e64887ce65b3775fde9, type: 3}
---- !u!4 &7442238718000266162 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: d385e588814398240ba82948ea388770, type: 3}
+--- !u!4 &90401415027651726 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6557273083391402999, guid: 0102591478e99e64887ce65b3775fde9,
+  m_CorrespondingSourceObject: {fileID: 6346198991804140779, guid: d385e588814398240ba82948ea388770,
     type: 3}
-  m_PrefabInstance: {fileID: 4343785124506507333}
+  m_PrefabInstance: {fileID: 6436507841548777573}
   m_PrefabAsset: {fileID: 0}

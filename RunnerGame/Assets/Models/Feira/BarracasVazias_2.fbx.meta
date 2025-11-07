@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: 830baca46f28642469806aefbeeeaf80
+guid: f3549b60d8db16c48b26c7a728360ce1
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Lona 02
-    second: {fileID: 2100000, guid: c0cdc840c7763f244988b3697daccc5b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Madeira
-    second: {fileID: 2100000, guid: a2e8d38c90869ef489d7a979471854c9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "Mel\xE2ncia"
-    second: {fileID: 2100000, guid: 1c9f17d203f6e544198d6d3c9b0852ed, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

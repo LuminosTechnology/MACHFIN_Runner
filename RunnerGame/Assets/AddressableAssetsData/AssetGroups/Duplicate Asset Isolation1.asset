@@ -55,16 +55,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5ec413b99382db94bbf1c5a9e2d3f414
-    m_Address: Assets/Models/Feira/01 - Barraca v2.fbx
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 69545bdc7d53b984eaf418ae488a0f02
-    m_Address: Assets/Models/Feira/Barraca v2-SemFrutas.fbx
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 833a1538bfebe88499e444c1f2a0886e
     m_Address: Assets/Models/Feira/Mat_Lona05.mat
     m_ReadOnly: 0

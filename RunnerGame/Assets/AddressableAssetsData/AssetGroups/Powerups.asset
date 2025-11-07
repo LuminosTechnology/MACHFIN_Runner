@@ -13,42 +13,48 @@ MonoBehaviour:
   m_Name: Powerups
   m_EditorClassIdentifier: 
   m_GroupName: Powerups
-  m_Data:
-    m_SerializedData: []
   m_GUID: 4c4981ffc6cbd384f83bfa48976554ea
   m_SerializeEntries:
   - m_GUID: 1269ce00623d4694f927c463dd3be44a
     m_Address: ScoreMultiplier
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 527cd33d94f565c428b85a011d736c3c
     m_Address: Invincibilty
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8c89761b43b2362418709a8178d5dd8c
     m_Address: CoinMagnet
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8cede34fb26a722408198e0d27628ae9
     m_Address: MagnetParticles
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9e2b957157514af40870bf65c60ae63f
     m_Address: ExtraLifeParticles
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ba9ada52ec59a9a419f39eb32bf9a3b0
     m_Address: InvincibilityParticles
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cb8a481413e1e1d43aac95d00d81eea7
     m_Address: MultiplierParticles
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cccc43bc040988e488680155c25b163c
     m_Address: ExtraLife
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 735e874f947d0e143a6b4e83f8a7283a, type: 2}
   m_SchemaSet:

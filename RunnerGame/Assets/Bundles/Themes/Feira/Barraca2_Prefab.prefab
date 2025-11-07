@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2441215440479890909
+--- !u!1 &4232918643608516983
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,101 +8,101 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6346198991804140779}
+  - component: {fileID: 1973242030505263912}
   m_Layer: 0
-  m_Name: BarracaVazia_Prefab
+  m_Name: Barraca2_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6346198991804140779
+--- !u!4 &1973242030505263912
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2441215440479890909}
+  m_GameObject: {fileID: 4232918643608516983}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1.0256411, z: 1.0256411}
+  m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2798386650896023750}
+  - {fileID: 7404843103724319523}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2404751400373790509
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1001 &7010399193533535432
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6346198991804140779}
+    m_TransformParent: {fileID: 1973242030505263912}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: fa91deaa77d107e44bf89b218e8d9b11,
+    - target: {fileID: -8679921383154817045, guid: 76feac8c68cc3f14480b47fef35ee1d2,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fa91deaa77d107e44bf89b218e8d9b11,
+    - target: {fileID: -8679921383154817045, guid: 76feac8c68cc3f14480b47fef35ee1d2,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fa91deaa77d107e44bf89b218e8d9b11,
+    - target: {fileID: -8679921383154817045, guid: 76feac8c68cc3f14480b47fef35ee1d2,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fa91deaa77d107e44bf89b218e8d9b11,
+    - target: {fileID: -8679921383154817045, guid: 76feac8c68cc3f14480b47fef35ee1d2,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.76604444
+      value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fa91deaa77d107e44bf89b218e8d9b11,
+    - target: {fileID: -8679921383154817045, guid: 76feac8c68cc3f14480b47fef35ee1d2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.64278764
+      value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fa91deaa77d107e44bf89b218e8d9b11,
+    - target: {fileID: -8679921383154817045, guid: 76feac8c68cc3f14480b47fef35ee1d2,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fa91deaa77d107e44bf89b218e8d9b11,
+    - target: {fileID: -8679921383154817045, guid: 76feac8c68cc3f14480b47fef35ee1d2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fa91deaa77d107e44bf89b218e8d9b11,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fa91deaa77d107e44bf89b218e8d9b11,
+    - target: {fileID: -8679921383154817045, guid: 76feac8c68cc3f14480b47fef35ee1d2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76feac8c68cc3f14480b47fef35ee1d2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fa91deaa77d107e44bf89b218e8d9b11,
+    - target: {fileID: -8679921383154817045, guid: 76feac8c68cc3f14480b47fef35ee1d2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: fa91deaa77d107e44bf89b218e8d9b11,
+    - target: {fileID: 919132149155446097, guid: 76feac8c68cc3f14480b47fef35ee1d2,
         type: 3}
       propertyPath: m_Name
-      value: BarracasVazias_1
+      value: barraca2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fa91deaa77d107e44bf89b218e8d9b11, type: 3}
---- !u!4 &2798386650896023750 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 76feac8c68cc3f14480b47fef35ee1d2, type: 3}
+--- !u!4 &7404843103724319523 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fa91deaa77d107e44bf89b218e8d9b11,
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 76feac8c68cc3f14480b47fef35ee1d2,
     type: 3}
-  m_PrefabInstance: {fileID: 2404751400373790509}
+  m_PrefabInstance: {fileID: 7010399193533535432}
   m_PrefabAsset: {fileID: 0}
