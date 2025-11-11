@@ -374,11 +374,11 @@ public class CharacterInputController : MonoBehaviour
 			{
 				// Debug.Log("Robot Sliding");
 				Transform robotChar = character.transform.GetChild(0);
-				robotChar.transform.rotation = Quaternion.Euler(0, 45, 0);
-				robotChar.transform.position = new Vector3(
-					robotChar.transform.position.x,
-				 	robotChar.transform.position.y - 0.3f,
-				  	robotChar.transform.position.z);
+				robotChar.transform.rotation = Quaternion.Euler(0, 6f, 0);
+				// robotChar.transform.position = new Vector3(
+				// 	robotChar.transform.position.x,
+				//  	robotChar.transform.position.y - 0.3f,
+				//   	robotChar.transform.position.z);
 			}
 
 
@@ -399,10 +399,10 @@ public class CharacterInputController : MonoBehaviour
 				// Debug.Log("Robot Sliding");
 				Transform robotChar = character.transform.GetChild(0);
 				robotChar.transform.rotation = Quaternion.Euler(0, 0, 0);
-				robotChar.transform.position = new Vector3(
-					robotChar.transform.position.x,
-				 	robotChar.transform.position.y + 0.3f,
-				  	robotChar.transform.position.z);
+				// robotChar.transform.position = new Vector3(
+				// 	robotChar.transform.position.x,
+				//  	robotChar.transform.position.y + 0.3f,
+				//   	robotChar.transform.position.z);
 			}
 
 			characterCollider.Slide(false);

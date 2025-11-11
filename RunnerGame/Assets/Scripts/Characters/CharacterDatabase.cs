@@ -24,7 +24,7 @@ public class CharacterDatabase
         }
         Character c;
         var hasChar = m_CharactersDict.ContainsKey(type);
-        Debug.Log($"{type} {hasChar}");
+        // Debug.Log($"{type} {hasChar}");
 
         if (m_CharactersDict == null || !m_CharactersDict.TryGetValue(type, out c))
             return null;
