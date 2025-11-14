@@ -100,6 +100,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37b6756a5cc350840a57651f75926591
+    m_Address: Assets/Font/Rubik-Bold.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3940fade9e1ac7e44b7df894133991ea
     m_Address: Assets/Models/Daytime/House.fbx
     m_ReadOnly: 0
@@ -242,11 +247,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7e59919583afb9341a72173ebbac3fcd
     m_Address: Assets/Textures/Graffiti/Graffiti11.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7fb7db1348c569d41ab1ad4df6cb9ae0
-    m_Address: Assets/Font/Rubik-VariableFont_wght.ttf
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -542,6 +542,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e98075cb4974df0408eb7ee2083b60f8
     m_Address: Assets/Models/Daytime/PlasteredWall02.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: efd4e7b5e34f37b4b919bfb0dd124757
+    m_Address: Assets/Font/Rubik-Bold SDF.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

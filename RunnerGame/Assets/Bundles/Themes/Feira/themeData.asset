@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5397c64509ab92a4b9e8309aebcb66e1, type: 3}
   m_Name: themeData
   m_EditorClassIdentifier: 
-  themeName: Feira
+  themeName: Bairro FEIRA
   cost: 0
   premiumCost: 0
-  themeIcon: {fileID: 21300036, guid: e1a536f74c7ef384a8d7132148ace0c8, type: 3}
+  themeIcon: {fileID: 21300000, guid: 52e5f5e9b21ab1747862e7a1881a66dc, type: 3}
   zones:
   - length: 500
     prefabList:
