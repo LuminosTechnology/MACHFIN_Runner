@@ -37,6 +37,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 426cab1165df5c4409e320cea4142e69
+    m_Address: Assets/Animation/NewMachafin/Machafin_TPose.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 473ffa016efe3724cad08daa78e3d12a
     m_Address: Rubbish Raccoon
     m_ReadOnly: 0

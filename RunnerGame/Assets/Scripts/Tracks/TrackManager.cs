@@ -115,9 +115,9 @@ public class TrackManager : MonoBehaviour
     protected bool m_Rerun;     // This lets us know if we are entering a game over (ads) state or starting a new game (see GameState)
 
     protected bool m_IsTutorial; //Tutorial is a special run that don't chance section until the tutorial step is "validated" by the TutorialState.
-    
+
     Vector3 m_CameraOriginalPos = Vector3.zero;
-    
+
     const float k_FloatingOriginThreshold = 10000f;
 
     protected const float k_CountdownToStartLength = 5f;
@@ -128,7 +128,7 @@ public class TrackManager : MonoBehaviour
     protected const int k_DesiredSegmentCount = 10;
     protected const float k_SegmentRemovalDistance = -30f;
     protected const float k_Acceleration = 0.2f;
-    
+
     protected void Awake()
     {
         m_ScoreAccum = 0.0f;
@@ -178,7 +178,7 @@ public class TrackManager : MonoBehaviour
         {
             firstObstacle = true;
             m_CameraOriginalPos = Camera.main.transform.position;
-            
+
             if (m_TrackSeed != -1)
                 Random.InitState(m_TrackSeed);
             else
@@ -210,7 +210,7 @@ public class TrackManager : MonoBehaviour
 
             characterController.Init();
             characterController.CheatInvincible(invincible);
-            
+
             //Instantiate(CharacterDatabase.GetCharacter(PlayerData.instance.characters[PlayerData.instance.usedCharacter]), Vector3.zero, Quaternion.identity);
             player.transform.SetParent(characterController.characterCollider.transform, false);
             Camera.main.transform.SetParent(characterController.transform, true);
@@ -222,8 +222,16 @@ public class TrackManager : MonoBehaviour
 
             m_CurrentZone = 0;
             m_CurrentZoneDistance = 0;
-
-            skyMeshFilter.sharedMesh = m_CurrentThemeData.skyMesh;
+            if (skyMeshFilter != null)
+            {
+                Debug.Log(m_CurrentThemeData);
+                if (m_CurrentThemeData.skyMesh != null)
+                    skyMeshFilter.sharedMesh = m_CurrentThemeData.skyMesh;
+                else
+                {
+                    Debug.LogError($"No sky mesh found for theme {m_CurrentThemeData.themeName}");
+                }
+            }
             RenderSettings.fogColor = m_CurrentThemeData.fogColor;
             RenderSettings.fog = true;
 
@@ -564,7 +572,7 @@ public class TrackManager : MonoBehaviour
     private IEnumerator SpawnFromAssetReference(AssetReference reference, TrackSegment segment, int posIndex)
     {
         AsyncOperationHandle op = Addressables.LoadAssetAsync<GameObject>(reference);
-        yield return op; 
+        yield return op;
         GameObject obj = op.Result as GameObject;
         if (obj != null)
         {
