@@ -166,7 +166,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eec1acc59e96374418cfb825b4ed4fbd
-    m_Address: Assets/Bundles/Themes/Feira/Obstacles/ObstacleBin.prefab
+    m_Address: BarrilTNT
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
