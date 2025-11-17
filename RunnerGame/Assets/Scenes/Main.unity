@@ -23923,7 +23923,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403348304}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -23937,8 +23937,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7fb7db1348c569d41ab1ad4df6cb9ae0, type: 3}
-    m_FontSize: 65
+    m_Font: {fileID: 12800000, guid: 37b6756a5cc350840a57651f75926591, type: 3}
+    m_FontSize: 72
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -23949,7 +23949,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ThemeName
+  m_Text: Bairro FEIRA
 --- !u!222 &1403348307
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26319,7 +26319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -28539,7 +28539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1696922161
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29321,7 +29321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 1, y: 288.5}
+  m_AnchoredPosition: {x: 1, y: 832.6}
   m_SizeDelta: {x: 0, y: 172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1753286966
@@ -31967,7 +31967,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300106, guid: e1a536f74c7ef384a8d7132148ace0c8, type: 3}
+    m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:

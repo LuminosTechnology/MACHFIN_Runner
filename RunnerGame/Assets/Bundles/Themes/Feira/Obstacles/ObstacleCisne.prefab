@@ -164,7 +164,7 @@ MonoBehaviour:
   impactedSound: {fileID: 8300000, guid: 90690b03aaccb6e4a96d2cdb757b3b44, type: 3}
   minTime: 2
   maxTime: 5
-  animator: {fileID: 95000010306431478}
+  animator: {fileID: 924012778238958985}
   patrollingSound:
   - {fileID: 8300000, guid: 692deea899152264f8419135ceefafcb, type: 3}
   - {fileID: 8300000, guid: a683c76e59dd6b04a9420526560624a0, type: 3}
@@ -340,7 +340,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000014162031080}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 0a3d5f3fd7e6ad64394b0d2b4e7fc3fa, type: 3}
   m_Controller: {fileID: 9100000, guid: ced37169b811dfb42b2d90461f2de73d, type: 2}
   m_CullingMode: 1
@@ -432,11 +432,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cisne
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 0a3d5f3fd7e6ad64394b0d2b4e7fc3fa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 0a3d5f3fd7e6ad64394b0d2b4e7fc3fa,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ced37169b811dfb42b2d90461f2de73d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3d5f3fd7e6ad64394b0d2b4e7fc3fa, type: 3}
+--- !u!95 &924012778238958985 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 0a3d5f3fd7e6ad64394b0d2b4e7fc3fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 6753241168938164248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6499517166816528371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0a3d5f3fd7e6ad64394b0d2b4e7fc3fa,
