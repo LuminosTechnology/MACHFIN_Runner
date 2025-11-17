@@ -125,6 +125,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bdf1591de076d9444bdb077602989c80
+    m_Address: ObstacleLowPineapples
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c0cdc840c7763f244988b3697daccc5b
     m_Address: Assets/Models/Feira/Lona 01.mat
     m_ReadOnly: 0

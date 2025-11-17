@@ -555,6 +555,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f41332bea72574841a587c1beaaa67dc
+    m_Address: Pineapple
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa5a8fc362c346548982ad762f0c9fd7
     m_Address: Assets/Textures/SlatsAlbedo.tif
     m_ReadOnly: 0
