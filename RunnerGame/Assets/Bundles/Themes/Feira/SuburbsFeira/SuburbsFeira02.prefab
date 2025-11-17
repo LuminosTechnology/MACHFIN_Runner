@@ -318,9 +318,9 @@ MonoBehaviour:
   manager: {fileID: 0}
   objectRoot: {fileID: 0}
   collectibleTransform: {fileID: 429504, guid: 16cac8b68c4ca6448baecd0680e025f6, type: 3}
-  hasObstacles: 0
+  hasObstacles: 1
   possibleObstacles:
-  - m_AssetGUID: eec1acc59e96374418cfb825b4ed4fbd
+  - m_AssetGUID: cb9237f38c166354ea22cf7f8443b8c0
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 

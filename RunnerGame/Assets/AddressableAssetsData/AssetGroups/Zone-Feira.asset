@@ -135,6 +135,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb9237f38c166354ea22cf7f8443b8c0
+    m_Address: ObstacleCisne
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d385e588814398240ba82948ea388770
     m_Address: barracavazia_prefab
     m_ReadOnly: 0
