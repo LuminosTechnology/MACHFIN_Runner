@@ -32,7 +32,13 @@ public class PlayerData
     protected string saveFile = "";
 
 
-    public int coins;
+    public int picanha;
+    public int chocolate;
+    public int cash; 
+    public int cafe; 
+    public int coin;
+    public int gold;
+
     public int premium;
     public Dictionary<Consumable.ConsumableType, int> consumables = new Dictionary<Consumable.ConsumableType, int>();   // Inventory of owned consumables and quantity.
 
@@ -242,7 +248,12 @@ public class PlayerData
 		m_Instance.usedTheme = 0;
 		m_Instance.usedAccessory = -1;
 
-        m_Instance.coins = 0;
+        m_Instance.picanha = 0;
+        m_Instance.chocolate = 0;
+        m_Instance.cash = 0; 
+        m_Instance.cafe = 0;
+        m_Instance.coin = 0;
+        m_Instance.gold = 0;
         m_Instance.premium = 0;
 
         // m_Instance.characters.Add("Trash Cat");
@@ -274,7 +285,7 @@ public class PlayerData
 			ver = r.ReadInt32();
 		}
 
-        coins = r.ReadInt32();
+        picanha = r.ReadInt32();
 
         consumables.Clear();
         int consumableCount = r.ReadInt32();
@@ -396,7 +407,7 @@ public class PlayerData
         BinaryWriter w = new BinaryWriter(new FileStream(saveFile, FileMode.OpenOrCreate));
 
         w.Write(s_Version);
-        w.Write(coins);
+        w.Write(picanha);
 
         w.Write(consumables.Count);
         foreach(KeyValuePair<Consumable.ConsumableType, int> p in consumables)
@@ -479,7 +490,7 @@ public class PlayerDataEditor : Editor
     [MenuItem("Trash Dash Debug/Give 1000000 fishbones and 1000 premium")]
     static public void GiveCoins()
     {
-        PlayerData.instance.coins += 1000000;
+        PlayerData.instance.picanha += 1000000;
 		PlayerData.instance.premium += 1000;
         PlayerData.instance.Save();
     }

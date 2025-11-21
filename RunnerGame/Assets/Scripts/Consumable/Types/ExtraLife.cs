@@ -41,6 +41,6 @@ public class ExtraLife : Consumable
         if (c.currentLife < k_MaxLives)
             c.currentLife += 1;
 		else
-            c.coins += k_CoinValue;
+            c.picanhas += k_CoinValue;
     }
 }

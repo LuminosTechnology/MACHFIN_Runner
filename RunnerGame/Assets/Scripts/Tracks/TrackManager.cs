@@ -239,7 +239,7 @@ public class TrackManager : MonoBehaviour
 
             gameObject.SetActive(true);
             characterController.gameObject.SetActive(true);
-            characterController.coins = 0;
+            characterController.picanhas = 0;
             characterController.premium = 0;
 
             m_Score = 0;

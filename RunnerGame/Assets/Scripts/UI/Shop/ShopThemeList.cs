@@ -60,7 +60,7 @@ public class ShopThemeList : ShopList
 
 	protected void RefreshButton(ShopItemListItem itm, ThemeData theme)
 	{
-		if (theme.cost > PlayerData.instance.coins)
+		if (theme.cost > PlayerData.instance.picanha)
 		{
 			itm.buyButton.interactable = false;
 			itm.pricetext.color = Color.red;
@@ -91,7 +91,7 @@ public class ShopThemeList : ShopList
 
 	public void Buy(ThemeData t)
     {
-        PlayerData.instance.coins -= t.cost;
+        PlayerData.instance.picanha -= t.cost;
 		PlayerData.instance.premium -= t.premiumCost;
         PlayerData.instance.AddTheme(t.themeName);
         PlayerData.instance.Save();

@@ -26,7 +26,12 @@ public class CharacterInputController : MonoBehaviour
 
 	public Consumable inventory;
 
-	public int coins { get { return m_Coins; } set { m_Coins = value; } }
+	public int picanhas { get { return m_Picanhas; } set { m_Picanhas = value; } }
+	public int chocolates { get { return m_Chocolates; } set { m_Chocolates = value; } }
+	public int cash { get { return m_Cash; } set { m_Cash = value; } } 
+	public int cafe  { get { return m_Cafe; } set { m_Cafe = value; } }
+	public int coins  { get { return m_Coins; } set { m_Coins = value; } }
+	public int gold  { get { return m_Gold; } set { m_Gold = value; } }
 	public int premium { get { return m_Premium; } set { m_Premium = value; } }
 	public int currentLife { get { return m_CurrentLife; } set { m_CurrentLife = value; } }
 	public List<Consumable> consumables { get { return m_ActiveConsumables; } }
@@ -47,7 +52,12 @@ public class CharacterInputController : MonoBehaviour
 	[HideInInspector] public int currentTutorialLevel;
 	[HideInInspector] public bool tutorialWaitingForValidation;
 
+	protected int m_Picanhas;
+	protected int m_Chocolates;
+	protected int m_Cash; 
+	protected int m_Cafe;
 	protected int m_Coins;
+	protected int m_Gold;
 	protected int m_Premium;
 	protected int m_CurrentLife;
 
