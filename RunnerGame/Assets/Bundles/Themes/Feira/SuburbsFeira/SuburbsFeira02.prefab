@@ -318,14 +318,14 @@ MonoBehaviour:
   manager: {fileID: 0}
   objectRoot: {fileID: 0}
   collectibleTransform: {fileID: 429504, guid: 16cac8b68c4ca6448baecd0680e025f6, type: 3}
-  hasObstacles: 0
+  hasObstacles: 1
   possibleObstacles:
-  - m_AssetGUID: d5b35865369384d4e8c522f98c6d3597
+  - m_AssetGUID: bdf1591de076d9444bdb077602989c80
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
-  - m_AssetGUID: ca28baf069f12a04eadfdb045a6b1aa8
+  - m_AssetGUID: eec1acc59e96374418cfb825b4ed4fbd
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 

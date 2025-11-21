@@ -218,7 +218,9 @@ public class TrackManager : MonoBehaviour
             if (m_IsTutorial)
                 m_CurrentThemeData = tutorialThemeData;
             else
+            {
                 m_CurrentThemeData = ThemeDatabase.GetThemeData(PlayerData.instance.themes[PlayerData.instance.usedTheme]);
+            }
 
             m_CurrentZone = 0;
             m_CurrentZoneDistance = 0;
