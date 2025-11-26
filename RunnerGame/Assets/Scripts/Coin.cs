@@ -2,6 +2,7 @@
 
 public class Coin : MonoBehaviour
 {
+    public Pooler poolOrigin;
 	static public Pooler coinPool;
     static public Pooler[] coinsPool;
     public bool isPremium = false;

@@ -34,6 +34,92 @@ MonoBehaviour:
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
+  - length: 500
+    prefabList:
+    - m_AssetGUID: 5143c15768494d24da2eba0d63ac3df4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 6fa29f48d4cca724aa174c9b7307cb78
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: e14c5f5cae90a7f4db8afb9513bd824d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - length: 500
+    prefabList:
+    - m_AssetGUID: b227503d13a18074288b98579f605026
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+    - m_AssetGUID: b227503d13a18074288b98579f605026
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 5143c15768494d24da2eba0d63ac3df4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 696f68ce4fc7d1343b5a904a36c51922
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+  - length: 500
+    prefabList:
+    - m_AssetGUID: 696f68ce4fc7d1343b5a904a36c51922
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+    - m_AssetGUID: b227503d13a18074288b98579f605026
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+    - m_AssetGUID: e73ffbefea0b2e94da5088e991690d32
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: b227503d13a18074288b98579f605026
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  collectiblesData:
+  - m_name: Ouro
+    m_CollectiblePrefab: {fileID: 4446606806195557474, guid: ebe1f47633142b94d9844c4223dd44ec,
+      type: 3}
+    m_SpawnChance: 2
+  - m_name: Dolar
+    m_CollectiblePrefab: {fileID: 9026649906486562854, guid: 79cb4a6434f98e94490222ffc86dff79,
+      type: 3}
+    m_SpawnChance: 15
+  - m_name: Moeda
+    m_CollectiblePrefab: {fileID: 6029498762936536357, guid: 0992ed5b645317f42ab9b7cfdb6855aa,
+      type: 3}
+    m_SpawnChance: 15
+  - m_name: Cafe
+    m_CollectiblePrefab: {fileID: 8747537509992210593, guid: e188bf98d2ff66e478dcde59bebb3f49,
+      type: 3}
+    m_SpawnChance: 15
+  - m_name: Chocolate
+    m_CollectiblePrefab: {fileID: 2196784118034559650, guid: 710aa7c473c13aa4ab8563e0977dc232,
+      type: 3}
+    m_SpawnChance: 15
+  - m_name: Picanha
+    m_CollectiblePrefab: {fileID: 184264, guid: 16cac8b68c4ca6448baecd0680e025f6,
+      type: 3}
+    m_SpawnChance: 100
   collectiblePrefab: {fileID: 184264, guid: 16cac8b68c4ca6448baecd0680e025f6, type: 3}
   premiumCollectible: {fileID: 1000010457517272, guid: ac3c86c2382618643bfda6ab3cc81a0b,
     type: 3}

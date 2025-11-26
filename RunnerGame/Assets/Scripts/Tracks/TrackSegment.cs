@@ -13,11 +13,11 @@ public class TrackSegment : MonoBehaviour
     public Transform pathParent;
     public TrackManager manager;
 
-	public Transform objectRoot;
+    public Transform objectRoot;
     public Transform collectibleTransform;
 
-    public bool hasObstacles; 
-    public AssetReference[] possibleObstacles; 
+    public bool hasObstacles;
+    public AssetReference[] possibleObstacles;
 
     [HideInInspector]
     public float[] obstaclePositions;
@@ -30,13 +30,13 @@ public class TrackSegment : MonoBehaviour
     {
         UpdateWorldLength();
 
-		GameObject obj = new GameObject("ObjectRoot");
-		obj.transform.SetParent(transform);
-		objectRoot = obj.transform;
+        GameObject obj = new GameObject("ObjectRoot");
+        obj.transform.SetParent(transform);
+        objectRoot = obj.transform;
 
-		obj = new GameObject("Collectibles");
-		obj.transform.SetParent(objectRoot);
-		collectibleTransform = obj.transform;
+        obj = new GameObject("Collectibles");
+        obj.transform.SetParent(objectRoot);
+        collectibleTransform = obj.transform;
     }
 
     // Same as GetPointAt but using an interpolation parameter in world units instead of 0 to 1.
@@ -47,8 +47,8 @@ public class TrackSegment : MonoBehaviour
     }
 
 
-	// Interpolation parameter t is clamped between 0 and 1.
-	public void GetPointAt(float t, out Vector3 pos, out Quaternion rot)
+    // Interpolation parameter t is clamped between 0 and 1.
+    public void GetPointAt(float t, out Vector3 pos, out Quaternion rot)
     {
         float clampedT = Mathf.Clamp01(t);
         float scaledT = (pathParent.childCount - 1) * clampedT;
@@ -83,17 +83,18 @@ public class TrackSegment : MonoBehaviour
         }
     }
 
-	public void Cleanup()
-	{
-		while(collectibleTransform.childCount > 0)
-		{
-			Transform t = collectibleTransform.GetChild(0);
-			t.SetParent(null);
-            Coin.coinPool.Free(t.gameObject);
-		}
+    public void Cleanup()
+    {
+        while (collectibleTransform.childCount > 0)
+        {
+            Transform t = collectibleTransform.GetChild(0);
+            t.SetParent(null);
+            t.GetComponent<Coin>().poolOrigin.Free(t.gameObject);
+            // Coin.coinPool.Free(t.gameObject);
+        }
 
-	    Addressables.ReleaseInstance(gameObject);
-	}
+        Addressables.ReleaseInstance(gameObject);
+    }
 
 #if UNITY_EDITOR
     void OnDrawGizmos()

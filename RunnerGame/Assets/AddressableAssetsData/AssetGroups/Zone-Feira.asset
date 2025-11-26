@@ -70,6 +70,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6fa29f48d4cca724aa174c9b7307cb78
+    m_Address: SuburbsFeira01_Vazio
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 76feac8c68cc3f14480b47fef35ee1d2
     m_Address: Assets/Models/Feira/barraca2.fbx
     m_ReadOnly: 0
@@ -112,6 +117,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b14724044e36ddf469e32abfee8cf8f2
     m_Address: Assets/Models/Feira/lona_tex.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b227503d13a18074288b98579f605026
+    m_Address: SuburbsFeira02_Vazio
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -162,6 +172,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e14c5f5cae90a7f4db8afb9513bd824d
     m_Address: Assets/Bundles/Themes/Feira/SuburbsFeira/SuburbsFeira02.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e73ffbefea0b2e94da5088e991690d32
+    m_Address: SuburbsFeira03_Vazio
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
