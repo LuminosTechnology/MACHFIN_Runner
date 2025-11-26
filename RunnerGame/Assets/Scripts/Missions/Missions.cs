@@ -137,10 +137,10 @@ public class PickupMission : MissionBase
 
     public override void Update(TrackManager manager)
     {
-        int coins = manager.characterController.coins - previousCoinAmount;
+        int coins = manager.characterController.picanhas - previousCoinAmount;
         progress += coins;
 
-        previousCoinAmount = manager.characterController.coins;
+        previousCoinAmount = manager.characterController.picanhas;
     }
 }
 

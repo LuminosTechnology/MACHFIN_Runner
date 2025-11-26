@@ -317,7 +317,7 @@ MonoBehaviour:
   pathParent: {fileID: 4000013462740542}
   manager: {fileID: 0}
   objectRoot: {fileID: 0}
-  collectibleTransform: {fileID: 429504, guid: 16cac8b68c4ca6448baecd0680e025f6, type: 3}
+  collectibleTransform: {fileID: 0}
   hasObstacles: 1
   possibleObstacles:
   - m_AssetGUID: bdf1591de076d9444bdb077602989c80

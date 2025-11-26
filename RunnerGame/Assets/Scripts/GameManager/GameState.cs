@@ -341,7 +341,7 @@ public class GameState : AState
 
     protected void UpdateUI()
     {
-        coinText.text = trackManager.characterController.coins.ToString();
+        coinText.text = trackManager.characterController.picanhas.ToString();
         premiumText.text = trackManager.characterController.premium.ToString();
 
 		for (int i = 0; i < 3; ++i)

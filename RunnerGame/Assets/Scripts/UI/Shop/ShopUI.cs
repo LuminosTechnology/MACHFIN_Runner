@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 #if UNITY_ADS
 using UnityEngine.Advertisements;
 #endif
@@ -20,6 +21,7 @@ public class ShopUI : MonoBehaviour
 
     [Header("UI")]
     public Text coinCounter;
+    public CoinCounterUI[] coinsCounters;
     public Text premiumCounter;
     public Button cheatButton;
 
@@ -31,7 +33,7 @@ public class ShopUI : MonoBehaviour
     protected const int k_AdRewardCoins = 100;
 #endif
 
-	void Start ()
+    void Start()
     {
         PlayerData.Create();
 
@@ -53,12 +55,19 @@ public class ShopUI : MonoBehaviour
 
         m_OpenList = itemList;
         itemList.Open();
-	}
-	
-	void Update ()
+    }
+
+    void Update()
     {
-        coinCounter.text = PlayerData.instance.coins.ToString();
+        // coinCounter.text = PlayerData.instance.picanha.ToString();
         premiumCounter.text = PlayerData.instance.premium.ToString();
+
+        foreach (var counter in coinsCounters)
+        {
+            int amount = PlayerData.instance.GetCoin(counter.coinType);
+            counter.coinCounter.text = amount.ToString();
+        }
+
     }
 
     public void OpenItemList()
@@ -94,26 +103,27 @@ public class ShopUI : MonoBehaviour
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 
-	public void CloseScene()
-	{
+    public void CloseScene()
+    {
         SceneManager.UnloadSceneAsync("shop");
-	    LoadoutState loadoutState = GameManager.instance.topState as LoadoutState;
-	    if(loadoutState != null)
+        LoadoutState loadoutState = GameManager.instance.topState as LoadoutState;
+        if (loadoutState != null)
         {
             loadoutState.Refresh();
         }
-	}
+    }
 
-	public void CheatCoin()
-	{
+    public void CheatCoin()
+    {
 #if !UNITY_EDITOR && !DEVELOPMENT_BUILD
         return ; //you can't cheat in production build
 #endif
 
-        PlayerData.instance.coins += k_CheatCoins;
-		PlayerData.instance.premium += k_CheatPremium;
-		PlayerData.instance.Save();
-	}
+        PlayerData.instance.picanha += k_CheatCoins;
+        PlayerData.instance.premium += k_CheatPremium;
+        PlayerData.instance.Save();
+    }
+
 
 #if UNITY_ADS
     public void ShowRewardedAd()
@@ -143,4 +153,25 @@ public class ShopUI : MonoBehaviour
         }
     }
 #endif
+#if UNITY_EDITOR
+    #region OnValidate 
+    private void OnValidate()
+    {
+        // Atualiza automaticamente o nome baseado no enum
+        for (int i = 0; i < coinsCounters.Length; i++)
+        {
+            coinsCounters[i].name = coinsCounters[i].coinType.ToString();
+        }
+    }
+    #endregion
+#endif
+
+}
+
+[Serializable]
+public struct CoinCounterUI
+{
+    public string name;
+    public CoinType coinType;
+    public Text coinCounter;
 }

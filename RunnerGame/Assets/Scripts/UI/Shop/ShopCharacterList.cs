@@ -60,7 +60,7 @@ public class ShopCharacterList : ShopList
 
 	protected void RefreshButton(ShopItemListItem itm, Character c)
 	{
-		if (c.cost > PlayerData.instance.coins)
+		if (c.cost > PlayerData.instance.picanha)
 		{
 			itm.buyButton.interactable = false;
 			itm.pricetext.color = Color.red;
@@ -92,7 +92,7 @@ public class ShopCharacterList : ShopList
 
 	public void Buy(Character c)
     {
-        PlayerData.instance.coins -= c.cost;
+        PlayerData.instance.picanha -= c.cost;
 		PlayerData.instance.premium -= c.premiumCost;
         PlayerData.instance.AddCharacter(c.characterName);
         PlayerData.instance.Save();

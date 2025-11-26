@@ -125,7 +125,7 @@ public class ShopAccessoriesList : ShopList
 
 	protected void RefreshButton(ShopItemListItem itm, CharacterAccessories accessory, string compoundName)
 	{
-		if (accessory.cost > PlayerData.instance.coins)
+		if (accessory.cost > PlayerData.instance.picanha)
 		{
 			itm.buyButton.interactable = false;
 			itm.pricetext.color = Color.red;
@@ -157,7 +157,7 @@ public class ShopAccessoriesList : ShopList
 
 	public void Buy(string name, int cost, int premiumCost)
     {
-        PlayerData.instance.coins -= cost;
+        PlayerData.instance.picanha -= cost;
 		PlayerData.instance.premium -= premiumCost;
 		PlayerData.instance.AddAccessory(name);
         PlayerData.instance.Save();

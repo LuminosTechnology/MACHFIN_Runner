@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 11457466}
   - component: {fileID: 6552710}
   m_Layer: 8
-  m_Name: Pickup
+  m_Name: Pickup_Picanha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPremium: 0
+  coinType: 0
 --- !u!65 &6552710
 BoxCollider:
   m_ObjectHideFlags: 0
