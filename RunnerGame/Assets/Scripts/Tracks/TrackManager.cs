@@ -605,73 +605,69 @@ public class TrackManager : MonoBehaviour
     public IEnumerator SpawnCoinAndPowerup(TrackSegment segment)
     {
         if (!m_IsTutorial)
-            yield return null;
-
-
-        // Define o comprimento mínimo e máximo para uma linha de moedas.
-
-
-        float currentWorldPos = 0.0f;
-        int currentLane = Random.Range(0, 3);
-
-        float powerupChance = Mathf.Clamp01(Mathf.Floor(m_TimeSincePowerup) * 0.5f * 0.001f);
-        float premiumChance = Mathf.Clamp01(Mathf.Floor(m_TimeSinceLastPremium) * 0.5f * 0.0001f);
-
-        while (currentWorldPos < segment.worldLength)
         {
-            // Gera um comprimento aleatório para a linha de moedas e uma lacuna.
+            float currentWorldPos = 0.0f;
+            int currentLane = Random.Range(0, 3);
 
+            float powerupChance = Mathf.Clamp01(Mathf.Floor(m_TimeSincePowerup) * 0.5f * 0.001f);
+            float premiumChance = Mathf.Clamp01(Mathf.Floor(m_TimeSinceLastPremium) * 0.5f * 0.0001f);
 
-            // Verifica se deve gerar um power-up ou um item premium.
-            if (Random.value < powerupChance)
+            while (currentWorldPos < segment.worldLength)
             {
-                // Lógica para gerar power-up (mantida do original para um único item).
-                // ... (você pode adicionar a lógica de spawn de power-up aqui se desejar)
-                m_TimeSincePowerup = 0.0f;
-            }
-            else if (Random.value < premiumChance)
-            {
-                // Lógica para gerar item premium (mantida do original para um único item).
-                // ... (você pode adicionar a lógica de spawn de item premium aqui se desejar)
-                m_TimeSinceLastPremium = 0.0f;
-            }
-            else
-            {
-                // int lineLength = Random.Range(minLineLength, maxLineLength); 
+                // Gera um comprimento aleatório para a linha de moedas e uma lacuna.
 
 
-                CollectibleCurrency chosen = GetRandomCollectible();
-                Pooler pool = Coin.coinsPool.First(p => p.m_Original == chosen.m_CollectiblePrefab);
-                // Gera uma linha de moedas.
-                int lineLength = Random.Range(chosen.m_MinLineLength, chosen.m_MaxLineLength);
-                increment = chosen.m_Increment;
-
-
-                // Muda de faixa aleatoriamente.
-                if (Random.value < 0.1f)
-                    currentLane = (currentLane + Random.Range(1, 3)) % 3;
-
-                for (int i = 0; i < lineLength; ++i)
+                // Verifica se deve gerar um power-up ou um item premium.
+                if (Random.value < powerupChance)
                 {
-                    Vector3 pos;
-                    Quaternion rot;
-                    segment.GetPointAtInWorldUnit(currentWorldPos, out pos, out rot);
+                    // Lógica para gerar power-up (mantida do original para um único item).
+                    // ... (você pode adicionar a lógica de spawn de power-up aqui se desejar)
+                    m_TimeSincePowerup = 0.0f;
+                }
+                else if (Random.value < premiumChance)
+                {
+                    // Lógica para gerar item premium (mantida do original para um único item).
+                    // ... (você pode adicionar a lógica de spawn de item premium aqui se desejar)
+                    m_TimeSinceLastPremium = 0.0f;
+                }
+                else
+                {
+                    // int lineLength = Random.Range(minLineLength, maxLineLength); 
+
+
+                    CollectibleCurrency chosen = GetRandomCollectible();
+                    Pooler pool = Coin.coinsPool.First(p => p.m_Original == chosen.m_CollectiblePrefab);
+                    // Gera uma linha de moedas.
+                    int lineLength = Random.Range(chosen.m_MinLineLength, chosen.m_MaxLineLength);
+                    increment = chosen.m_Increment;
+
 
                     // Muda de faixa aleatoriamente.
+                    if (Random.value < 0.1f)
+                        currentLane = (currentLane + Random.Range(1, 3)) % 3;
 
-                    pos = pos + ((currentLane - 1) * laneOffset * (rot * Vector3.right));
-
-                    // Verifica se a posição é válida antes de gerar a moeda.
-                    if (!Physics.CheckSphere(pos, 0.4f, 1 << 9))
+                    for (int i = 0; i < lineLength; ++i)
                     {
-                        GameObject toUse = pool.Get(pos, rot);
-                        toUse.GetComponent<Coin>().poolOrigin = pool;
-                        toUse.transform.SetParent(segment.collectibleTransform, true);
+                        Vector3 pos;
+                        Quaternion rot;
+                        segment.GetPointAtInWorldUnit(currentWorldPos, out pos, out rot);
+
+                        // Muda de faixa aleatoriamente.
+
+                        pos = pos + ((currentLane - 1) * laneOffset * (rot * Vector3.right));
+
+                        // Verifica se a posição é válida antes de gerar a moeda.
+                        if (!Physics.CheckSphere(pos, 0.4f, 1 << 9))
+                        {
+                            GameObject toUse = pool.Get(pos, rot);
+                            toUse.GetComponent<Coin>().poolOrigin = pool;
+                            toUse.transform.SetParent(segment.collectibleTransform, true);
+                        }
+                        currentWorldPos += increment;
                     }
-                    currentWorldPos += increment;
                 }
+                currentWorldPos += increment * gapOffset; // Adiciona uma lacuna após a linha de moedas ou power-up.
             }
-            currentWorldPos += increment * gapOffset; // Adiciona uma lacuna após a linha de moedas ou power-up.
         }
 
         yield return null;

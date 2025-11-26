@@ -113,58 +113,61 @@ public class CharacterCollider : MonoBehaviour
 			if (magnetCoins.Contains(c.gameObject))
 				magnetCoins.Remove(c.gameObject);
 
-			TryGetComponent(out Coin _coin);
-
-			if (_coin.isPremium)
+			if (c.gameObject.TryGetComponent(out Coin _coin))
 			{
-				Addressables.ReleaseInstance(c.gameObject);
-				PlayerData.instance.premium += 1;
-				controller.premium += 1;
-				m_Audio.PlayOneShot(premiumSound);
-			}
-			else
-			{
-				_coin.poolOrigin.Free(c.gameObject);
-
-				// Coin.coinPool.Free(c.gameObject);
-				
-				switch (_coin.coinType)
+				if (_coin.isPremium)
 				{
-					case CoinType.Picanha:
-						PlayerData.instance.picanha += 1;
-						break;
-
-					case CoinType.Chocolate:
-						PlayerData.instance.chocolate += 1;
-						break;
-
-					case CoinType.Cash:
-						PlayerData.instance.cash += 1;
-						break;
-
-
-					case CoinType.Cafe:
-						PlayerData.instance.cafe += 1;
-						break;
-
-					case CoinType.Coin:
-						PlayerData.instance.coin += 1;
-						break;
-
-					case CoinType.Gold:
-						PlayerData.instance.gold += 1;
-						break;
-
-					case CoinType.Premium:
-						// PlayerData.instance.premium += 1;
-						break;
-
-
+					Addressables.ReleaseInstance(c.gameObject);
+					PlayerData.instance.premium += 1;
+					controller.premium += 1;
+					m_Audio.PlayOneShot(premiumSound);
 				}
-				// PlayerData.instance.picanha += 1;
-				// controller.picanhas += 1;
-				m_Audio.PlayOneShot(coinSound);
+				else
+				{
+					_coin.poolOrigin.Free(c.gameObject);
+
+					// Coin.coinPool.Free(c.gameObject);
+
+					switch (_coin.coinType)
+					{
+						case CoinType.Picanha:
+							PlayerData.instance.picanha += 1;
+							break;
+
+						case CoinType.Chocolate:
+							PlayerData.instance.chocolate += 1;
+							break;
+
+						case CoinType.Cash:
+							PlayerData.instance.cash += 1;
+							break;
+
+
+						case CoinType.Cafe:
+							PlayerData.instance.cafe += 1;
+							break;
+
+						case CoinType.Coin:
+							PlayerData.instance.coin += 1;
+							break;
+
+						case CoinType.Gold:
+							PlayerData.instance.gold += 1;
+							break;
+
+						case CoinType.Premium:
+							// PlayerData.instance.premium += 1;
+							break;
+
+
+					}
+					// PlayerData.instance.picanha += 1;
+					// controller.picanhas += 1;
+					m_Audio.PlayOneShot(coinSound);
+				}
 			}
+
+
 		}
 		else if (c.gameObject.layer == k_ObstacleLayerIndex)
 		{
