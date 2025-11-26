@@ -23,7 +23,7 @@ public class CharacterCollider : MonoBehaviour
 
 		public int picanhas;
 		public int chocolate;
-		public int cash; 
+		public int cash;
 		public int cafe;
 		public int coin;
 		public int gold;
@@ -113,7 +113,9 @@ public class CharacterCollider : MonoBehaviour
 			if (magnetCoins.Contains(c.gameObject))
 				magnetCoins.Remove(c.gameObject);
 
-			if (c.GetComponent<Coin>().isPremium)
+			TryGetComponent(out Coin _coin);
+
+			if (_coin.isPremium)
 			{
 				Addressables.ReleaseInstance(c.gameObject);
 				PlayerData.instance.premium += 1;
@@ -122,8 +124,11 @@ public class CharacterCollider : MonoBehaviour
 			}
 			else
 			{
-				Coin.coinPool.Free(c.gameObject);
-				switch (c.GetComponent<Coin>().coinType)
+				_coin.poolOrigin.Free(c.gameObject);
+
+				// Coin.coinPool.Free(c.gameObject);
+				
+				switch (_coin.coinType)
 				{
 					case CoinType.Picanha:
 						PlayerData.instance.picanha += 1;
@@ -136,7 +141,7 @@ public class CharacterCollider : MonoBehaviour
 					case CoinType.Cash:
 						PlayerData.instance.cash += 1;
 						break;
- 
+
 
 					case CoinType.Cafe:
 						PlayerData.instance.cafe += 1;
@@ -157,7 +162,7 @@ public class CharacterCollider : MonoBehaviour
 
 				}
 				// PlayerData.instance.picanha += 1;
-				controller.picanhas += 1;
+				// controller.picanhas += 1;
 				m_Audio.PlayOneShot(coinSound);
 			}
 		}
@@ -205,7 +210,7 @@ public class CharacterCollider : MonoBehaviour
 				m_DeathData.character = controller.character.characterName;
 				m_DeathData.themeUsed = controller.trackManager.currentTheme.themeName;
 				m_DeathData.obstacleType = ob.GetType().ToString();
-				m_DeathData.picanhas = controller.picanhas; 
+				m_DeathData.picanhas = controller.picanhas;
 				m_DeathData.premium = controller.premium;
 				m_DeathData.score = controller.trackManager.score;
 				m_DeathData.worldDistance = controller.trackManager.worldDistance;

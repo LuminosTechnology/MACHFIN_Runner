@@ -474,41 +474,61 @@ public class PlayerData
         w.Close();
     }
 
-
-}
-
-// Helper class to cheat in the editor for test purpose
-#if UNITY_EDITOR
-public class PlayerDataEditor : Editor
-{
-	[MenuItem("Trash Dash Debug/Clear Save")]
-    static public void ClearSave()
+    public int GetCoin(CoinType coinType)
     {
-        File.Delete(Application.persistentDataPath + "/save.bin");
-    } 
-
-    [MenuItem("Trash Dash Debug/Give 1000000 fishbones and 1000 premium")]
-    static public void GiveCoins()
-    {
-        PlayerData.instance.picanha += 1000000;
-		PlayerData.instance.premium += 1000;
-        PlayerData.instance.Save();
-    }
-
-    [MenuItem("Trash Dash Debug/Give 10 Consumables of each types")]
-    static public void AddConsumables()
-    {
-       
-        for(int i = 0; i < ShopItemList.s_ConsumablesTypes.Length; ++i)
+        switch (coinType)
         {
-            Consumable c = ConsumableDatabase.GetConsumbale(ShopItemList.s_ConsumablesTypes[i]);
-            if(c != null)
-            {
-                PlayerData.instance.consumables[c.GetConsumableType()] = 10;
-            }
+            case CoinType.Picanha:
+                return picanha;
+            case CoinType.Chocolate:
+                return chocolate;
+            case CoinType.Cash:
+                return cash;
+            case CoinType.Cafe:
+                return cafe;
+            case CoinType.Coin:
+                return coin;
+            case CoinType.Gold:
+                return gold;
+            default:
+                return 0;
         }
 
-        PlayerData.instance.Save();
     }
 }
+
+    // Helper class to cheat in the editor for test purpose
+#if UNITY_EDITOR
+    public class PlayerDataEditor : Editor
+    {
+        [MenuItem("Trash Dash Debug/Clear Save")]
+        static public void ClearSave()
+        {
+            File.Delete(Application.persistentDataPath + "/save.bin");
+        }
+
+        [MenuItem("Trash Dash Debug/Give 1000000 fishbones and 1000 premium")]
+        static public void GiveCoins()
+        {
+            PlayerData.instance.picanha += 1000000;
+            PlayerData.instance.premium += 1000;
+            PlayerData.instance.Save();
+        }
+
+        [MenuItem("Trash Dash Debug/Give 10 Consumables of each types")]
+        static public void AddConsumables()
+        {
+
+            for (int i = 0; i < ShopItemList.s_ConsumablesTypes.Length; ++i)
+            {
+                Consumable c = ConsumableDatabase.GetConsumbale(ShopItemList.s_ConsumablesTypes[i]);
+                if (c != null)
+                {
+                    PlayerData.instance.consumables[c.GetConsumableType()] = 10;
+                }
+            }
+
+            PlayerData.instance.Save();
+        }
+    }
 #endif

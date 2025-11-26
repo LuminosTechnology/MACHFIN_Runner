@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 49811845}
   - component: {fileID: 49811844}
   m_Layer: 5
-  m_Name: CoinsCounter
+  m_Name: MoedaCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 215140665}
   - component: {fileID: 215140664}
   m_Layer: 5
-  m_Name: CoinsCounter
+  m_Name: PicanhaCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2122,7 +2122,7 @@ GameObject:
   - component: {fileID: 599906852}
   - component: {fileID: 599906851}
   m_Layer: 5
-  m_Name: CoinsCounter
+  m_Name: GoldCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4371,7 +4371,7 @@ GameObject:
   - component: {fileID: 1205005029}
   - component: {fileID: 1205005028}
   m_Layer: 5
-  m_Name: CoinsCounter
+  m_Name: ChocolateCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5097,6 +5097,25 @@ MonoBehaviour:
   accessoriesList: {fileID: 540240814}
   themeList: {fileID: 415189872}
   coinCounter: {fileID: 215140664}
+  coinsCounters:
+  - name: Picanha
+    coinType: 0
+    coinCounter: {fileID: 215140664}
+  - name: Chocolate
+    coinType: 1
+    coinCounter: {fileID: 1205005028}
+  - name: Cash
+    coinType: 2
+    coinCounter: {fileID: 2003636272}
+  - name: Cafe
+    coinType: 3
+    coinCounter: {fileID: 1529102024}
+  - name: Coin
+    coinType: 4
+    coinCounter: {fileID: 49811844}
+  - name: Gold
+    coinType: 5
+    coinCounter: {fileID: 599906851}
   premiumCounter: {fileID: 61687490}
   cheatButton: {fileID: 792817056}
 --- !u!1 &1457582963
@@ -5848,7 +5867,7 @@ GameObject:
   - component: {fileID: 1529102025}
   - component: {fileID: 1529102024}
   m_Layer: 5
-  m_Name: CoinsCounter
+  m_Name: CafeCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6765,7 +6784,7 @@ GameObject:
   - component: {fileID: 2003636273}
   - component: {fileID: 2003636272}
   m_Layer: 5
-  m_Name: CoinsCounter
+  m_Name: DolarCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
