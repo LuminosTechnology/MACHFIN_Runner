@@ -165,9 +165,9 @@ MonoBehaviour:
   accessories: []
   animator: {fileID: 2070277420254211562}
   icon: {fileID: 21300054, guid: e1a536f74c7ef384a8d7132148ace0c8, type: 3}
-  jumpSound: {fileID: 8300000, guid: 819da6b208e0c0342b38dbbba363b740, type: 3}
-  hitSound: {fileID: 8300000, guid: 4df05e5a3da67b74ab57e4fdbff8c1fa, type: 3}
-  deathSound: {fileID: 8300000, guid: 3acd66c1c1f3d3a499214949f2b98bc5, type: 3}
+  jumpSound: {fileID: 8300000, guid: 39eea5d767a9fa846bb6c3cd7071a807, type: 3}
+  hitSound: {fileID: 8300000, guid: 3490ee9c4c800d843b8e836b22f5a3ef, type: 3}
+  deathSound: {fileID: 8300000, guid: ee712bae8aa4f2446b3bd1a06c82c164, type: 3}
 --- !u!82 &4673595072850023684
 AudioSource:
   m_ObjectHideFlags: 0
