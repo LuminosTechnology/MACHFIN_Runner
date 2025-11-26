@@ -44,4 +44,7 @@ public struct CollectibleCurrency
     public GameObject m_CollectiblePrefab;
     [Range(0, 100)]
     public float m_SpawnChance;
+    public int m_MinLineLength;
+    public int m_MaxLineLength;
+    public float m_Increment;
 }

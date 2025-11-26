@@ -100,26 +100,44 @@ MonoBehaviour:
     m_CollectiblePrefab: {fileID: 4446606806195557474, guid: ebe1f47633142b94d9844c4223dd44ec,
       type: 3}
     m_SpawnChance: 2
+    m_MinLineLength: 1
+    m_MaxLineLength: 3
+    m_Increment: 3
   - m_name: Dolar
     m_CollectiblePrefab: {fileID: 9026649906486562854, guid: 79cb4a6434f98e94490222ffc86dff79,
       type: 3}
     m_SpawnChance: 15
+    m_MinLineLength: 3
+    m_MaxLineLength: 5
+    m_Increment: 2
   - m_name: Moeda
     m_CollectiblePrefab: {fileID: 6029498762936536357, guid: 0992ed5b645317f42ab9b7cfdb6855aa,
       type: 3}
     m_SpawnChance: 15
+    m_MinLineLength: 3
+    m_MaxLineLength: 7
+    m_Increment: 2
   - m_name: Cafe
     m_CollectiblePrefab: {fileID: 8747537509992210593, guid: e188bf98d2ff66e478dcde59bebb3f49,
       type: 3}
     m_SpawnChance: 15
+    m_MinLineLength: 5
+    m_MaxLineLength: 10
+    m_Increment: 2
   - m_name: Chocolate
     m_CollectiblePrefab: {fileID: 2196784118034559650, guid: 710aa7c473c13aa4ab8563e0977dc232,
       type: 3}
     m_SpawnChance: 15
+    m_MinLineLength: 5
+    m_MaxLineLength: 10
+    m_Increment: 1.5
   - m_name: Picanha
     m_CollectiblePrefab: {fileID: 184264, guid: 16cac8b68c4ca6448baecd0680e025f6,
       type: 3}
     m_SpawnChance: 100
+    m_MinLineLength: 5
+    m_MaxLineLength: 25
+    m_Increment: 1.5
   collectiblePrefab: {fileID: 184264, guid: 16cac8b68c4ca6448baecd0680e025f6, type: 3}
   premiumCollectible: {fileID: 1000010457517272, guid: ac3c86c2382618643bfda6ab3cc81a0b,
     type: 3}

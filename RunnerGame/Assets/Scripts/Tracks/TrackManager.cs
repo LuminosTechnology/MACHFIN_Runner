@@ -48,7 +48,7 @@ public class TrackManager : MonoBehaviour
 
     public int minLineLength = 5;
     public int maxLineLength = 15;
-    public float increment = 1.5f;
+    private float increment = 1.5f;
     public float gapOffset = 5f;
 
 
@@ -620,8 +620,7 @@ public class TrackManager : MonoBehaviour
         while (currentWorldPos < segment.worldLength)
         {
             // Gera um comprimento aleatório para a linha de moedas e uma lacuna.
-            int lineLength = Random.Range(minLineLength, maxLineLength);
-            int gapLength = Random.Range(minLineLength / 2, maxLineLength / 2);
+
 
             // Verifica se deve gerar um power-up ou um item premium.
             if (Random.value < powerupChance)
@@ -638,9 +637,20 @@ public class TrackManager : MonoBehaviour
             }
             else
             {
+                // int lineLength = Random.Range(minLineLength, maxLineLength); 
+
+
                 CollectibleCurrency chosen = GetRandomCollectible();
                 Pooler pool = Coin.coinsPool.First(p => p.m_Original == chosen.m_CollectiblePrefab);
                 // Gera uma linha de moedas.
+                int lineLength = Random.Range(chosen.m_MinLineLength, chosen.m_MaxLineLength);
+                increment = chosen.m_Increment;
+
+
+                // Muda de faixa aleatoriamente.
+                if (Random.value < 0.1f)
+                    currentLane = (currentLane + Random.Range(1, 3)) % 3;
+
                 for (int i = 0; i < lineLength; ++i)
                 {
                     Vector3 pos;
@@ -648,8 +658,6 @@ public class TrackManager : MonoBehaviour
                     segment.GetPointAtInWorldUnit(currentWorldPos, out pos, out rot);
 
                     // Muda de faixa aleatoriamente.
-                    if (Random.value < 0.1f)
-                        currentLane = (currentLane + Random.Range(1, 3)) % 3;
 
                     pos = pos + ((currentLane - 1) * laneOffset * (rot * Vector3.right));
 
@@ -663,7 +671,7 @@ public class TrackManager : MonoBehaviour
                     currentWorldPos += increment;
                 }
             }
-            currentWorldPos += gapLength * increment + gapOffset; // Adiciona uma lacuna após a linha de moedas ou power-up.
+            currentWorldPos += increment * gapOffset; // Adiciona uma lacuna após a linha de moedas ou power-up.
         }
 
         yield return null;
