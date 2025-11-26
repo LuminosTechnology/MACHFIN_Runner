@@ -7,6 +7,7 @@ using UnityEngine.Analytics;
 using UnityEngine.ResourceManagement;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using GameObject = UnityEngine.GameObject;
+using System.Linq;
 
 #if UNITY_ANALYTICS
 using UnityEngine.Analytics;
@@ -248,6 +249,16 @@ public class TrackManager : MonoBehaviour
             m_SafeSegementLeft = m_IsTutorial ? 0 : k_StartingSafeSegments;
 
             Coin.coinPool = new Pooler(currentTheme.collectiblePrefab, k_StartingCoinPoolSize);
+            int _index = 0;
+            Coin.coinsPool = new Pooler[currentTheme.collectiblesData.Length];
+
+            foreach (var coin in currentTheme.collectiblesData)
+            {
+                // Debug.Log($"Creating {coin.m_name} pool");
+                Coin.coinsPool[_index] = new Pooler(coin.m_CollectiblePrefab, k_StartingCoinPoolSize);
+                _index++;
+
+            }
 
             PlayerData.instance.StartRunMissions(this);
 
@@ -662,7 +673,13 @@ public class TrackManager : MonoBehaviour
                     }
                     else
                     {
-                        toUse = Coin.coinPool.Get(pos, rot);
+                        //   toUse = Coin.coinPool.Get(pos, rot);
+                        CollectibleCurrency chosen = GetRandomCollectible();
+
+                        Pooler pool = Coin.coinsPool.First(p => p.m_Original == chosen.m_CollectiblePrefab);
+                        toUse = pool.Get(pos, rot);
+
+
                         toUse.transform.SetParent(segment.collectibleTransform, true);
                     }
 
@@ -678,6 +695,27 @@ public class TrackManager : MonoBehaviour
                 currentWorldPos += increment;
             }
         }
+    }
+
+    public CollectibleCurrency GetRandomCollectible()
+    {
+        float total = 0f;
+
+        foreach (var coin in currentTheme.collectiblesData)
+        {
+            total += coin.m_SpawnChance;
+        }
+        float rand = Random.Range(0, total);
+        total = 0;
+        foreach (var coin in currentTheme.collectiblesData)
+        {
+            if (rand < coin.m_SpawnChance)
+            {
+                return coin;
+            }
+            rand -= coin.m_SpawnChance;
+        }
+        return currentTheme.collectiblesData[0];
     }
 
     public void AddScore(int amount)
