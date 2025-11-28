@@ -40,6 +40,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2649007a398a8cd4283b27371a56cddf
+    m_Address: ObstacleVeneno
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 31b31b2658746dc45ade3ff2ed49cad0
     m_Address: barraca1
     m_ReadOnly: 0

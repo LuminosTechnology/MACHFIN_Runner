@@ -10,6 +10,7 @@ public class SimpleBarricade : Obstacle
     protected const int k_MaxObstacleCount = 2;
     protected const int k_LeftMostLaneIndex = -1;
     protected const int k_RightMostLaneIndex = 1;
+
     
     public override IEnumerator Spawn(TrackSegment segment, float t)
     {
@@ -55,4 +56,10 @@ public class SimpleBarricade : Obstacle
             }
         }
     }
+}
+
+public enum ObstacleType
+{
+    Damage,
+    Inoffensive
 }

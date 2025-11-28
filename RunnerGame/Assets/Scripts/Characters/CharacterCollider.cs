@@ -193,8 +193,11 @@ public class CharacterCollider : MonoBehaviour
 			{
 				m_TutorialHitObstacle = true;
 			}
+			if (ob.m_ObstacleType == ObstacleType.Inoffensive)
+			{ 
+			}
 			else
-			{
+			{ 
 				controller.currentLife -= 1;
 			}
 
