@@ -515,6 +515,24 @@ public class TrackManager : MonoBehaviour
     }
 
     private readonly Vector3 _offScreenSpawnPos = new Vector3(-100f, -100f, -100f);
+
+    public bool IsObstacleAreaFree(TrackSegment segment, float obstacleT)
+    {
+        // Pega o ponto exato baseado no t da curva (mesma lógica do spawn atual)
+        Vector3 pos;
+        Quaternion rot;
+        segment.GetPointAt(obstacleT, out pos, out rot);
+
+        float radius = segment.obstacleCheckRadius;
+
+        // Colisão apenas com obstaculos
+        LayerMask mask = LayerMask.GetMask("Obstacle");
+
+        // Verificar se já existe obstáculo na área
+        bool hasObstacle = Physics.CheckSphere(pos, radius, mask);
+
+        return !hasObstacle;
+    }
     public IEnumerator SpawnNewSegment()
     {
         if (!m_IsTutorial)
@@ -581,7 +599,12 @@ public class TrackManager : MonoBehaviour
         {
             for (int i = 0; i < segment.obstaclePositions.Length; ++i)
             {
+
                 AssetReference assetRef = segment.possibleObstacles[Random.Range(0, segment.possibleObstacles.Length)];
+                if (!IsObstacleAreaFree(segment, i))
+                {
+                    return; // impede o spawn
+                }
                 StartCoroutine(SpawnFromAssetReference(assetRef, segment, i));
             }
         }
