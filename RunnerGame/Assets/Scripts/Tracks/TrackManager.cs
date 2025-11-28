@@ -65,6 +65,8 @@ public class TrackManager : MonoBehaviour
 
     [Header("Tutorial")]
     public ThemeData tutorialThemeData;
+    [Header("Segment")]
+    public float segmentCheckRadius = 7f;
 
     public System.Action<TrackSegment> newSegmentCreated;
     public System.Action<TrackSegment> currentSegementChanged;
@@ -515,6 +517,32 @@ public class TrackManager : MonoBehaviour
     }
 
     private readonly Vector3 _offScreenSpawnPos = new Vector3(-100f, -100f, -100f);
+
+    public bool IsObstacleAreaFree(TrackSegment segment, float obstacleT)
+    {
+        // Pega o ponto exato baseado no t da curva (mesma lógica do spawn atual)
+        Vector3 pos;
+        Quaternion rot;
+        segment.GetPointAt(obstacleT, out pos, out rot);
+
+        float radius = segment.obstacleCheckRadius;
+
+        // Colisão apenas com obstaculos
+        LayerMask mask = LayerMask.GetMask("Obstacle");
+
+        // Verificar se já existe obstáculo na área
+        bool hasObstacle = Physics.CheckSphere(pos, radius, mask);
+
+        return !hasObstacle;
+    }
+    public bool IsSegmentAreaFree(Vector3 position, float radius)
+    {
+        LayerMask mask = LayerMask.GetMask("TrackSegment");
+
+        bool hasSomething = Physics.CheckSphere(position, radius, mask);
+
+        return !hasSomething;
+    }
     public IEnumerator SpawnNewSegment()
     {
         if (!m_IsTutorial)
@@ -523,56 +551,104 @@ public class TrackManager : MonoBehaviour
                 ChangeZone();
         }
 
-        int segmentUse = Random.Range(0, m_CurrentThemeData.zones[m_CurrentZone].prefabList.Length);
-        if (segmentUse == m_PreviousSegment) segmentUse = (segmentUse + 1) % m_CurrentThemeData.zones[m_CurrentZone].prefabList.Length;
+        int attempts = 5; // segurança: tenta várias vezes encontrar um segmento que caiba
 
-        AsyncOperationHandle segmentToUseOp = m_CurrentThemeData.zones[m_CurrentZone].prefabList[segmentUse].InstantiateAsync(_offScreenSpawnPos, Quaternion.identity);
-        yield return segmentToUseOp;
-        if (segmentToUseOp.Result == null || !(segmentToUseOp.Result is GameObject))
+        TrackSegment newSegment = null;
+
+        while (attempts > 0)
         {
-            Debug.LogWarning(string.Format("Unable to load segment {0}.", m_CurrentThemeData.zones[m_CurrentZone].prefabList[segmentUse].Asset.name));
+            attempts--;
+
+            int segmentUse = Random.Range(0, m_CurrentThemeData.zones[m_CurrentZone].prefabList.Length);
+
+            if (segmentUse == m_PreviousSegment)
+                segmentUse = (segmentUse + 1) % m_CurrentThemeData.zones[m_CurrentZone].prefabList.Length;
+
+
+            // ==== Carrega o segmento sem posicionar ainda ====
+            AsyncOperationHandle segmentOp =
+                m_CurrentThemeData.zones[m_CurrentZone].prefabList[segmentUse].InstantiateAsync(_offScreenSpawnPos, Quaternion.identity);
+
+            yield return segmentOp;
+
+            if (segmentOp.Result == null)
+            {
+                Debug.LogWarning("Failed to load segment.");
+                continue;
+            }
+
+            GameObject segmentObj = segmentOp.Result as GameObject;
+            newSegment = segmentObj.GetComponent<TrackSegment>();
+
+            // =====================
+            // CALCULA POSIÇÃO REAL
+            // =====================
+
+            Vector3 currentExitPoint;
+            Quaternion currentExitRotation;
+
+            if (m_Segments.Count > 0)
+                m_Segments[m_Segments.Count - 1].GetPointAt(1f, out currentExitPoint, out currentExitRotation);
+            else
+            {
+                currentExitPoint = transform.position;
+                currentExitRotation = transform.rotation;
+            }
+
+            newSegment.transform.rotation = currentExitRotation;
+
+            Vector3 entryPoint;
+            Quaternion entryRotation;
+
+            newSegment.GetPointAt(0f, out entryPoint, out entryRotation);
+
+            Vector3 finalPos = currentExitPoint + (newSegment.transform.position - entryPoint);
+
+            // ========================
+            // CHECAR COLISÃO DE ÁREA
+            // ========================
+
+            if (!IsSegmentAreaFree(finalPos, segmentCheckRadius))
+            {
+                Debug.Log("Segmento bloqueado — tentando outro...");
+
+                // IMPORTANTE: descartar o segmento carregado
+                Addressables.ReleaseInstance(segmentObj);
+
+                newSegment = null;
+                continue; // tenta outro prefab
+            }
+
+            // Área está livre: posicionar o segmento
+            newSegment.transform.position = finalPos;
+            break;
+        }
+
+        // Se ainda assim não achou um segmento válido:
+        if (newSegment == null)
+        {
+            Debug.LogError("Nenhum segmento pôde ser spawnado em área livre.");
             yield break;
         }
-        TrackSegment newSegment = (segmentToUseOp.Result as GameObject).GetComponent<TrackSegment>();
 
-        Vector3 currentExitPoint;
-        Quaternion currentExitRotation;
-        if (m_Segments.Count > 0)
-        {
-            m_Segments[m_Segments.Count - 1].GetPointAt(1.0f, out currentExitPoint, out currentExitRotation);
-        }
-        else
-        {
-            currentExitPoint = transform.position;
-            currentExitRotation = transform.rotation;
-        }
+        // =========================
+        // SEGMENTO ACEITO — FINALIZA
+        // =========================
 
-        newSegment.transform.rotation = currentExitRotation;
-
-        Vector3 entryPoint;
-        Quaternion entryRotation;
-        newSegment.GetPointAt(0.0f, out entryPoint, out entryRotation);
-
-
-        Vector3 pos = currentExitPoint + (newSegment.transform.position - entryPoint);
-        newSegment.transform.position = pos;
         newSegment.manager = this;
 
-        newSegment.transform.localScale = new Vector3((Random.value > 0.5f ? -1 : 1), 1, 1);
-        newSegment.objectRoot.localScale = new Vector3(1.0f / newSegment.transform.localScale.x, 1, 1);
+        // newSegment.transform.localScale = new Vector3((Random.value > 0.5f ? -1 : 1), 1, 1);
+        newSegment.objectRoot.localScale = new Vector3(1f / newSegment.transform.localScale.x, 1, 1);
 
         if (m_SafeSegementLeft <= 0)
-        {
             SpawnObstacle(newSegment);
-        }
         else
-            m_SafeSegementLeft -= 1;
+            m_SafeSegementLeft--;
 
         m_Segments.Add(newSegment);
 
-        if (newSegmentCreated != null) newSegmentCreated.Invoke(newSegment);
+        newSegmentCreated?.Invoke(newSegment);
     }
-
 
     public void SpawnObstacle(TrackSegment segment)
     {
@@ -581,7 +657,12 @@ public class TrackManager : MonoBehaviour
         {
             for (int i = 0; i < segment.obstaclePositions.Length; ++i)
             {
+
                 AssetReference assetRef = segment.possibleObstacles[Random.Range(0, segment.possibleObstacles.Length)];
+                if (!IsObstacleAreaFree(segment, i))
+                {
+                    return; // impede o spawn
+                }
                 StartCoroutine(SpawnFromAssetReference(assetRef, segment, i));
             }
         }

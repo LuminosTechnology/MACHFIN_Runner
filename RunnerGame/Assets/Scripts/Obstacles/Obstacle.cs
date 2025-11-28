@@ -9,10 +9,11 @@ using UnityEngine;
 public abstract class Obstacle : MonoBehaviour
 {
 	public AudioClip impactedSound;
+	public ObstacleType m_ObstacleType;
 
-    public virtual void Setup() {}
+	public virtual void Setup() { }
 
-    public abstract IEnumerator Spawn(TrackSegment segment, float t);
+	public abstract IEnumerator Spawn(TrackSegment segment, float t);
 
 	public virtual void Impacted()
 	{
@@ -32,4 +33,5 @@ public abstract class Obstacle : MonoBehaviour
 			audioSource.Play();
 		}
 	}
+
 }

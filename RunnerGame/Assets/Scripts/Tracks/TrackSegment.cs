@@ -19,6 +19,8 @@ public class TrackSegment : MonoBehaviour
     public bool hasObstacles;
     public AssetReference[] possibleObstacles;
 
+    [Header("Obstacle Check")]
+    public float obstacleCheckRadius = 1.5f;
     [HideInInspector]
     public float[] obstaclePositions;
 
