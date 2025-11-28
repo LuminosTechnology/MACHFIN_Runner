@@ -13,7 +13,8 @@ using UnityEngine.Purchasing;
 public class StartButton : MonoBehaviour
 {
     private float m_startScale;
-    private float m_animDuration = 0.1f;
+    [SerializeField] private float m_animDuration = 0.1f;
+    [SerializeField] private float m_targetScale = 0.7f;
     void Start()
     {
         m_startScale = transform.localScale.x;
@@ -33,7 +34,7 @@ public class StartButton : MonoBehaviour
         var module = StandardPurchasingModule.Instance();
 #endif
 
-        transform.DOScale(0, m_animDuration).SetEase(Ease.InBack).OnComplete(() =>
+        transform.DOScale(m_targetScale, m_animDuration).SetEase(Ease.OutBounce).OnComplete(() =>
         {
             transform.DOScale(m_startScale, m_animDuration).SetEase(Ease.InBounce).OnComplete(() =>
             {
