@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 23000013165891466}
   - component: {fileID: 114000013783906396}
   m_Layer: 0
-  m_Name: SuburbsFeira02_vazio
+  m_Name: Feira_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

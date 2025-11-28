@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 4629950536037892763}
   - component: {fileID: 7054922359077990583}
   m_Layer: 0
-  m_Name: SuburbsFeira01
+  m_Name: Feira1_vazio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,18 +717,8 @@ MonoBehaviour:
   manager: {fileID: 0}
   objectRoot: {fileID: 0}
   collectibleTransform: {fileID: 0}
-  hasObstacles: 1
-  possibleObstacles:
-  - m_AssetGUID: cb9237f38c166354ea22cf7f8443b8c0
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: eec1acc59e96374418cfb825b4ed4fbd
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
+  hasObstacles: 0
+  possibleObstacles: []
   obstaclePositions:
   - 0.5
 --- !u!1 &4097897891073812213
