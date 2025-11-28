@@ -104,7 +104,7 @@ Transform:
   m_GameObject: {fileID: 1000011327127314}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.1370203, z: -0, w: 0.99056834}
-  m_LocalPosition: {x: 5.02, y: -0.03, z: -1.85}
+  m_LocalPosition: {x: -6.95, y: -0.03, z: -1.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -277,6 +277,7 @@ MonoBehaviour:
   collectibleTransform: {fileID: 0}
   hasObstacles: 0
   possibleObstacles: []
+  obstacleCheckRadius: 1.5
   obstaclePositions:
   - 0.5
 --- !u!1 &1000011549924906
@@ -425,13 +426,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000012079801946}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.47, y: 0, z: -3.36}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 4.34, y: -0.04, z: -4.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4000012838528080}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &33000012946938258
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -515,7 +516,7 @@ Transform:
   m_GameObject: {fileID: 1000012337971582}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 13, y: 0, z: 13.3}
+  m_LocalPosition: {x: 9.13, y: 0, z: 9.42}
   m_LocalScale: {x: 1.0000014, y: 1, z: 1.0000014}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -815,7 +816,7 @@ Transform:
   m_GameObject: {fileID: 1000014167877690}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.28, y: -0.67, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

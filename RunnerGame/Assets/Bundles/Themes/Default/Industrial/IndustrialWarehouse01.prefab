@@ -252,6 +252,7 @@ MonoBehaviour:
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
+  obstacleCheckRadius: 1.5
   obstaclePositions:
   - 0.5
 --- !u!1 &1000011283875314
