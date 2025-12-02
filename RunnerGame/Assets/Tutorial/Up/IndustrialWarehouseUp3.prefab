@@ -142,11 +142,12 @@ MonoBehaviour:
   collectibleTransform: {fileID: 0}
   hasObstacles: 1
   possibleObstacles:
-  - m_AssetGUID: bdf1591de076d9444bdb077602989c80
+  - m_AssetGUID: d68ac797bf384f84bbca159dc2a6e4d7
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
+  obstacleCheckRadius: 1.5
   obstaclePositions:
   - 0.5
 --- !u!1 &1000011283875314

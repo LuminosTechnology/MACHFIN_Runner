@@ -106,6 +106,9 @@ public class LoadoutState : AState
                 m_PowerupToUse = Consumable.ConsumableType.NONE;
         }
 
+        Debug.Log(PlayerData.instance.themes.Count);
+         
+
         Refresh();
     }
 
@@ -254,7 +257,7 @@ public class LoadoutState : AState
 
                 Character c = CharacterDatabase.GetCharacter(PlayerData.instance.characters[PlayerData.instance.usedCharacter]);
                 if (c == null)
-                { 
+                {
                 }
                 if (c != null)
                 {

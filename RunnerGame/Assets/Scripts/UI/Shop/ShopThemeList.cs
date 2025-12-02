@@ -10,7 +10,7 @@ public class ShopThemeList : ShopList
 {
     public override void Populate()
     {
-		m_RefreshCallback = null;
+        m_RefreshCallback = null;
         foreach (Transform t in listRoot)
         {
             Destroy(t.gameObject);
@@ -47,52 +47,60 @@ public class ShopThemeList : ShopList
                         itm.premiumText.transform.parent.gameObject.SetActive(false);
                     }
 
-                    itm.buyButton.onClick.AddListener(delegate() { Buy(theme); });
+                    itm.buyButton.onClick.AddListener(delegate () { Buy(theme); });
 
                     itm.buyButton.image.sprite = itm.buyButtonSprite;
 
                     RefreshButton(itm, theme);
-                    m_RefreshCallback += delegate() { RefreshButton(itm, theme); };
+                    m_RefreshCallback += delegate () { RefreshButton(itm, theme); };
                 };
             }
         }
     }
 
-	protected void RefreshButton(ShopItemListItem itm, ThemeData theme)
-	{
-		if (theme.cost > PlayerData.instance.picanha)
-		{
-			itm.buyButton.interactable = false;
-			itm.pricetext.color = Color.red;
-		}
-		else
-		{
-			itm.pricetext.color = Color.black;
-		}
+    protected void RefreshButton(ShopItemListItem itm, ThemeData theme)
+    {
+        if (theme.cost > PlayerData.instance.picanha)
+        {
+            itm.buyButton.interactable = false;
+            itm.pricetext.color = Color.red;
+        }
+        else
+        {
+            itm.pricetext.color = Color.black;
+        }
 
-		if (theme.premiumCost > PlayerData.instance.premium)
-		{
-			itm.buyButton.interactable = false;
-			itm.premiumText.color = Color.red;
-		}
-		else
-		{
-			itm.premiumText.color = Color.black;
-		}
+        if (theme.premiumCost > PlayerData.instance.premium)
+        {
+            itm.buyButton.interactable = false;
+            itm.premiumText.color = Color.red;
+        }
+        else
+        {
+            itm.premiumText.color = Color.black;
+        }
 
-		if (PlayerData.instance.themes.Contains(theme.themeName))
-		{
-			itm.buyButton.interactable = false;
-			itm.buyButton.image.sprite = itm.disabledButtonSprite;
-			itm.buyButton.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = "Comprado";
-		}
-	}
+        Debug.Log(theme.themeName);
+        if (PlayerData.instance.themes.Contains(theme.themeName))
+        {
+            Debug.Log($"I have: {theme.themeName}");
+            itm.buyButton.interactable = false;
+            itm.buyButton.image.sprite = itm.disabledButtonSprite;
+            itm.buyButton.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = "Comprado";
+        }
+        else
+        {
+
+            itm.buyButton.interactable = true; 
+            itm.buyButton.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = "Comprar";
+        }
+    }
 
 
-	public void Buy(ThemeData t)
+    public void Buy(ThemeData t)
     {
         PlayerData.instance.picanha -= t.cost;
-		PlayerData.instance.premium -= t.premiumCost;
+        PlayerData.instance.premium -= t.premiumCost;
         PlayerData.instance.AddTheme(t.themeName);
         PlayerData.instance.Save();
 

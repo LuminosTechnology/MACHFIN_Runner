@@ -230,13 +230,14 @@ MonoBehaviour:
   manager: {fileID: 0}
   objectRoot: {fileID: 0}
   collectibleTransform: {fileID: 0}
-  hasObstacles: 0
+  hasObstacles: 1
   possibleObstacles:
   - m_AssetGUID: b19a0bd8ede69fe4683dff84150a047b
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
+  obstacleCheckRadius: 1.5
   obstaclePositions:
   - 0.5
 --- !u!1 &1000011283875314

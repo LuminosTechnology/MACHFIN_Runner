@@ -554,7 +554,7 @@ public class GameState : AState
                 m_NextValidSegment = null;
                 trackManager.ChangeZone();
 
-                tutorialValidatedObstacles.text = "Passed!";
+                tutorialValidatedObstacles.text = "Passou!";
 
                 if (trackManager.currentZone == 0)
                 {//we looped, mean we finished the tutorial.
