@@ -35,6 +35,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 337a967ace0b3cd44a5baa19ea163f49
+    m_Address: Assets/Models/Lojas/Predio_Comercial_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 34841599ea11fe941b5fb0ba17678873
     m_Address: Assets/Models/Feira/pera_tex.jpg
     m_ReadOnly: 0
@@ -52,6 +57,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5dfda1f5d21ec9a4783456e3d1a3dbcc
     m_Address: Assets/Models/Daytime/RoadWorksBarrierLow.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 670b4051e08ed5b45a404ad8fa720244
+    m_Address: Assets/Models/Lojas/Predio_Comercial_03.fbx
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -92,6 +102,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c5b4e6cbf5e8cd645a2c8ac01816bd24
     m_Address: Assets/Models/Daytime/Tree01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6f38f4fd5f15834ab70b94f71efb10f
+    m_Address: Assets/Models/Lojas/Predio_Comercial_02.fbx
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
