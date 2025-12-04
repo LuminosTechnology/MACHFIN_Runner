@@ -257,7 +257,7 @@ public class PlayerData
         m_Instance.premium = 0;
 
         // m_Instance.characters.Add("Trash Cat");
-        m_Instance.characters.Add("Robot");
+        m_Instance.characters.Add("Robo");
 		m_Instance.themes.Add("Bairro FEIRA");
 
         m_Instance.ftueLevel = 0;

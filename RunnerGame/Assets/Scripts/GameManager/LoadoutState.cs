@@ -107,7 +107,7 @@ public class LoadoutState : AState
         }
 
         Debug.Log(PlayerData.instance.themes.Count);
-         
+
 
         Refresh();
     }
@@ -144,7 +144,6 @@ public class LoadoutState : AState
     public void Refresh()
     {
         PopulatePowerup();
-
         StartCoroutine(PopulateCharacters());
         StartCoroutine(PopulateTheme());
     }
@@ -190,6 +189,7 @@ public class LoadoutState : AState
             PlayerData.instance.usedCharacter = 0;
         else if (PlayerData.instance.usedCharacter < 0)
             PlayerData.instance.usedCharacter = PlayerData.instance.characters.Count - 1;
+
 
         StartCoroutine(PopulateCharacters());
     }
@@ -254,7 +254,7 @@ public class LoadoutState : AState
             GameObject newChar = null;
             while (newChar == null)
             {
-
+                Debug.Log("NEW CHAR IS NULL OH NO FUCKIT BRROOOOOOOOOOOO");
                 Character c = CharacterDatabase.GetCharacter(PlayerData.instance.characters[PlayerData.instance.usedCharacter]);
                 if (c == null)
                 {
