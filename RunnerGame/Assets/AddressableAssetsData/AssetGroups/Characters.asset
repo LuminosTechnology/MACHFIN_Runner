@@ -15,8 +15,20 @@ MonoBehaviour:
   m_GroupName: Characters
   m_GUID: 0ee8914add8bf184eb2669a5f9b6f538
   m_SerializeEntries:
+  - m_GUID: 0587d97cb83907149ba8933d8e033669
+    m_Address: Robo Verde
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0fc3a0a5267831449adfae749fc2e59e
-    m_Address: Robot
+    m_Address: Robo
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 113ebcd8b91c2384694d0b0017b7dfb3
+    m_Address: Robo Laranja
     m_ReadOnly: 0
     m_SerializedLabels:
     - characters
@@ -26,27 +38,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2ae64d0eaec8d6f4f9436fce6117048d
-    m_Address: Trash Cat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - characters
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2bfa18892388236498842bbfe7a3ff83
     m_Address: Assets/Prefabs/UI/Header.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3aedc24e6aff6684fb45ecc1f6ca7d42
+    m_Address: Robo Roxo
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 426cab1165df5c4409e320cea4142e69
     m_Address: Assets/Animation/NewMachafin/Machafin_TPose.fbx
     m_ReadOnly: 0
     m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 473ffa016efe3724cad08daa78e3d12a
-    m_Address: Rubbish Raccoon
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - characters
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 66ffdb61d1b141042801dbd8e8ce91cd
     m_Address: Assets/Bundles/Themes/Lojas/Lojas/Lojas_03_vazio.prefab
@@ -77,6 +83,12 @@ MonoBehaviour:
     m_Address: Assets/Bundles/Themes/Lojas/Lojas/Lojas_05_vazio.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 903a1be7f203ea7448ea716270499cba
+    m_Address: Robo Amarelo
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 909324b5b80887b44b38a099ea0bd363
     m_Address: Assets/Bundles/Themes/Lojas/SuburbsFeira/Lojas_01.prefab
@@ -112,6 +124,12 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/UI/Score.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c650b5e8bad5d264b9956279eefc7610
+    m_Address: Robo Vermelho
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d00b4fe948b1ad641a0b8e1da752c1e2
     m_Address: Assets/Prefabs/UI/NewNewEntryItem.prefab
