@@ -79,6 +79,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b8b0e92003589e4e9719beacc032e94
+    m_Address: Assets/Bundles/Themes/Lojas/Lojas/Lojas_02_vazio.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7dae29cfedaa2ad47b8dcb7eb6780ab6
     m_Address: Assets/Bundles/Themes/Lojas/Lojas/Lojas_05_vazio.prefab
     m_ReadOnly: 0
