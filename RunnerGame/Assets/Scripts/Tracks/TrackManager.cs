@@ -311,6 +311,8 @@ public class TrackManager : MonoBehaviour
         Camera.main.transform.SetParent(null);
         Camera.main.transform.position = m_CameraOriginalPos;
 
+        Debug.Log("End Track");
+
         characterController.gameObject.SetActive(false);
 
         for (int i = 0; i < parallaxRoot.childCount; ++i)

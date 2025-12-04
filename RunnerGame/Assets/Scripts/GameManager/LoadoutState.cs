@@ -106,7 +106,6 @@ public class LoadoutState : AState
                 m_PowerupToUse = Consumable.ConsumableType.NONE;
         }
 
-        Debug.Log(PlayerData.instance.themes.Count);
 
 
         Refresh();
@@ -254,7 +253,6 @@ public class LoadoutState : AState
             GameObject newChar = null;
             while (newChar == null)
             {
-                Debug.Log("NEW CHAR IS NULL OH NO FUCKIT BRROOOOOOOOOOOO");
                 Character c = CharacterDatabase.GetCharacter(PlayerData.instance.characters[PlayerData.instance.usedCharacter]);
                 if (c == null)
                 {

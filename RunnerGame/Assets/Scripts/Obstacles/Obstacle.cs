@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -15,7 +15,7 @@ public abstract class Obstacle : MonoBehaviour
 
 	public abstract IEnumerator Spawn(TrackSegment segment, float t);
 
-	public virtual void Impacted()
+ 	public virtual void Impacted()
 	{
 		Animation anim = GetComponentInChildren<Animation>();
 		AudioSource audioSource = GetComponent<AudioSource>();

@@ -18,10 +18,7 @@ public class CharacterDatabase
 
     static public Character GetCharacter(string type)
     {
-        foreach (var o in m_CharactersDict.Keys)
-        {
-            Debug.Log(o);
-        }
+       
         Character c;
         var hasChar = m_CharactersDict.ContainsKey(type);
         // Debug.Log($"{type} {hasChar}");
@@ -43,7 +40,7 @@ public class CharacterDatabase
                 Character c = op.GetComponent<Character>();
                 if (c != null)
                 {
-                    Debug.Log($"Adding {c.characterName} to database");
+                    // Debug.Log($"Adding {c.characterName} to database");
                     m_CharactersDict.Add(c.characterName, c);
                 }
             });
