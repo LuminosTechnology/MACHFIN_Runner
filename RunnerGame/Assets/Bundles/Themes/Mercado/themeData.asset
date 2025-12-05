@@ -19,7 +19,32 @@ MonoBehaviour:
   zones:
   - length: 500
     prefabList:
+    - m_AssetGUID: 24241ae8f2292e04fa51f3a93d76a906
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     - m_AssetGUID: d7ecb2ecffb7dad41b0c65d438c85c32
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 0671a57c780ceed4c943551ab1d2f1f4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: fa163d8aa0b149d4f85e5c298f01265e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 60b7e4a86d41fb94091a8cf958919b2e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 85ad2ef091ab5f843b0be9cbbfe33594
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 

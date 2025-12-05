@@ -21,6 +21,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - characters
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0671a57c780ceed4c943551ab1d2f1f4
+    m_Address: Assets/Bundles/Themes/Mercado/Mercado_03.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0fc3a0a5267831449adfae749fc2e59e
     m_Address: Robo
     m_ReadOnly: 0
@@ -59,6 +64,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60b7e4a86d41fb94091a8cf958919b2e
+    m_Address: Assets/Bundles/Themes/Mercado/Mercado_05.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 66ffdb61d1b141042801dbd8e8ce91cd
     m_Address: Assets/Bundles/Themes/Lojas/Lojas/Lojas_03_vazio.prefab
     m_ReadOnly: 0
@@ -91,6 +101,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7dae29cfedaa2ad47b8dcb7eb6780ab6
     m_Address: Assets/Bundles/Themes/Lojas/Lojas/Lojas_05_vazio.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85ad2ef091ab5f843b0be9cbbfe33594
+    m_Address: Assets/Bundles/Themes/Mercado/Mercado_06.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -163,6 +178,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e507c6ea262996e45be80b1bdad1fd58
     m_Address: Assets/Prefabs/UI/EntryItem.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa163d8aa0b149d4f85e5c298f01265e
+    m_Address: Assets/Bundles/Themes/Mercado/Mercado_04.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
