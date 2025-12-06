@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MAT_PlacaMercado
+  m_Name: MAT_PlacaMercadoGrande
   m_Shader: {fileID: 4800000, guid: 93d8fc18fdc65dd4aa903210d93f3343, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
