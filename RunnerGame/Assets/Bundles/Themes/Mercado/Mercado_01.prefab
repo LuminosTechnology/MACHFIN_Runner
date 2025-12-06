@@ -660,9 +660,9 @@ MonoBehaviour:
   manager: {fileID: 0}
   objectRoot: {fileID: 0}
   collectibleTransform: {fileID: 0}
-  hasObstacles: 0
+  hasObstacles: 1
   possibleObstacles:
-  - m_AssetGUID: cb9237f38c166354ea22cf7f8443b8c0
+  - m_AssetGUID: eec1acc59e96374418cfb825b4ed4fbd
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 
@@ -2711,15 +2711,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1220301742709830426}
     m_Modifications:
+    - target: {fileID: 889397816049564768, guid: 4840405d5c15d4f4bbed74e642ce59df,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 993445215908174921, guid: 4840405d5c15d4f4bbed74e642ce59df,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1700125107528776363, guid: 4840405d5c15d4f4bbed74e642ce59df,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3159918824022006287, guid: 4840405d5c15d4f4bbed74e642ce59df,
         type: 3}
       propertyPath: m_Name
       value: parede_janela
       objectReference: {fileID: 0}
+    - target: {fileID: 3787879203905004915, guid: 4840405d5c15d4f4bbed74e642ce59df,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.6
+      objectReference: {fileID: 0}
     - target: {fileID: 7841061495073510276, guid: 4840405d5c15d4f4bbed74e642ce59df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7841061495073510276, guid: 4840405d5c15d4f4bbed74e642ce59df,
         type: 3}
@@ -2765,6 +2785,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001871380240777788, guid: 4840405d5c15d4f4bbed74e642ce59df,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

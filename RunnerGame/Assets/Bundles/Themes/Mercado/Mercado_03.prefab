@@ -652,7 +652,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   objectRoot: {fileID: 0}
   collectibleTransform: {fileID: 0}
-  hasObstacles: 0
+  hasObstacles: 1
   possibleObstacles:
   - m_AssetGUID: cb9237f38c166354ea22cf7f8443b8c0
     m_SubObjectName: 
