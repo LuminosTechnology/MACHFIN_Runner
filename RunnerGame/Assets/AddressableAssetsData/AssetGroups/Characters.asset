@@ -64,6 +64,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b82373bea38f6b48ab6e1af96ee1d1f
+    m_Address: Assets/Bundles/Themes/Shopping/Shopping_01.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 60b7e4a86d41fb94091a8cf958919b2e
     m_Address: Assets/Bundles/Themes/Mercado/Mercado_05.prefab
     m_ReadOnly: 0

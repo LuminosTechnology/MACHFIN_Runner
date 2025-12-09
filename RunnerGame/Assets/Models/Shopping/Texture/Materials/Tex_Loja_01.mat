@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MAT_Janela
+  m_Name: Tex_Loja_01
   m_Shader: {fileID: 4800000, guid: 93d8fc18fdc65dd4aa903210d93f3343, type: 3}
-  m_Parent: {fileID: 2100000, guid: db0de00ab9e16be4a89d759c5800664f, type: 2}
+  m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -18,14 +18,13 @@ Material:
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses:
-  - MOTIONVECTORS
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 45fcb4ec7159b6b449086ccea771df93, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7e53fadf719fdfa41ae197a179f631b9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -33,16 +32,3 @@ Material:
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &2897119061895944812
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
-  version: 10

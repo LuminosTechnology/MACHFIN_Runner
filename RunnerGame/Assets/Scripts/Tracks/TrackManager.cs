@@ -256,20 +256,24 @@ public class TrackManager : MonoBehaviour
             m_ScoreAccum = 0;
 
             m_SafeSegementLeft = m_IsTutorial ? 0 : k_StartingSafeSegments;
-
-            Coin.coinPool = new Pooler(currentTheme.collectiblePrefab, k_StartingCoinPoolSize);
-            int _index = 0;
-            Coin.coinsPool = new Pooler[currentTheme.collectiblesData.Length];
-
-            foreach (var coin in currentTheme.collectiblesData)
+            if (!m_IsTutorial)
             {
-                // Debug.Log($"Creating {coin.m_name} pool");
-                Coin.coinsPool[_index] = new Pooler(coin.m_CollectiblePrefab, k_StartingCoinPoolSize);
-                _index++;
 
+                Coin.coinPool = new Pooler(currentTheme.collectiblePrefab, k_StartingCoinPoolSize);
+                int _index = 0;
+                Coin.coinsPool = new Pooler[currentTheme.collectiblesData.Length];
+
+                foreach (var coin in currentTheme.collectiblesData)
+                {
+                    // Debug.Log($"Creating {coin.m_name} pool");
+                    Coin.coinsPool[_index] = new Pooler(coin.m_CollectiblePrefab, k_StartingCoinPoolSize);
+                    _index++;
+
+                }
+
+                PlayerData.instance.StartRunMissions(this);
             }
 
-            PlayerData.instance.StartRunMissions(this);
 
 #if UNITY_ANALYTICS
             AnalyticsEvent.GameStart(new Dictionary<string, object>
