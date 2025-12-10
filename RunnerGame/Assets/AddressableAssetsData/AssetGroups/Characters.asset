@@ -69,8 +69,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4cb6ba83387b36f4aaa985352b6345a7
+    m_Address: Assets/Bundles/Themes/Shopping/Shopping_04.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 60b7e4a86d41fb94091a8cf958919b2e
     m_Address: Assets/Bundles/Themes/Mercado/Mercado_05.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 65fe4ff541c47294a917d495cff08ce6
+    m_Address: Assets/Bundles/Themes/Shopping/Shopping_05.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -155,6 +165,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ae3ae57eed8f40f42b9d8d22fcac2bc7
+    m_Address: Assets/Bundles/Themes/Shopping/Shopping_02.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b50cd2cb2dd4b79408ca1d1cf271ce61
+    m_Address: Assets/Bundles/Themes/Shopping/Shopping_03.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c650b5e8bad5d264b9956279eefc7610
     m_Address: Robo Vermelho
     m_ReadOnly: 0
@@ -183,6 +203,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e507c6ea262996e45be80b1bdad1fd58
     m_Address: Assets/Prefabs/UI/EntryItem.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f17244eb45d59194eb85f897181ea682
+    m_Address: Assets/Bundles/Themes/Shopping/Shopping_06.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

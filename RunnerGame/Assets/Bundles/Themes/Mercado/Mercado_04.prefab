@@ -180,6 +180,8 @@ Transform:
   - {fileID: 1377043497826768363}
   - {fileID: 9201459679594445603}
   - {fileID: 7506186487158696676}
+  - {fileID: 4150834526289821629}
+  - {fileID: 5442804800398292909}
   m_Father: {fileID: 1177185297075128030}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1432819354999038613
@@ -483,8 +485,6 @@ Transform:
   m_Children:
   - {fileID: 1220301742709830426}
   - {fileID: 7672462097557654914}
-  - {fileID: 4150834526289821629}
-  - {fileID: 5442804800398292909}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &409861416358069495
@@ -1283,7 +1283,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1177185297075128030}
+    m_TransformParent: {fileID: 1220301742709830426}
     m_Modifications:
     - target: {fileID: 743612247412463499, guid: fbeacb6c0a2c91540b94c07276845732,
         type: 3}
@@ -2070,7 +2070,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1177185297075128030}
+    m_TransformParent: {fileID: 1220301742709830426}
     m_Modifications:
     - target: {fileID: 743612247412463499, guid: fbeacb6c0a2c91540b94c07276845732,
         type: 3}
