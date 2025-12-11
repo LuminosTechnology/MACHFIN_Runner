@@ -107,6 +107,8 @@ public class LoadoutState : AState
         }
 
 
+        charSelect.gameObject.SetActive(false);
+        themeSelect.gameObject.SetActive(false);
 
         Refresh();
     }
@@ -172,8 +174,11 @@ public class LoadoutState : AState
             m_Character.transform.Rotate(0, k_CharacterRotationSpeed * Time.deltaTime, 0, Space.Self);
         }
 
-        charSelect.gameObject.SetActive(PlayerData.instance.characters.Count > 1);
-        themeSelect.gameObject.SetActive(PlayerData.instance.themes.Count > 1);
+        if (PlayerData.instance.tutorialDone)
+        {
+            charSelect.gameObject.SetActive(PlayerData.instance.characters.Count > 1);
+            themeSelect.gameObject.SetActive(PlayerData.instance.themes.Count > 1);
+        }
     }
 
     public void GoToStore()

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -8,6 +9,8 @@ using UnityEngine.ResourceManagement;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using GameObject = UnityEngine.GameObject;
 using System.Linq;
+using UnityEngine.Rendering;
+using Random = UnityEngine.Random;
 
 #if UNITY_ANALYTICS
 using UnityEngine.Analytics;
@@ -31,16 +34,20 @@ using UnityEngine.Analytics;
 /// </summary>
 public class TrackManager : MonoBehaviour
 {
-    static public TrackManager instance { get { return s_Instance; } }
+    static public TrackManager instance
+    {
+        get { return s_Instance; }
+    }
+
     static protected TrackManager s_Instance;
 
     static int s_StartHash = Animator.StringToHash("Start");
 
     public delegate int MultiplierModifier(int current);
+
     public MultiplierModifier modifyMultiply;
 
-    [Header("Character & Movements")]
-    public CharacterInputController characterController;
+    [Header("Character & Movements")] public CharacterInputController characterController;
     public float minSpeed = 5.0f;
     public float maxSpeed = 10.0f;
     public int speedStep = 4;
@@ -52,46 +59,104 @@ public class TrackManager : MonoBehaviour
     public float gapOffset = 5f;
 
 
-
     public bool invincible = false;
 
-    [Header("Objects")]
-    public ConsumableDatabase consumableDatabase;
+    [Header("Objects")] public ConsumableDatabase consumableDatabase;
     public MeshFilter skyMeshFilter;
+    [SerializeField] private LayerMask _coinsLayerMask = 1 << 8;
+    [SerializeField] private LayerMask _obstacleLayerMask = 1 << 9;
 
-    [Header("Parallax")]
-    public Transform parallaxRoot;
+
+    [Header("Parallax")] public Transform parallaxRoot;
     public float parallaxRatio = 0.5f;
 
-    [Header("Tutorial")]
-    public ThemeData tutorialThemeData;
-    [Header("Segment")]
-    public float segmentCheckRadius = 7f;
+    [Header("Tutorial")] public ThemeData tutorialThemeData;
+    [Header("Segment")] public float segmentCheckRadius = 7f;
+
 
     public System.Action<TrackSegment> newSegmentCreated;
     public System.Action<TrackSegment> currentSegementChanged;
 
-    public int trackSeed { get { return m_TrackSeed; } set { m_TrackSeed = value; } }
+    public int trackSeed
+    {
+        get { return m_TrackSeed; }
+        set { m_TrackSeed = value; }
+    }
 
-    public float timeToStart { get { return m_TimeToStart; } }  // Will return -1 if already started (allow to update UI)
+    public float timeToStart
+    {
+        get { return m_TimeToStart; }
+    } // Will return -1 if already started (allow to update UI)
 
-    public int score { get { return m_Score; } }
-    public int multiplier { get { return m_Multiplier; } }
-    public float currentSegmentDistance { get { return m_CurrentSegmentDistance; } }
-    public float worldDistance { get { return m_TotalWorldDistance; } }
-    public float speed { get { return m_Speed; } }
-    public float speedRatio { get { return (m_Speed - minSpeed) / (maxSpeed - minSpeed); } }
-    public int currentZone { get { return m_CurrentZone; } }
+    public int score
+    {
+        get { return m_Score; }
+    }
 
-    public TrackSegment currentSegment { get { return m_Segments[0]; } }
-    public List<TrackSegment> segments { get { return m_Segments; } }
-    public ThemeData currentTheme { get { return m_CurrentThemeData; } }
+    public int multiplier
+    {
+        get { return m_Multiplier; }
+    }
 
-    public bool isMoving { get { return m_IsMoving; } }
-    public bool isRerun { get { return m_Rerun; } set { m_Rerun = value; } }
+    public float currentSegmentDistance
+    {
+        get { return m_CurrentSegmentDistance; }
+    }
 
-    public bool isTutorial { get { return m_IsTutorial; } set { m_IsTutorial = value; } }
+    public float worldDistance
+    {
+        get { return m_TotalWorldDistance; }
+    }
+
+    public float speed
+    {
+        get { return m_Speed; }
+    }
+
+    public float speedRatio
+    {
+        get { return (m_Speed - minSpeed) / (maxSpeed - minSpeed); }
+    }
+
+    public int currentZone
+    {
+        get { return m_CurrentZone; }
+    }
+
+    public TrackSegment currentSegment
+    {
+        get { return m_Segments[0]; }
+    }
+
+    public List<TrackSegment> segments
+    {
+        get { return m_Segments; }
+    }
+
+    public ThemeData currentTheme
+    {
+        get { return m_CurrentThemeData; }
+    }
+
+    public bool isMoving
+    {
+        get { return m_IsMoving; }
+    }
+
+    public bool isRerun
+    {
+        get { return m_Rerun; }
+        set { m_Rerun = value; }
+    }
+
+    public bool isTutorial
+    {
+        get { return m_IsTutorial; }
+        set { m_IsTutorial = value; }
+    }
+
     public bool isLoaded { get; set; }
+
     //used by the obstacle spawning code in the tutorial, as it need to spawn the 1st obstacle in the middle lane
     public bool firstObstacle { get; set; }
 
@@ -106,7 +171,7 @@ public class TrackManager : MonoBehaviour
     protected bool m_IsMoving;
     protected float m_Speed;
 
-    protected float m_TimeSincePowerup;     // The higher it goes, the higher the chance of spawning one
+    protected float m_TimeSincePowerup; // The higher it goes, the higher the chance of spawning one
     protected float m_TimeSinceLastPremium;
 
     protected int m_Multiplier;
@@ -122,9 +187,12 @@ public class TrackManager : MonoBehaviour
 
     protected int m_Score;
     protected float m_ScoreAccum;
-    protected bool m_Rerun;     // This lets us know if we are entering a game over (ads) state or starting a new game (see GameState)
 
-    protected bool m_IsTutorial; //Tutorial is a special run that don't chance section until the tutorial step is "validated" by the TutorialState.
+    protected bool
+        m_Rerun; // This lets us know if we are entering a game over (ads) state or starting a new game (see GameState)
+
+    protected bool
+        m_IsTutorial; //Tutorial is a special run that don't chance section until the tutorial step is "validated" by the TutorialState.
 
     Vector3 m_CameraOriginalPos = Vector3.zero;
 
@@ -208,9 +276,11 @@ public class TrackManager : MonoBehaviour
             yield return op;
             if (op.Result == null || !(op.Result is GameObject))
             {
-                Debug.LogWarning(string.Format("Unable to load character {0}.", PlayerData.instance.characters[PlayerData.instance.usedCharacter]));
+                Debug.LogWarning(string.Format("Unable to load character {0}.",
+                    PlayerData.instance.characters[PlayerData.instance.usedCharacter]));
                 yield break;
             }
+
             Character player = op.Result.GetComponent<Character>();
 
             player.SetupAccesory(PlayerData.instance.usedAccessory);
@@ -229,7 +299,8 @@ public class TrackManager : MonoBehaviour
                 m_CurrentThemeData = tutorialThemeData;
             else
             {
-                m_CurrentThemeData = ThemeDatabase.GetThemeData(PlayerData.instance.themes[PlayerData.instance.usedTheme]);
+                m_CurrentThemeData =
+                    ThemeDatabase.GetThemeData(PlayerData.instance.themes[PlayerData.instance.usedTheme]);
             }
 
             m_CurrentZone = 0;
@@ -244,6 +315,7 @@ public class TrackManager : MonoBehaviour
                     Debug.LogError($"No sky mesh found for theme {m_CurrentThemeData.themeName}");
                 }
             }
+
             RenderSettings.fogColor = m_CurrentThemeData.fogColor;
             RenderSettings.fog = true;
 
@@ -258,7 +330,6 @@ public class TrackManager : MonoBehaviour
             m_SafeSegementLeft = m_IsTutorial ? 0 : k_StartingSafeSegments;
             if (!m_IsTutorial)
             {
-
                 Coin.coinPool = new Pooler(currentTheme.collectiblePrefab, k_StartingCoinPoolSize);
                 int _index = 0;
                 Coin.coinsPool = new Pooler[currentTheme.collectiblesData.Length];
@@ -268,7 +339,6 @@ public class TrackManager : MonoBehaviour
                     // Debug.Log($"Creating {coin.m_name} pool");
                     Coin.coinsPool[_index] = new Pooler(coin.m_CollectiblePrefab, k_StartingCoinPoolSize);
                     _index++;
-
                 }
 
                 PlayerData.instance.StartRunMissions(this);
@@ -336,6 +406,7 @@ public class TrackManager : MonoBehaviour
 
     private int _parallaxRootChildren = 0;
     private int _spawnedSegments = 0;
+
     void Update()
     {
         while (_spawnedSegments < (m_IsTutorial ? 4 : k_DesiredSegmentCount))
@@ -348,7 +419,10 @@ public class TrackManager : MonoBehaviour
         {
             while (_parallaxRootChildren < currentTheme.cloudNumber)
             {
-                float lastZ = parallaxRoot.childCount == 0 ? 0 : parallaxRoot.GetChild(parallaxRoot.childCount - 1).position.z + currentTheme.cloudMinimumDistance.z;
+                float lastZ = parallaxRoot.childCount == 0
+                    ? 0
+                    : parallaxRoot.GetChild(parallaxRoot.childCount - 1).position.z +
+                      currentTheme.cloudMinimumDistance.z;
 
                 GameObject cloud = currentTheme.cloudPrefabs[Random.Range(0, currentTheme.cloudPrefabs.Length)];
                 if (cloud != null)
@@ -411,7 +485,8 @@ public class TrackManager : MonoBehaviour
         // Parallax Handling
         if (parallaxRoot != null)
         {
-            Vector3 difference = (currentPos - characterTransform.position) * parallaxRatio; ;
+            Vector3 difference = (currentPos - characterTransform.position) * parallaxRatio;
+            ;
             int count = parallaxRoot.childCount;
             for (int i = 0; i < count; i++)
             {
@@ -533,14 +608,14 @@ public class TrackManager : MonoBehaviour
 
         float radius = segment.obstacleCheckRadius;
 
-        // Colisão apenas com obstaculos
-        LayerMask mask = LayerMask.GetMask("Obstacle");
+        // Colisão apenas com obstaculos 
 
         // Verificar se já existe obstáculo na área
-        bool hasObstacle = Physics.CheckSphere(pos, radius, mask);
+        bool hasObstacle = Physics.CheckSphere(pos, radius, _obstacleLayerMask);
 
         return !hasObstacle;
     }
+
     public bool IsSegmentAreaFree(Vector3 position, float radius)
     {
         LayerMask mask = LayerMask.GetMask("TrackSegment");
@@ -549,6 +624,7 @@ public class TrackManager : MonoBehaviour
 
         return !hasSomething;
     }
+
     public IEnumerator SpawnNewSegment()
     {
         if (!m_IsTutorial)
@@ -573,7 +649,8 @@ public class TrackManager : MonoBehaviour
 
             // ==== Carrega o segmento sem posicionar ainda ====
             AsyncOperationHandle segmentOp =
-                m_CurrentThemeData.zones[m_CurrentZone].prefabList[segmentUse].InstantiateAsync(_offScreenSpawnPos, Quaternion.identity);
+                m_CurrentThemeData.zones[m_CurrentZone].prefabList[segmentUse]
+                    .InstantiateAsync(_offScreenSpawnPos, Quaternion.identity);
 
             yield return segmentOp;
 
@@ -663,12 +740,12 @@ public class TrackManager : MonoBehaviour
         {
             for (int i = 0; i < segment.obstaclePositions.Length; ++i)
             {
-
                 AssetReference assetRef = segment.possibleObstacles[Random.Range(0, segment.possibleObstacles.Length)];
                 if (!IsObstacleAreaFree(segment, i))
                 {
                     return; // impede o spawn
                 }
+
                 StartCoroutine(SpawnFromAssetReference(assetRef, segment, i));
             }
         }
@@ -742,17 +819,17 @@ public class TrackManager : MonoBehaviour
                         // Muda de faixa aleatoriamente.
 
                         pos = pos + ((currentLane - 1) * laneOffset * (rot * Vector3.right));
-
                         // Verifica se a posição é válida antes de gerar a moeda.
-                        if (!Physics.CheckSphere(pos, 0.4f, 1 << 9))
-                        {
-                            GameObject toUse = pool.Get(pos, rot);
-                            toUse.GetComponent<Coin>().poolOrigin = pool;
-                            toUse.transform.SetParent(segment.collectibleTransform, true);
-                        }
+
+                        GameObject toUse = pool.Get(pos, rot);
+                        toUse.GetComponent<Coin>().poolOrigin = pool;
+                        toUse.transform.SetParent(segment.collectibleTransform, true);
+ 
+
                         currentWorldPos += increment;
                     }
                 }
+
                 currentWorldPos += increment * gapOffset; // Adiciona uma lacuna após a linha de moedas ou power-up.
             }
         }
@@ -768,6 +845,7 @@ public class TrackManager : MonoBehaviour
         {
             total += coin.m_SpawnChance;
         }
+
         float rand = Random.Range(0, total);
         total = 0;
         foreach (var coin in currentTheme.collectiblesData)
@@ -776,8 +854,10 @@ public class TrackManager : MonoBehaviour
             {
                 return coin;
             }
+
             rand -= coin.m_SpawnChance;
         }
+
         return currentTheme.collectiblesData[0];
     }
 
