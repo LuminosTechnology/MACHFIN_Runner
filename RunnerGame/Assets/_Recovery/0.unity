@@ -39264,10 +39264,6 @@ MonoBehaviour:
   parallaxRatio: 0.8
   tutorialThemeData: {fileID: 11400000, guid: d2594127ff496284399060a56ff8ad68, type: 2}
   segmentCheckRadius: 7
-  _cameraFOV: 80
-  _cameraAngle: 20
-  _cameraDistance: -2
-  _cameraHeight: 4
 --- !u!4 &1958487561
 Transform:
   m_ObjectHideFlags: 0

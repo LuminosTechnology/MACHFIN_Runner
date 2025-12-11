@@ -8,7 +8,7 @@ public class Coin : MonoBehaviour
     static public Pooler[] coinsPool;
     public bool isPremium = false;
     public CoinType coinType;
-
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.greenYellow;

@@ -94,7 +94,7 @@ public class LoadoutState : AState
         {
             MusicPlayer.instance.SetStem(0, menuTheme);
             StartCoroutine(MusicPlayer.instance.RestartAllStems());
-        }
+        } 
 
         runButton.interactable = false;
         runButton.GetComponentInChildren<Text>().text = "Loading...";
