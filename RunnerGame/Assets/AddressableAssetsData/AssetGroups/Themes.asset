@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Themes
   m_GUID: 39cca0338cf24d84983f02f76cd584ea
   m_SerializeEntries:
+  - m_GUID: 01433d517cee5334eb1b88c0002d0ee9
+    m_Address: themeDataShopping
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - themeData
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 307920649fad57c44a3f625498935048
     m_Address: themeDataMercado
     m_ReadOnly: 0

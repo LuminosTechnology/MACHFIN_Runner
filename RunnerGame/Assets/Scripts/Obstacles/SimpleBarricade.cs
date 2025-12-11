@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using Random = UnityEngine.Random;
 
 public class SimpleBarricade : Obstacle
 {
@@ -10,6 +12,8 @@ public class SimpleBarricade : Obstacle
     protected const int k_MaxObstacleCount = 2;
     protected const int k_LeftMostLaneIndex = -1;
     protected const int k_RightMostLaneIndex = 1;
+
+    [SerializeField] private float checkRadius = 1f; 
 
     
     public override IEnumerator Spawn(TrackSegment segment, float t)
@@ -41,11 +45,13 @@ public class SimpleBarricade : Obstacle
             }
             GameObject obj = op.Result as GameObject;
 
-            if (obj == null)
+            if (!obj)
                 Debug.Log(gameObject.name);
             else
             {
-                obj.transform.position += obj.transform.right * lane * segment.manager.laneOffset;
+                
+                
+                obj.transform.position += obj.transform.right * (lane * segment.manager.laneOffset);
 
                 obj.transform.SetParent(segment.objectRoot, true);
 
@@ -53,8 +59,22 @@ public class SimpleBarricade : Obstacle
                 Vector3 oldPos = obj.transform.position;
                 obj.transform.position += Vector3.back;
                 obj.transform.position = oldPos;
+
+                var cols = Physics.OverlapSphere(obj.transform.position, checkRadius, 1 << 8);
+
+                if (cols.Length > 0)
+                { 
+                    Addressables.ReleaseInstance(obj);
+                    break;
+                }
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, checkRadius);
     }
 }
 

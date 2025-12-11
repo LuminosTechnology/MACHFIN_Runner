@@ -28,7 +28,7 @@ public class CharacterInputController : MonoBehaviour
 
 	public int picanhas { get { return m_Picanhas; } set { m_Picanhas = value; } }
 	public int chocolates { get { return m_Chocolates; } set { m_Chocolates = value; } }
-	public int cash { get { return m_Cash; } set { m_Cash = value; } } 
+	public int cash { get { return m_Cash; } set { m_Cash = value; } }
 	public int cafe  { get { return m_Cafe; } set { m_Cafe = value; } }
 	public int coins  { get { return m_Coins; } set { m_Coins = value; } }
 	public int gold  { get { return m_Gold; } set { m_Gold = value; } }
@@ -54,7 +54,7 @@ public class CharacterInputController : MonoBehaviour
 
 	protected int m_Picanhas;
 	protected int m_Chocolates;
-	protected int m_Cash; 
+	protected int m_Cash;
 	protected int m_Cafe;
 	protected int m_Coins;
 	protected int m_Gold;
@@ -100,10 +100,8 @@ public class CharacterInputController : MonoBehaviour
 
 	}
 
-#if !UNITY_STANDALONE
 	protected Vector2 m_StartingTouch;
 	protected bool m_IsSwiping = false;
-#endif
 
 	// Cheating functions, use for testing
 	public void CheatInvincible(bool invincible)
@@ -458,7 +456,7 @@ public class CharacterInputController : MonoBehaviour
 			}
 		}
 
-		// If we didn't had one, activate that one 
+		// If we didn't had one, activate that one
 		c.transform.SetParent(transform, false);
 		c.gameObject.SetActive(false);
 

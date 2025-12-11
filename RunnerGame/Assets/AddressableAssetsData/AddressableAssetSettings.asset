@@ -68,6 +68,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fab46ba20057801419f1a975233c2cbd, type: 2}
   - {fileID: 11400000, guid: 9eb1f1c41da675e4480e553f40ccac60, type: 2}
   - {fileID: 11400000, guid: c4bc7133680d0814388173d245e6e7c2, type: 2}
+  - {fileID: 11400000, guid: 0b710f60054bde24d800846e047f9788, type: 2}
   - {fileID: 11400000, guid: 6d0ac92b4f2a00540ae4a633719d68b2, type: 2}
   - {fileID: 11400000, guid: e3adb68a802258245ab23da4b807c185, type: 2}
   - {fileID: 11400000, guid: 695ff1abe1b44a14c8cb4b402b2a6c94, type: 2}
@@ -102,19 +103,19 @@ MonoBehaviour:
         m_Value: 'HostedData/[BuildTarget]'
     m_ProfileEntryNames:
     - m_Id: 2b8be43d6259b66479a487c5d62a5120
-      m_Name: RemoteLoadPath
+      m_Name: Remote.LoadPath
       m_InlineUsage: 0
     - m_Id: 48a34a86fea3bca43b73f47f4556ea17
-      m_Name: LocalLoadPath
+      m_Name: Local.LoadPath
       m_InlineUsage: 0
     - m_Id: 5092185a396d423439d038aabcdd991b
-      m_Name: LocalBuildPath
+      m_Name: Local.BuildPath
       m_InlineUsage: 0
     - m_Id: 8313888cf8465ae438b49b4cc62dc871
       m_Name: BuildTarget
       m_InlineUsage: 0
     - m_Id: e2a85240a48a2184b9fe1ffd5c4ef06e
-      m_Name: RemoteBuildPath
+      m_Name: Remote.BuildPath
       m_InlineUsage: 0
     m_ProfileVersion: 1
   m_LabelTable:

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Duplicate Asset Isolation5
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Duplicate Asset Isolation5
+  m_GUID: 623924ede1d4c81429c2fd4d9825a470
+  m_SerializeEntries:
+  - m_GUID: 1617cfc397fe5cb44a031a01be509f56
+    m_Address: Assets/Models/Daytime/Materials/WoodSlats.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 316ecd620f5e13b47b8016689f692272
+    m_Address: Assets/Models/Daytime/Materials/WheelyBin.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 73838a4b27f685b4ba7dc6c530df2130
+    m_Address: Assets/Models/Daytime/Materials/Dumpster.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b276cab46e729ff4ea32dd98cccf1844
+    m_Address: Assets/Models/Daytime/Materials/Plaster.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df3e204b635dfcb41a154b26067ae5fc
+    m_Address: Assets/Textures/Machfin/Icons/Icon_Azul.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e644e9efc9c85d64e9b8c788ba4a3695
+    m_Address: Assets/Models/Daytime/Materials/VCOL.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 735e874f947d0e143a6b4e83f8a7283a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 81152788d3c76e841ab6187081138aaf, type: 2}
+    - {fileID: 11400000, guid: 40662a057c8d07d49bfe5738780dd31e, type: 2}
