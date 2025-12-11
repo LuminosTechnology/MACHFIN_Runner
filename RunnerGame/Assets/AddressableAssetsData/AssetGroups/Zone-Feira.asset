@@ -115,6 +115,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3432013f178d3648812ee67dcb213a3
+    m_Address: Assets/Bundles/Themes/Feira/SuburbsFeira/Feira1 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b57054a512e91cd4ebde808779c17c7f
     m_Address: Assets/Bundles/Themes/Feira/Obstacles/ObstacleWheelyBin.prefab
     m_ReadOnly: 0
