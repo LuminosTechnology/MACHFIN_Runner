@@ -196,6 +196,8 @@ public class TrackManager : MonoBehaviour
 
     Vector3 m_CameraOriginalPos = Vector3.zero;
 
+    private Camera m_camera;
+
     const float k_FloatingOriginThreshold = 10000f;
 
     protected const float k_CountdownToStartLength = 5f;
@@ -206,6 +208,12 @@ public class TrackManager : MonoBehaviour
     protected const int k_DesiredSegmentCount = 10;
     protected const float k_SegmentRemovalDistance = -30f;
     protected const float k_Acceleration = 0.2f;
+
+    [Header("Camera Settings")] [SerializeField]
+    private float _cameraFOV = 80f;
+    [SerializeField] private float _cameraAngle = 20;
+    [SerializeField] private float _cameraDistance = -4.5f;
+    [SerializeField] private float _cameraHeight = 4.5f;
 
     protected void Awake()
     {
@@ -255,7 +263,8 @@ public class TrackManager : MonoBehaviour
         if (!m_Rerun)
         {
             firstObstacle = true;
-            m_CameraOriginalPos = Camera.main.transform.position;
+            m_camera = Camera.main;
+            m_CameraOriginalPos = m_camera.transform.position;
 
             if (m_TrackSeed != -1)
                 Random.InitState(m_TrackSeed);
@@ -293,7 +302,7 @@ public class TrackManager : MonoBehaviour
 
             //Instantiate(CharacterDatabase.GetCharacter(PlayerData.instance.characters[PlayerData.instance.usedCharacter]), Vector3.zero, Quaternion.identity);
             player.transform.SetParent(characterController.characterCollider.transform, false);
-            Camera.main.transform.SetParent(characterController.transform, true);
+            m_camera.transform.SetParent(characterController.transform, true);
 
             if (m_IsTutorial)
                 m_CurrentThemeData = tutorialThemeData;
@@ -305,6 +314,15 @@ public class TrackManager : MonoBehaviour
 
             m_CurrentZone = 0;
             m_CurrentZoneDistance = 0;
+            
+            //Camera
+             
+            m_camera.transform.position = m_CameraOriginalPos;
+
+            m_camera.transform.rotation = Quaternion.Euler(new Vector3(_cameraAngle, 0,0));
+            m_camera.transform.position = new Vector3(0, _cameraHeight, _cameraDistance);
+            m_camera.fieldOfView = _cameraFOV;
+            
             if (skyMeshFilter != null)
             {
                 Debug.Log(m_CurrentThemeData);
@@ -382,10 +400,7 @@ public class TrackManager : MonoBehaviour
         Addressables.ReleaseInstance(characterController.character.gameObject);
         characterController.character = null;
 
-        Camera.main.transform.SetParent(null);
-        Camera.main.transform.position = m_CameraOriginalPos;
-
-        Debug.Log("End Track");
+        m_camera.transform.SetParent(null); 
 
         characterController.gameObject.SetActive(false);
 
@@ -819,11 +834,22 @@ public class TrackManager : MonoBehaviour
                         // Muda de faixa aleatoriamente.
 
                         pos = pos + ((currentLane - 1) * laneOffset * (rot * Vector3.right));
-                        // Verifica se a posição é válida antes de gerar a moeda.
-
-                        GameObject toUse = pool.Get(pos, rot);
-                        toUse.GetComponent<Coin>().poolOrigin = pool;
-                        toUse.transform.SetParent(segment.collectibleTransform, true);
+                        // --- INÍCIO DA VERIFICAÇÃO ---
+                        // Verifica se há colisoes numa esfera nessa posição.
+                        // Se o array retornado tiver comprimento 0, o espaço está livre.
+                        if (Physics.OverlapSphere(pos, 0.5f, 1<<8).Length == 0)
+                        {
+                            // Espaço livre -> Pode spawnar
+                            GameObject toUse = pool.Get(pos, rot);
+                            toUse.GetComponent<Coin>().poolOrigin = pool;
+                            toUse.transform.SetParent(segment.collectibleTransform, true);
+                        }
+                        else 
+                        {
+                            // Opcional: Log para debug se necessário
+                            // Debug.Log("Tentou spawnar moeda em cima de algo e foi impedido.");
+                        }
+                        // --- FIM DA VERIFICAÇÃO ---
  
 
                         currentWorldPos += increment;
