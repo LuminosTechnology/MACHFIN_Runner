@@ -117,7 +117,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010703704722}
   - component: {fileID: 65000011028955966}
-  - component: {fileID: 114000011742927702}
   - component: {fileID: 82000012920248836}
   - component: {fileID: 114098358831157252}
   - component: {fileID: 8399701194495452086}
@@ -166,20 +165,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 1.7789581, z: 0.29541254}
   m_Center: {x: -0.02892065, y: 0.87983406, z: -0.004761219}
---- !u!114 &114000011742927702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000013842435444}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74cb1264bb5e40d47b4850ac0a649a77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  impactedSound: {fileID: 0}
-  m_ObstacleType: 0
 --- !u!82 &82000012920248836
 AudioSource:
   m_ObjectHideFlags: 0
@@ -304,6 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SimpleBarricade
   impactedSound: {fileID: 8300000, guid: 0d9e50755a43a614a8233233466a4e80, type: 3}
   m_ObstacleType: 0
+  checkRadius: 1
 --- !u!1 &7617272266341931603
 GameObject:
   m_ObjectHideFlags: 0

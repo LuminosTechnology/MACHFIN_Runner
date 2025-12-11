@@ -63,7 +63,8 @@ public class SimpleBarricade : Obstacle
                 var cols = Physics.OverlapSphere(obj.transform.position, checkRadius, 1 << 8);
 
                 if (cols.Length > 0)
-                { 
+                {
+                    // Debug.Log($"Im ${obj.name} and im overlaping a coin at ${obj.transform.position}");
                     Addressables.ReleaseInstance(obj);
                     break;
                 }
