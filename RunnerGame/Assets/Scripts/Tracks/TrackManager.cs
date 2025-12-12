@@ -325,7 +325,7 @@ public class TrackManager : MonoBehaviour
             
             if (skyMeshFilter != null)
             {
-                Debug.Log(m_CurrentThemeData);
+                // Debug.Log(m_CurrentThemeData);
                 if (m_CurrentThemeData.skyMesh != null)
                     skyMeshFilter.sharedMesh = m_CurrentThemeData.skyMesh;
                 else
