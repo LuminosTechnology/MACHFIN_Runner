@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12,7 +13,22 @@ MonoBehaviour:
   m_Name: Consumables
   m_EditorClassIdentifier: 
   consumbales:
-  - {fileID: 11491712, guid: 8c89761b43b2362418709a8178d5dd8c, type: 2}
-  - {fileID: 11420506, guid: 1269ce00623d4694f927c463dd3be44a, type: 2}
-  - {fileID: 114000010511232114, guid: 527cd33d94f565c428b85a011d736c3c, type: 2}
-  - {fileID: 114000011351653892, guid: cccc43bc040988e488680155c25b163c, type: 2}
+  - {fileID: 11491712, guid: 8c89761b43b2362418709a8178d5dd8c, type: 3}
+  - {fileID: 11420506, guid: 1269ce00623d4694f927c463dd3be44a, type: 3}
+  - {fileID: 114000010511232114, guid: 527cd33d94f565c428b85a011d736c3c, type: 3}
+  - {fileID: 114000011351653892, guid: cccc43bc040988e488680155c25b163c, type: 3}
+  coinsRefs:
+  - coin: 0
+    icon: {fileID: 21300000, guid: 4fa1c80537935594283eb41f381624ef, type: 3}
+  - coin: 1
+    icon: {fileID: 21300000, guid: 5ad7650a052f4e248b9c66f8049fe536, type: 3}
+  - coin: 3
+    icon: {fileID: 21300000, guid: 63f2cb4f483e5b04fbf15122bb94c307, type: 3}
+  - coin: 5
+    icon: {fileID: 21300000, guid: 86499c18155892b43a1bc17fe4879177, type: 3}
+  - coin: 4
+    icon: {fileID: 21300000, guid: 3b293f782ba671d41b186516e441682f, type: 3}
+  - coin: 2
+    icon: {fileID: 21300000, guid: c75906d553c07f641b82b5c952326170, type: 3}
+  - coin: 6
+    icon: {fileID: 21300000, guid: 479d02bd2f6bbad42aa814d0f33b10db, type: 3}

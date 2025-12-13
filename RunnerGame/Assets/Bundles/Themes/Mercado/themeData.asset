@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: themeData
   m_EditorClassIdentifier: 
   themeName: Mercado do Bairro
+  price:
+  - coinType: 5
+    amount: 5
+  - coinType: 6
+    amount: 3
   cost: 1
   premiumCost: 0
   themeIcon: {fileID: 21300000, guid: 74bee1ce7eab6fd4b91944fb0776e327, type: 3}

@@ -162,6 +162,7 @@ MonoBehaviour:
   characterName: Robo
   cost: 0
   premiumCost: 0
+  characterPrice: []
   accessories: []
   animator: {fileID: 2070277420254211562}
   icon: {fileID: 21300000, guid: df3e204b635dfcb41a154b26067ae5fc, type: 3}

@@ -7,6 +7,8 @@ using UnityEngine.AddressableAssets;
 /// </summary>
 public abstract class Consumable : MonoBehaviour
 {
+    public CoinPrice[] prices;
+    [Space]
     public float duration;
 
     public enum ConsumableType
@@ -112,4 +114,11 @@ public abstract class Consumable : MonoBehaviour
             }
         }
     }
+}
+
+[System.Serializable]
+public struct CoinPrice
+{
+    public CoinType coinType;
+    public int amount; 
 }

@@ -8,50 +8,55 @@ using UnityEngine.Analytics;
 
 public class ShopItemList : ShopList
 {
-	static public Consumable.ConsumableType[] s_ConsumablesTypes = System.Enum.GetValues(typeof(Consumable.ConsumableType)) as Consumable.ConsumableType[];
+    static public Consumable.ConsumableType[] s_ConsumablesTypes =
+        System.Enum.GetValues(typeof(Consumable.ConsumableType)) as Consumable.ConsumableType[];
 
-	public override void Populate()
+    public override void Populate()
     {
-		m_RefreshCallback = null;
+        m_RefreshCallback = null;
         foreach (Transform t in listRoot)
         {
             Destroy(t.gameObject);
         }
 
-        for(int i = 0; i < s_ConsumablesTypes.Length; ++i)
+        var db = GameManager.instance.m_ConsumableDatabase;
+
+        for (int i = 0; i < s_ConsumablesTypes.Length; ++i)
         {
             Consumable c = ConsumableDatabase.GetConsumbale(s_ConsumablesTypes[i]);
-            if(c != null)
+            if (c != null)
             {
                 prefabItem.InstantiateAsync().Completed += (op) =>
                 {
                     if (op.Result == null || !(op.Result is GameObject))
                     {
-                        Debug.LogWarning(string.Format("Unable to load item shop list {0}.", prefabItem.RuntimeKey));
+                        Debug.LogWarning(string.Format("Unable to load item shop list {0}.",
+                            prefabItem.RuntimeKey));
                         return;
                     }
+
                     GameObject newEntry = op.Result;
                     newEntry.transform.SetParent(listRoot, false);
 
                     ShopItemListItem itm = newEntry.GetComponent<ShopItemListItem>();
-
+                    itm.PopulateUI(c.prices, db);
                     itm.buyButton.image.sprite = itm.buyButtonSprite;
 
-                    itm.nameText.text = c.GetConsumableName();
-                    itm.pricetext.text = c.GetPrice().ToString();
+                    // itm.nameText.text = c.GetConsumableName();
+                    // itm.pricetext.text = cPrice.price.ToString();
 
-                    if (c.GetPremiumCost() > 0)
-                    {
-                        itm.premiumText.transform.parent.gameObject.SetActive(true);
-                        itm.premiumText.text = c.GetPremiumCost().ToString();
-                    }
-                    else
-                    {
-                        itm.premiumText.transform.parent.gameObject.SetActive(false);
-                    }
+                    // if (c.GetPremiumCost() > 0)
+                    // {
+                    //     itm.premiumText.transform.parent.gameObject.SetActive(true);
+                    //     itm.premiumText.text = c.GetPremiumCost().ToString();
+                    // }
+                    // else
+                    // {
+                    //     itm.premiumText.transform.parent.gameObject.SetActive(false);
+                    // }
 
+                    // itm.icon.sprite = db.GetCoinRef(cPrice.coin).icon;
                     itm.icon.sprite = c.icon;
-
                     itm.countText.gameObject.SetActive(true);
 
                     itm.buyButton.onClick.AddListener(delegate() { Buy(c); });
@@ -62,38 +67,51 @@ public class ShopItemList : ShopList
         }
     }
 
-	protected void RefreshButton(ShopItemListItem itemList, Consumable c)
-	{
-		int count = 0;
-		PlayerData.instance.consumables.TryGetValue(c.GetConsumableType(), out count);
-		itemList.countText.text = count.ToString();
+    protected void RefreshButton(ShopItemListItem itemList, Consumable c)
+    {
+        int count = 0;
+        PlayerData.instance.consumables.TryGetValue(c.GetConsumableType(), out count);
+        itemList.countText.text = count.ToString();
 
-		if (c.GetPrice() > PlayerData.instance.picanha)
-		{
-			itemList.buyButton.interactable = false;
-			itemList.pricetext.color = Color.red;
-		}
-		else
-		{
-			itemList.pricetext.color = Color.black;
-		}
+        bool canBuy = PlayerData.instance.CanAfford(c.prices);
+        
+        if (!canBuy)
+        {
+            itemList.buyButton.interactable = false;
+            itemList.pricetext.color = Color.red;
+        }
+        else
+        {
+            itemList.pricetext.color = Color.black;
+        }
 
-		if (c.GetPremiumCost() > PlayerData.instance.premium)
-		{
-			itemList.buyButton.interactable = false;
-			itemList.premiumText.color = Color.red;
-		}
-		else
-		{
-			itemList.premiumText.color = Color.black;
-		}
-	}
+        // if (c.GetPrice() > PlayerData.instance.picanha)
+        // {
+        //     itemList.buyButton.interactable = false;
+        //     itemList.pricetext.color = Color.red;
+        // }
+        // else
+        // {
+        //     itemList.pricetext.color = Color.black;
+        // }
+
+        // if (c.GetPremiumCost() > PlayerData.instance.premium)
+        // {
+        //     itemList.buyButton.interactable = false;
+        //     itemList.premiumText.color = Color.red;
+        // }
+        // else
+        // {
+        //     itemList.premiumText.color = Color.black;
+        // }
+    }
 
     public void Buy(Consumable c)
     {
-        PlayerData.instance.picanha -= c.GetPrice();
-		PlayerData.instance.premium -= c.GetPremiumCost();
-		PlayerData.instance.Add(c.GetConsumableType());
+        // PlayerData.instance.picanha -= c.GetPrice();
+        // PlayerData.instance.premium -= c.GetPremiumCost();
+        PlayerData.instance.SpendCurrency(c.prices);
+        PlayerData.instance.Add(c.GetConsumableType());
         PlayerData.instance.Save();
 
 #if UNITY_ANALYTICS // Using Analytics Standard Events v0.3.0

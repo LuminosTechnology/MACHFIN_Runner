@@ -10,6 +10,7 @@ public class Character : MonoBehaviour
     public string characterName;
     public int cost;
 	public int premiumCost;
+	public CoinPrice[] characterPrice; 
 
 	public CharacterAccessories[] accessories;
 

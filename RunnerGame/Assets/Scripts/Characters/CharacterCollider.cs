@@ -127,40 +127,40 @@ public class CharacterCollider : MonoBehaviour
 					_coin.poolOrigin.Free(c.gameObject);
 
 					// Coin.coinPool.Free(c.gameObject);
-
-					switch (_coin.coinType)
-					{
-						case CoinType.Picanha:
-							PlayerData.instance.picanha += 1;
-							break;
-
-						case CoinType.Chocolate:
-							PlayerData.instance.chocolate += 1;
-							break;
-
-						case CoinType.Cash:
-							PlayerData.instance.cash += 1;
-							break;
-
-
-						case CoinType.Cafe:
-							PlayerData.instance.cafe += 1;
-							break;
-
-						case CoinType.Coin:
-							PlayerData.instance.coin += 1;
-							break;
-
-						case CoinType.Gold:
-							PlayerData.instance.gold += 1;
-							break;
-
-						case CoinType.Premium:
-							// PlayerData.instance.premium += 1;
-							break;
-
-
-					}
+					PlayerData.instance.AddCurrency(_coin.coinType,1);
+					// switch (_coin.coinType)
+					// {
+					// 	case CoinType.Picanha:
+					// 		PlayerData.instance.picanha += 1;
+					// 		break;
+					//
+					// 	case CoinType.Chocolate:
+					// 		PlayerData.instance.chocolate += 1;
+					// 		break;
+					//
+					// 	case CoinType.Cash:
+					// 		PlayerData.instance.cash += 1;
+					// 		break;
+					//
+					//
+					// 	case CoinType.Cafe:
+					// 		PlayerData.instance.cafe += 1;
+					// 		break;
+					//
+					// 	case CoinType.Coin:
+					// 		PlayerData.instance.coin += 1;
+					// 		break;
+					//
+					// 	case CoinType.Gold:
+					// 		PlayerData.instance.gold += 1;
+					// 		break;
+					//
+					// 	case CoinType.Premium:
+					// 		// PlayerData.instance.premium += 1;
+					// 		break;
+					//
+					//
+					// }
 					// PlayerData.instance.picanha += 1;
 					// controller.picanhas += 1;
 					m_Audio.PlayOneShot(coinSound);

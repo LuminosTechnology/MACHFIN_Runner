@@ -15,6 +15,7 @@ public class ShopThemeList : ShopList
         {
             Destroy(t.gameObject);
         }
+        var db = GameManager.instance.m_ConsumableDatabase;
 
         foreach (KeyValuePair<string, ThemeData> pair in ThemeDatabase.dictionnary)
         {
@@ -34,18 +35,19 @@ public class ShopThemeList : ShopList
                     ShopItemListItem itm = newEntry.GetComponent<ShopItemListItem>();
 
                     itm.nameText.text = theme.themeName;
-                    itm.pricetext.text = theme.cost.ToString();
+                    // itm.pricetext.text = theme.cost.ToString();
                     itm.icon.sprite = theme.themeIcon;
-
-                    if (theme.premiumCost > 0)
-                    {
-                        itm.premiumText.transform.parent.gameObject.SetActive(true);
-                        itm.premiumText.text = theme.premiumCost.ToString();
-                    }
-                    else
-                    {
-                        itm.premiumText.transform.parent.gameObject.SetActive(false);
-                    }
+                    itm.PopulateUI(theme.price,db);
+                    //
+                    // if (theme.premiumCost > 0)
+                    // {
+                    //     itm.premiumText.transform.parent.gameObject.SetActive(true);
+                    //     itm.premiumText.text = theme.premiumCost.ToString();
+                    // }
+                    // else
+                    // {
+                    //     itm.premiumText.transform.parent.gameObject.SetActive(false);
+                    // }
 
                     itm.buyButton.onClick.AddListener(delegate () { Buy(theme); });
 
@@ -60,7 +62,17 @@ public class ShopThemeList : ShopList
 
     protected void RefreshButton(ShopItemListItem itm, ThemeData theme)
     {
-        if (theme.cost > PlayerData.instance.picanha)
+        // if (theme.cost > PlayerData.instance.picanha)
+        // {
+        //     itm.buyButton.interactable = false;
+        //     itm.pricetext.color = Color.red;
+        // }
+        // else
+        // {
+        //     itm.pricetext.color = Color.black;
+        // }
+        bool canBuy = PlayerData.instance.CanAfford(theme.price);
+        if (!canBuy)
         {
             itm.buyButton.interactable = false;
             itm.pricetext.color = Color.red;
@@ -99,8 +111,9 @@ public class ShopThemeList : ShopList
 
     public void Buy(ThemeData t)
     {
-        PlayerData.instance.picanha -= t.cost;
-        PlayerData.instance.premium -= t.premiumCost;
+        // PlayerData.instance.picanha -= t.cost;
+        // PlayerData.instance.premium -= t.premiumCost;
+        PlayerData.instance.SpendCurrency(t.price);
         PlayerData.instance.AddTheme(t.themeName);
         PlayerData.instance.Save();
 

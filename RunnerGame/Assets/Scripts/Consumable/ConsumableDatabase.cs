@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
+using UnityEngine.UI;
 
 /// <summary>
 /// The consumable database is an asset in the project where designers can drag'n'drop the prefab for the Consumable. This allows explicit
@@ -9,6 +12,7 @@ using System.Collections.Generic;
 public class ConsumableDatabase : ScriptableObject
 {
     public Consumable[] consumbales;
+    public CoinRef[] coinsRefs;
 
     static protected Dictionary<Consumable.ConsumableType, Consumable> _consumablesDict;
 
@@ -30,4 +34,24 @@ public class ConsumableDatabase : ScriptableObject
         Consumable c;
         return _consumablesDict.TryGetValue (type, out c) ? c : null;
     }
+
+    public CoinRef GetCoinRef(CoinType type)
+    {
+        foreach (var c in coinsRefs)
+        {
+            if (c.coin == type)
+            {
+                return c;
+            }
+        }
+        //cache the first coin
+        return coinsRefs[0];
+    }
+
+}
+[Serializable]
+public struct CoinRef
+{
+    public CoinType coin;
+    public Sprite icon;
 }

@@ -29,8 +29,19 @@ public struct HighscoreEntry : System.IComparable<HighscoreEntry>
 public class PlayerData
 {
     static protected PlayerData m_Instance;
-    static public PlayerData instance { get { return m_Instance; } } 
-    protected string saveFile = ""; 
+
+    static public PlayerData instance
+    {
+        get { return m_Instance; }
+    }
+
+    protected string saveFile = "";
+
+    private Dictionary<CoinType, int> wallet = new Dictionary<CoinType, int>();
+    public List<CoinType> coins = new List<CoinType>();
+    public List<CoinPrice> savedWallet = new List<CoinPrice>();
+
+
     public int picanha;
     public int chocolate;
     public int cash;
@@ -38,22 +49,25 @@ public class PlayerData
     public int coin;
     public int gold;
 
-    
-    
-    
-    public int premium;
-    public Dictionary<Consumable.ConsumableType, int> consumables = new Dictionary<Consumable.ConsumableType, int>();   // Inventory of owned consumables and quantity.
 
-    public List<string> characters = new List<string>();    // Inventory of characters owned.
-    public int usedCharacter;                               // Currently equipped character.
+    public int premium;
+
+    public Dictionary<Consumable.ConsumableType, int>
+        consumables = new Dictionary<Consumable.ConsumableType, int>(); // Inventory of owned consumables and quantity.
+
+    public List<string> characters = new List<string>(); // Inventory of characters owned.
+    public int usedCharacter; // Currently equipped character.
     public int usedAccessory = -1;
-    public List<string> characterAccessories = new List<string>();  // List of owned accessories, in the form "charName:accessoryName".
-    public List<string> themes = new List<string>();                // Owned themes.
-    public int usedTheme;                                           // Currently used theme.
+
+    public List<string>
+        characterAccessories = new List<string>(); // List of owned accessories, in the form "charName:accessoryName".
+
+    public List<string> themes = new List<string>(); // Owned themes.
+    public int usedTheme; // Currently used theme.
     public List<HighscoreEntry> highscores = new List<HighscoreEntry>();
     public List<MissionBase> missions = new List<MissionBase>();
 
-    public string previousName = "Trash Cat";
+    public string previousName = "Machfin";
 
     public bool licenceAccepted;
     public bool tutorialDone;
@@ -63,13 +77,97 @@ public class PlayerData
     //ftue = First Time User Expeerience. This var is used to track thing a player do for the first time. It increment everytime the user do one of the step
     //e.g. it will increment to 1 when they click Start, to 2 when doing the first run, 3 when running at least 300m etc.
     public int ftueLevel = 0;
+
     //Player win a rank ever 300m (e.g. a player having reached 1200m at least once will be rank 4)
     public int rank = 0;
 
     // This will allow us to add data even after production, and so keep all existing save STILL valid. See loading & saving for how it work.
     // Note in a real production it would probably reset that to 1 before release (as all dev save don't have to be compatible w/ final product)
     // Then would increment again with every subsequent patches. We kept it to its dev value here for teaching purpose.
-    static int s_Version = 12;
+    static int s_Version = 13;
+
+    #region Wallet
+
+    public void InitializeWallet()
+    {
+        foreach (CoinType _c in System.Enum.GetValues(typeof(CoinType)))
+        {
+            if (!wallet.ContainsKey(_c))
+            {
+                wallet.Add(_c, 0);
+            }
+        }
+
+        LoadWallet();
+    }
+
+    public void LoadWallet()
+    {
+        foreach (var savedCoin in savedWallet)
+        {
+            if (wallet.ContainsKey(savedCoin.coinType))
+            {
+                wallet[savedCoin.coinType] = savedCoin.amount;
+            }
+        }
+    }
+
+    private void ClearWallet()
+    {
+        wallet.Clear();
+        savedWallet.Clear();
+    }
+
+    public bool CanAfford(CoinPrice[] prices)
+    {
+        foreach (var price in prices)
+        {
+            if (GetCurrencyAmount(price.coinType) < price.amount)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public int GetCurrencyAmount(CoinType type)
+    {
+        return wallet.GetValueOrDefault(type, 0);
+    }
+
+    public void AddCurrency(CoinType type, int amount)
+    {
+        Console.WriteLine($"[PlayerData.AddCurrency Line 140] {type} - {amount}");
+        if (wallet.ContainsKey(type))
+        {
+            wallet[type] += amount;
+            UpdateSaveList();
+        }
+    }
+
+    public void SpendCurrency(CoinPrice[] prices)
+    {
+        if (!CanAfford(prices)) return;
+
+        foreach (var p in prices)
+        {
+            wallet[p.coinType] -= p.amount;
+        }
+
+        UpdateSaveList();
+    }
+
+    private void UpdateSaveList()
+    {
+        savedWallet.Clear();
+        foreach (var pair in wallet)
+        {
+            savedWallet.Add(new CoinPrice { coinType = pair.Key, amount = pair.Value });
+        }
+    }
+
+    #endregion
 
     public void Consume(Consumable.ConsumableType type)
     {
@@ -110,7 +208,7 @@ public class PlayerData
 
     public void AddAccessory(string name)
     {
-        characterAccessories.Add(name); 
+        characterAccessories.Add(name);
     }
 
     // Mission management
@@ -227,6 +325,7 @@ public class PlayerData
         if (File.Exists(m_Instance.saveFile))
         {
             // If we have a save, we read it.
+            // Debug.Log("AAAAAAAAAAAAAAAAAA");
             m_Instance.Read();
         }
         else
@@ -258,6 +357,9 @@ public class PlayerData
         m_Instance.gold = 0;
         m_Instance.premium = 0;
 
+        m_Instance.ClearWallet();
+        m_Instance.InitializeWallet();
+
         // m_Instance.characters.Add("Trash Cat");
         m_Instance.characters.Add("Robo");
         m_Instance.themes.Add("Bairro FEIRA");
@@ -274,9 +376,12 @@ public class PlayerData
         m_Instance.Save();
     }
 
+
     public void Read()
     {
         BinaryReader r = new BinaryReader(new FileStream(saveFile, FileMode.Open));
+
+        // InitializeWallet();
 
         int ver = r.ReadInt32();
 
@@ -289,7 +394,37 @@ public class PlayerData
             ver = r.ReadInt32();
         }
 
-        picanha = r.ReadInt32();
+        if (ver < 13)
+        {
+            // É um save antigo: Lê a variável int antiga
+            int picanhaAntiga = r.ReadInt32();
+
+            // Converte para o novo sistema para não perder o progresso do jogador!
+            if (wallet.ContainsKey(CoinType.Picanha))
+            {
+                wallet[CoinType.Picanha] = picanhaAntiga;
+            }
+            else
+            {
+                wallet.Add(CoinType.Picanha, picanhaAntiga);
+            }
+        }
+        else
+        {
+            // É um save novo (v13+): Lê o dicionário
+            wallet.Clear(); // Limpa para garantir
+            int walletCount = r.ReadInt32();
+            for (int i = 0; i < walletCount; i++)
+            {
+                CoinType tipo = (CoinType)r.ReadInt32();
+                int valor = r.ReadInt32();
+
+                if (wallet.ContainsKey(tipo))
+                    wallet[tipo] = valor;
+                else
+                    wallet.Add(tipo, valor);
+            }
+        }
 
         consumables.Clear();
         int consumableCount = r.ReadInt32();
@@ -306,7 +441,8 @@ public class PlayerData
             string charName = r.ReadString();
 
             if (charName.Contains("Raccoon") && ver < 11)
-            {//in 11 version, we renamed Raccoon (fixing spelling) so we need to patch the save to give the character if player had it already
+            {
+                //in 11 version, we renamed Raccoon (fixing spelling) so we need to patch the save to give the character if player had it already
                 charName = charName.Replace("Racoon", "Raccoon");
             }
 
@@ -411,7 +547,14 @@ public class PlayerData
         BinaryWriter w = new BinaryWriter(new FileStream(saveFile, FileMode.OpenOrCreate));
 
         w.Write(s_Version);
-        w.Write(picanha);
+        // w.Write(picanha);
+
+        w.Write(wallet.Count);
+        foreach (KeyValuePair<CoinType, int> p in wallet)
+        {
+            w.Write((int)p.Key);
+            w.Write(p.Value);
+        }
 
         w.Write(consumables.Count);
         foreach (KeyValuePair<Consumable.ConsumableType, int> p in consumables)
@@ -480,24 +623,25 @@ public class PlayerData
 
     public int GetCoin(CoinType coinType)
     {
-        switch (coinType)
-        {
-            case CoinType.Picanha:
-                return picanha;
-            case CoinType.Chocolate:
-                return chocolate;
-            case CoinType.Cash:
-                return cash;
-            case CoinType.Cafe:
-                return cafe;
-            case CoinType.Coin:
-                return coin;
-            case CoinType.Gold:
-                return gold;
-            default:
-                return 0;
-        }
-
+        return m_Instance.wallet.GetValueOrDefault(coinType, 69);
+        
+        // switch (coinType)
+        // {
+        //     case CoinType.Picanha:
+        //         return picanha;
+        //     case CoinType.Chocolate:
+        //         return chocolate;
+        //     case CoinType.Cash:
+        //         return cash;
+        //     case CoinType.Cafe:
+        //         return cafe;
+        //     case CoinType.Coin:
+        //         return coin;
+        //     case CoinType.Gold:
+        //         return gold;
+        //     default:
+        //         return 0;
+        // }
     }
 }
 
@@ -505,24 +649,30 @@ public class PlayerData
 #if UNITY_EDITOR
 public class PlayerDataEditor : Editor
 {
-    [MenuItem("Trash Dash Debug/Clear Save")]
+    [MenuItem("Debug/Clear Save")]
     static public void ClearSave()
     {
         File.Delete(Application.persistentDataPath + "/save.bin");
     }
 
-    [MenuItem("Trash Dash Debug/Give 1000000 fishbones and 1000 premium")]
+    [MenuItem("Debug/Give 1000 of all coins")]
     static public void GiveCoins()
-    {
-        PlayerData.instance.picanha += 1000000;
-        PlayerData.instance.premium += 1000;
+    { 
+        foreach (CoinType coin in System.Enum.GetValues(typeof(CoinType)))
+        {
+            PlayerData.instance.AddCurrency(coin, 1000);
+
+             
+        }
+
+        // PlayerData.instance.picanha += 1000000;
+        // PlayerData.instance.premium += 1000;
         PlayerData.instance.Save();
     }
 
-    [MenuItem("Trash Dash Debug/Give 10 Consumables of each types")]
+    [MenuItem("Debug/Give 10 Consumables of each types")]
     static public void AddConsumables()
     {
-
         for (int i = 0; i < ShopItemList.s_ConsumablesTypes.Length; ++i)
         {
             Consumable c = ConsumableDatabase.GetConsumbale(ShopItemList.s_ConsumablesTypes[i]);
