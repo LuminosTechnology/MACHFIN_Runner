@@ -4984,7 +4984,7 @@ MonoBehaviour:
   - coinType: 1
     amount: 5
   duration: 10
-  icon: {fileID: 21300032, guid: e1a536f74c7ef384a8d7132148ace0c8, type: 3}
+  icon: {fileID: 21300000, guid: 56bd7a2353ce7e14a9df2320e7f6dfb0, type: 3}
   activatedSound: {fileID: 8300000, guid: 9c332a7257addfd478e6fbf4e338f877, type: 3}
   ActivatedParticleReference:
     m_AssetGUID: ba9ada52ec59a9a419f39eb32bf9a3b0
