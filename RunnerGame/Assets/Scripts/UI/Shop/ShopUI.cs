@@ -27,7 +27,7 @@ public class ShopUI : MonoBehaviour
 
     protected ShopList m_OpenList;
 
-    protected const int k_CheatCoins = 1000000;
+    protected const int k_CheatCoins = 1000;
     protected const int k_CheatPremium = 1000;
 #if UNITY_ADS
     protected const int k_AdRewardCoins = 100;
@@ -119,7 +119,11 @@ public class ShopUI : MonoBehaviour
         return ; //you can't cheat in production build
 #endif
 
-        PlayerData.instance.picanha += k_CheatCoins;
+        // PlayerData.instance.picanha += k_CheatCoins;
+        foreach (CoinType coin in System.Enum.GetValues(typeof(CoinType)))
+        {
+            PlayerData.instance.AddCurrency(coin,k_CheatCoins);
+        }
         PlayerData.instance.premium += k_CheatPremium;
         PlayerData.instance.Save();
     }

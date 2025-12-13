@@ -119,6 +119,6 @@ public abstract class Consumable : MonoBehaviour
 [System.Serializable]
 public struct CoinPrice
 {
-    public CoinType coin;
-    public int price; 
+    public CoinType coinType;
+    public int amount; 
 }

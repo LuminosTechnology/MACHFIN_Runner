@@ -73,7 +73,9 @@ public class ShopItemList : ShopList
         PlayerData.instance.consumables.TryGetValue(c.GetConsumableType(), out count);
         itemList.countText.text = count.ToString();
 
-        if (c.GetPrice() > PlayerData.instance.picanha)
+        bool canBuy = PlayerData.instance.CanAfford(c.prices);
+        
+        if (!canBuy)
         {
             itemList.buyButton.interactable = false;
             itemList.pricetext.color = Color.red;
@@ -83,21 +85,32 @@ public class ShopItemList : ShopList
             itemList.pricetext.color = Color.black;
         }
 
-        if (c.GetPremiumCost() > PlayerData.instance.premium)
-        {
-            itemList.buyButton.interactable = false;
-            itemList.premiumText.color = Color.red;
-        }
-        else
-        {
-            itemList.premiumText.color = Color.black;
-        }
+        // if (c.GetPrice() > PlayerData.instance.picanha)
+        // {
+        //     itemList.buyButton.interactable = false;
+        //     itemList.pricetext.color = Color.red;
+        // }
+        // else
+        // {
+        //     itemList.pricetext.color = Color.black;
+        // }
+
+        // if (c.GetPremiumCost() > PlayerData.instance.premium)
+        // {
+        //     itemList.buyButton.interactable = false;
+        //     itemList.premiumText.color = Color.red;
+        // }
+        // else
+        // {
+        //     itemList.premiumText.color = Color.black;
+        // }
     }
 
     public void Buy(Consumable c)
     {
-        PlayerData.instance.picanha -= c.GetPrice();
-        PlayerData.instance.premium -= c.GetPremiumCost();
+        // PlayerData.instance.picanha -= c.GetPrice();
+        // PlayerData.instance.premium -= c.GetPremiumCost();
+        PlayerData.instance.SpendCurrency(c.prices);
         PlayerData.instance.Add(c.GetConsumableType());
         PlayerData.instance.Save();
 

@@ -26,8 +26,10 @@ public class ShopItemListItem : MonoBehaviour
 			var _image = priceCoin.transform.GetChild(0).GetComponent<Image>();
 			var _amount = priceCoin.transform.GetChild(1).GetComponent<Text>();
 
-			_image.sprite = db.GetCoinRef(c.coin).icon;
-			_amount.text = c.price.ToString();
+			System.Console.WriteLine($"[ShopItemListItem.PopulateUI Line 29] {c.amount}");
+			
+			_image.sprite = db.GetCoinRef(c.coinType).icon;
+			_amount.text = c.amount.ToString();
 		}
 	}
 }

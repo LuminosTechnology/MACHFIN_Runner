@@ -124,7 +124,9 @@ public class ShopAccessoriesList : ShopList
     }
 
 	protected void RefreshButton(ShopItemListItem itm, CharacterAccessories accessory, string compoundName)
-	{
+	{ 
+		
+		
 		if (accessory.cost > PlayerData.instance.picanha)
 		{
 			itm.buyButton.interactable = false;

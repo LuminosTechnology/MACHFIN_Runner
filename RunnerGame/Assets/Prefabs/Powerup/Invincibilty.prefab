@@ -4979,10 +4979,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prices:
-  - coin: 3
-    price: 1500
-  - coin: 1
-    price: 5
+  - coinType: 3
+    amount: 1500
+  - coinType: 1
+    amount: 5
   duration: 10
   icon: {fileID: 21300032, guid: e1a536f74c7ef384a8d7132148ace0c8, type: 3}
   activatedSound: {fileID: 8300000, guid: 9c332a7257addfd478e6fbf4e338f877, type: 3}
