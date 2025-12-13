@@ -59,6 +59,8 @@ public class GameState : AState
 
     public Modifier currentModifier = new Modifier();
 
+    public AudioClip[] gameThemes; 
+
     public string adsPlacementId = "rewardedVideo";
 #if UNITY_ANALYTICS
     public AdvertisingNetwork adsNetwork = AdvertisingNetwork.UnityAds;
@@ -96,9 +98,11 @@ public class GameState : AState
             m_LifeHearts[i] = lifeRectTransform.GetChild(i).GetComponent<Image>();
         }
 
-        if (MusicPlayer.instance.GetStem(0) != gameTheme)
+        AudioClip _gameTheme = gameThemes[Random.Range(0, gameThemes.Length)];
+        
+        if (MusicPlayer.instance.GetStem(0) != _gameTheme)
         {
-            MusicPlayer.instance.SetStem(0, gameTheme);
+            MusicPlayer.instance.SetStem(0, _gameTheme);
             CoroutineHandler.StartStaticCoroutine(MusicPlayer.instance.RestartAllStems());
         }
 

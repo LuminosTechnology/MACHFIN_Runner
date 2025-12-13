@@ -55,7 +55,7 @@ public abstract class Consumable : MonoBehaviour
     {
         m_SinceStart = 0;
 
-		if (activatedSound != null)
+		if (activatedSound)
 		{
 			c.powerupSource.clip = activatedSound;
 			c.powerupSource.Play();
