@@ -3736,7 +3736,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b3a225948720ba140b36c6934e952369, type: 2}
+      objectReference: {fileID: 2100000, guid: a0a050c6b6a5e884f89d08490a19442f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
