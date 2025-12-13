@@ -162,6 +162,11 @@ MonoBehaviour:
   characterName: Robo Roxo
   cost: 1
   premiumCost: 0
+  characterPrice:
+  - coinType: 4
+    amount: 20000
+  - coinType: 2
+    amount: 5000
   accessories: []
   animator: {fileID: 2070277420254211562}
   icon: {fileID: 21300000, guid: e47a4ca0f16e32f4a8e836e5f54a11ac, type: 3}

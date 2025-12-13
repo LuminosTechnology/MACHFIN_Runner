@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: themeData
   m_EditorClassIdentifier: 
   themeName: Bairro LOJAS
+  price:
+  - coinType: 5
+    amount: 5
+  - coinType: 6
+    amount: 3
   cost: 1
   premiumCost: 0
   themeIcon: {fileID: 21300062, guid: e1a536f74c7ef384a8d7132148ace0c8, type: 3}

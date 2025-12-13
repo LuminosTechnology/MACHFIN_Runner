@@ -162,6 +162,11 @@ MonoBehaviour:
   characterName: Robo Vermelho
   cost: 1
   premiumCost: 0
+  characterPrice:
+  - coinType: 4
+    amount: 20000
+  - coinType: 2
+    amount: 5000
   accessories: []
   animator: {fileID: 2070277420254211562}
   icon: {fileID: 21300000, guid: 5af37712cee06ff4aa92f2df9caee6ab, type: 3}
