@@ -61,8 +61,8 @@ GameObject:
   - component: {fileID: 576013200161006305}
   - component: {fileID: 204834110935290456}
   - component: {fileID: 1104062528669571953}
-  - component: {fileID: 1188891900914296359}
   - component: {fileID: 2791598432897823167}
+  - component: {fileID: 4474619612839753232}
   m_Layer: 9
   m_Name: ObstacleVeneno
   m_TagString: Untagged
@@ -219,20 +219,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixerGroup: SFX
---- !u!114 &1188891900914296359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357894168124456628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bf43c79f6bad84784689f6386c2e5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SimpleBarricade
-  impactedSound: {fileID: 8300000, guid: 0d9e50755a43a614a8233233466a4e80, type: 3}
-  m_ObstacleType: 1
 --- !u!111 &2791598432897823167
 Animation:
   m_ObjectHideFlags: 0
@@ -250,6 +236,21 @@ Animation:
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &4474619612839753232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357894168124456628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d535cfe90690c3e498a319618fe1be67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoisonObstacle
+  impactedSound: {fileID: 8300000, guid: 0d9e50755a43a614a8233233466a4e80, type: 3}
+  m_ObstacleType: 1
+  checkRadius: 1
 --- !u!1 &1892567013608820545
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
 
 /// <summary>
 /// Handle everything related to controlling the character. Interact with both the Character (visual, animation) and CharacterCollider
@@ -21,6 +22,7 @@ public class CharacterInputController : MonoBehaviour
 	public CharacterCollider characterCollider;
 	public GameObject blobShadow;
 	public float laneChangeSpeed = 1.0f;
+	public int directionMultiplier = 1;
 
 	public int maxLife = 3;
 
@@ -102,6 +104,19 @@ public class CharacterInputController : MonoBehaviour
 
 	protected Vector2 m_StartingTouch;
 	protected bool m_IsSwiping = false;
+	
+	[Header("Poison Status")]
+	// Poison
+	public float poisonDuration=4f;
+	protected float m_SinceStart;
+	public bool poisonIsActive = false;
+
+	public delegate void ChangePoisonHandler(bool isActive);
+	public static event ChangePoisonHandler onPoisonEffectChanged;
+	
+	
+	
+	
 
 	// Cheating functions, use for testing
 	public void CheatInvincible(bool invincible)
@@ -327,6 +342,37 @@ public class CharacterInputController : MonoBehaviour
 			shadowPosition.y = k_ShadowGroundOffset;
 			blobShadow.transform.position = shadowPosition;
 		}
+
+		if (poisonIsActive)
+		{
+			HandlePoison();
+		}	
+		
+	}
+
+	public void HitPoison()
+	{
+		m_SinceStart = 0;
+		directionMultiplier = -1;
+		poisonIsActive = true;
+		onPoisonEffectChanged?.Invoke(true);
+	}
+
+	private void ResetPoison()
+	{
+		m_SinceStart = 0;
+		
+	}
+	private void HandlePoison()
+	{
+		m_SinceStart += Time.deltaTime;
+
+		if (m_SinceStart >= poisonDuration)
+		{
+			directionMultiplier = 1;
+			poisonIsActive = false;
+			onPoisonEffectChanged?.Invoke(false);
+		}
 	}
 
 	public void Jump()
@@ -421,7 +467,7 @@ public class CharacterInputController : MonoBehaviour
 	{
 		if (!m_IsRunning)
 			return;
-
+		direction *= directionMultiplier;
 		int targetLane = m_CurrentLane + direction;
 
 		if (targetLane < 0 || targetLane > 2)
