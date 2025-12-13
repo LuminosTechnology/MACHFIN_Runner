@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Coin : MonoBehaviour
 {
@@ -8,15 +9,17 @@ public class Coin : MonoBehaviour
     static public Pooler[] coinsPool;
     public bool isPremium = false;
     public CoinType coinType;
-    public AudioClip collectSound;
+
+    public Image coinIcon;
+    // public AudioClip collectSound;
 
     public void Collect(CharacterInputController c)
     {
-        if (collectSound)
-        {
-            c.powerupSource.clip = collectSound;
-            c.powerupSource.Play();
-        }
+        // if (collectSound)
+        // {
+        //     c.powerupSource.clip = collectSound;
+        //     c.powerupSource.Play();
+        // }
     }
     #if UNITY_EDITOR
     private void OnDrawGizmos()

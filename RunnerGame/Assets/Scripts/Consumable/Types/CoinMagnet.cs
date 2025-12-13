@@ -18,7 +18,7 @@ public class CoinMagnet : Consumable
 
     public override int GetPrice()
     {
-        return 750;
+        return prices[0].price;
     }
 
 	public override int GetPremiumCost()
