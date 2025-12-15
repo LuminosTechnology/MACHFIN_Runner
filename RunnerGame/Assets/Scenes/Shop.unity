@@ -3138,7 +3138,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Store
+  m_Text: Loja
 --- !u!222 &792817054
 CanvasRenderer:
   m_ObjectHideFlags: 0

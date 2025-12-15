@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5397c64509ab92a4b9e8309aebcb66e1, type: 3}
   m_Name: themeData
   m_EditorClassIdentifier: 
-  themeName: Mercado do Bairro
+  themeName: Supermercado do Bairro
   price:
   - coinType: 5
     amount: 5
@@ -100,7 +100,8 @@ MonoBehaviour:
   collectiblePrefab: {fileID: 184264, guid: 16cac8b68c4ca6448baecd0680e025f6, type: 3}
   premiumCollectible: {fileID: 1000010457517272, guid: ac3c86c2382618643bfda6ab3cc81a0b,
     type: 3}
-  cloudPrefabs: []
+  cloudPrefabs:
+  - {fileID: 1000013540275922, guid: 42cd8c81147fdf24c98f753d3e2ecde3, type: 3}
   cloudMinimumDistance: {x: 0, y: 0, z: 0}
   cloudSpread: {x: 0, y: 0, z: 0}
   cloudNumber: 0

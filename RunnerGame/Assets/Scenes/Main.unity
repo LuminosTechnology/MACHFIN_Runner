@@ -6993,7 +6993,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ab2cfde409d710b47b0b502877abb479, type: 3}
+    m_Font: {fileID: 12800000, guid: 37b6756a5cc350840a57651f75926591, type: 3}
     m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
@@ -7005,7 +7005,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Confirm!
+  m_Text: CONFIRMAR!
 --- !u!222 &418704412
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11950,7 +11950,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ab2cfde409d710b47b0b502877abb479, type: 3}
+    m_Font: {fileID: 12800000, guid: 37b6756a5cc350840a57651f75926591, type: 3}
     m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
@@ -11962,7 +11962,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DELETE DATA
+  m_Text: APAGAR DADOS
 --- !u!222 &681311100
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19227,7 +19227,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ab2cfde409d710b47b0b502877abb479, type: 3}
+    m_Font: {fileID: 12800000, guid: 37b6756a5cc350840a57651f75926591, type: 3}
     m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 0
@@ -19239,7 +19239,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NO
+  m_Text: "N\xC3O"
 --- !u!222 &1034873127
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28740,9 +28740,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 37b6756a5cc350840a57651f75926591, type: 3}
     m_FontSize: 72
     m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 175
+    m_BestFit: 1
+    m_MinSize: 16
+    m_MaxSize: 72
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -37360,7 +37360,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ab2cfde409d710b47b0b502877abb479, type: 3}
+    m_Font: {fileID: 12800000, guid: 37b6756a5cc350840a57651f75926591, type: 3}
     m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 0
@@ -37372,7 +37372,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YES
+  m_Text: APAGAR
 --- !u!222 &1824968646
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39520,7 +39520,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: ab2cfde409d710b47b0b502877abb479, type: 3}
+    m_Font: {fileID: 12800000, guid: 37b6756a5cc350840a57651f75926591, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -39532,7 +39532,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You will loose all bought items and currencies, are you sure?
+  m_Text: "Voc\xEA vai perder TODOS os itens, moedas e personagens, tem certeza?"
 --- !u!222 &1967966881
 CanvasRenderer:
   m_ObjectHideFlags: 0

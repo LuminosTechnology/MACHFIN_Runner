@@ -362,9 +362,9 @@ public class PlayerData
 
         // m_Instance.characters.Add("Trash Cat");
         m_Instance.characters.Add("Robo");
-        m_Instance.themes.Add("Bairro FEIRA");
-        m_Instance.themes.Add("Mercado do Bairro");
-        m_Instance.themes.Add("Shopping");
+        m_Instance.themes.Add("Feira do Bairro");
+        // m_Instance.themes.Add("Supermercado do Bairro");
+        // m_Instance.themes.Add("Shopping do Bairro");
 
         m_Instance.ftueLevel = 0;
         m_Instance.rank = 0;

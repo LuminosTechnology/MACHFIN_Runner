@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5397c64509ab92a4b9e8309aebcb66e1, type: 3}
   m_Name: themeData
   m_EditorClassIdentifier: 
-  themeName: Bairro LOJAS
+  themeName: Lojas do Bairro
   price:
   - coinType: 5
     amount: 5
