@@ -17192,7 +17192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entriesRoot: {fileID: 859562870}
-  entriesCount: 6
+  entriesCount: 0
   playerEntry: {fileID: 576403260}
   forcePlayerDisplay: 1
   displayPlayer: 1
@@ -17568,7 +17568,7 @@ MonoBehaviour:
   charPosition: {fileID: 764160786}
   themeNameDisplay: {fileID: 1403348306}
   themeSelect: {fileID: 1320600321}
-  themeIcon: {fileID: 1573491673}
+  themeIcon: {fileID: 1127998031}
   powerupSelect: {fileID: 1667271468}
   powerupIcon: {fileID: 590977525}
   powerupCount: {fileID: 1957119031}
@@ -21446,7 +21446,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter Name
+  m_Text: Seu nome
 --- !u!222 &1019362673
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23766,7 +23766,7 @@ MonoBehaviour:
     m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 42
+    m_MinSize: 12
     m_MaxSize: 87
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -23774,7 +23774,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 999999999
+  m_Text: 9999
 --- !u!222 &1109858309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24122,7 +24122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1127998028
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34347,13 +34347,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573491671}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

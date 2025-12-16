@@ -22,6 +22,7 @@ public class ThemeData : ScriptableObject
     public int cost;
     public int premiumCost;
     public Sprite themeIcon;
+    public Sprite themeBackground;
 
     [Header("Objects")]
     public ThemeZone[] zones;

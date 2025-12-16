@@ -244,7 +244,7 @@ public class LoadoutState : AState
         }
 
         themeNameDisplay.text = t.themeName;
-        themeIcon.sprite = t.themeIcon;
+        themeIcon.sprite = t.themeBackground;
 
         skyMeshFilter.sharedMesh = t.skyMesh;
         UIGroundFilter.sharedMesh = t.UIGroundMesh;

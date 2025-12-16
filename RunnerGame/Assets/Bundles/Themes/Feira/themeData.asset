@@ -16,7 +16,8 @@ MonoBehaviour:
   price: []
   cost: 0
   premiumCost: 0
-  themeIcon: {fileID: 21300000, guid: 52e5f5e9b21ab1747862e7a1881a66dc, type: 3}
+  themeIcon: {fileID: 21300000, guid: 76b01f50d90678743acf9c99c34b9355, type: 3}
+  themeBackground: {fileID: 21300000, guid: 750afdc23a58cb14894cbadb67b8d677, type: 3}
   zones:
   - length: 500
     prefabList:
@@ -130,3 +131,4 @@ MonoBehaviour:
   skyMesh: {fileID: 4300002, guid: 0fd40b0b70fef064c9b7e20779b1f8ec, type: 3}
   UIGroundMesh: {fileID: 4300000, guid: 28288b28edded764b843730ced06fb8c, type: 3}
   fogColor: {r: 0.86274517, g: 0.9725491, b: 1, a: 1}
+  canShowInStore: 1
