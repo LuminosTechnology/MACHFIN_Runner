@@ -24,56 +24,7 @@ MonoBehaviour:
   zones:
   - length: 0
     prefabList:
-    - m_AssetGUID: b50cd2cb2dd4b79408ca1d1cf271ce61
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    - m_AssetGUID: 4b82373bea38f6b48ab6e1af96ee1d1f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    - m_AssetGUID: 4cb6ba83387b36f4aaa985352b6345a7
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-  - length: 0
-    prefabList:
-    - m_AssetGUID: 65fe4ff541c47294a917d495cff08ce6
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    - m_AssetGUID: 4b82373bea38f6b48ab6e1af96ee1d1f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    - m_AssetGUID: b50cd2cb2dd4b79408ca1d1cf271ce61
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
     - m_AssetGUID: ae3ae57eed8f40f42b9d8d22fcac2bc7
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-  - length: 0
-    prefabList:
-    - m_AssetGUID: b50cd2cb2dd4b79408ca1d1cf271ce61
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    - m_AssetGUID: 4cb6ba83387b36f4aaa985352b6345a7
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    - m_AssetGUID: f17244eb45d59194eb85f897181ea682
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
