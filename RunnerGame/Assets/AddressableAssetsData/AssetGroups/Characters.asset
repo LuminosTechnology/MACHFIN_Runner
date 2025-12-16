@@ -140,6 +140,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9d476741bbdd9f546965efd98383c575
+    m_Address: Assets/Prefabs/UI/EntryShopCharacter.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a3d0c39a4d479a64ca58e442cc0d0b9c
     m_Address: Assets/Bundles/Themes/Lojas/Lojas/Lojas_04.prefab
     m_ReadOnly: 0
@@ -182,7 +187,7 @@ MonoBehaviour:
     - characters
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d00b4fe948b1ad641a0b8e1da752c1e2
-    m_Address: Assets/Prefabs/UI/NewNewEntryItem.prefab
+    m_Address: Assets/Prefabs/UI/EntryShopItem.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

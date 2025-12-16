@@ -67,6 +67,10 @@ public class CharacterCollider : MonoBehaviour
 	protected const int k_ObstacleLayerIndex = 9;
 	protected const int k_PowerupLayerIndex = 10;
 	protected const float k_DefaultInvinsibleTime = 2f;
+	
+	//Collect coin event
+	public delegate void CollectCoinHandler(CoinType type);
+	public static event CollectCoinHandler CollectCoin;
 
 	protected void Start()
 	{
@@ -127,35 +131,37 @@ public class CharacterCollider : MonoBehaviour
 					_coin.poolOrigin.Free(c.gameObject);
 					_coin.Collect(controller);
 					// Coin.coinPool.Free(c.gameObject);
-					PlayerData.instance.AddCurrency(_coin.coinType,1);
+					OnCollectCoin(_coin.coinType);
+					
 					// switch (_coin.coinType)
 					// {
 					// 	case CoinType.Picanha:
-					// 		PlayerData.instance.picanha += 1;
+					// 		controller.picanhas += 1;
 					// 		break;
 					//
 					// 	case CoinType.Chocolate:
-					// 		PlayerData.instance.chocolate += 1;
+					// 		controller.chocolates += 1;
 					// 		break;
 					//
 					// 	case CoinType.Cash:
-					// 		PlayerData.instance.cash += 1;
+					// 		controller.cash += 1;
 					// 		break;
 					//
 					//
 					// 	case CoinType.Cafe:
-					// 		PlayerData.instance.cafe += 1;
+					// 		controller.cafe += 1;
 					// 		break;
 					//
 					// 	case CoinType.Coin:
-					// 		PlayerData.instance.coin += 1;
+					// 		controller.coins += 1;
 					// 		break;
 					//
 					// 	case CoinType.Gold:
-					// 		PlayerData.instance.gold += 1;
+					// 		controller.gold += 1;
 					// 		break;
 					//
 					// 	case CoinType.Premium:
+					// 		controller.premium += 1;
 					// 		// PlayerData.instance.premium += 1;
 					// 		break;
 					//
@@ -276,5 +282,12 @@ public class CharacterCollider : MonoBehaviour
 		Shader.SetGlobalFloat(s_BlinkingValueHash, 0.0f);
 
 		m_Invincible = false;
+	}
+
+	private static void OnCollectCoin(CoinType type)
+	{
+		
+		PlayerData.instance.AddCurrency(type,1);
+		CollectCoin?.Invoke(type);
 	}
 }
