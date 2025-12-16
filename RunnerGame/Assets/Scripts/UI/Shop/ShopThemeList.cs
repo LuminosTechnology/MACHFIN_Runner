@@ -15,13 +15,16 @@ public class ShopThemeList : ShopList
         {
             Destroy(t.gameObject);
         }
+
         var db = GameManager.instance.m_ConsumableDatabase;
 
         foreach (KeyValuePair<string, ThemeData> pair in ThemeDatabase.dictionnary)
         {
             ThemeData theme = pair.Value;
-            if (theme != null)
+            if (theme != null && theme.canShowInStore)
             {
+                 
+                
                 prefabItem.InstantiateAsync().Completed += (op) =>
                 {
                     if (op.Result == null || !(op.Result is GameObject))
@@ -29,6 +32,7 @@ public class ShopThemeList : ShopList
                         Debug.LogWarning(string.Format("Unable to load theme shop list {0}.", prefabItem.Asset.name));
                         return;
                     }
+
                     GameObject newEntry = op.Result;
                     newEntry.transform.SetParent(listRoot, false);
 
@@ -37,7 +41,7 @@ public class ShopThemeList : ShopList
                     itm.nameText.text = theme.themeName;
                     // itm.pricetext.text = theme.cost.ToString();
                     itm.icon.sprite = theme.themeIcon;
-                    itm.PopulateUI(theme.price,db);
+                    itm.PopulateUI(theme.price, db);
                     //
                     // if (theme.premiumCost > 0)
                     // {
@@ -49,12 +53,12 @@ public class ShopThemeList : ShopList
                     //     itm.premiumText.transform.parent.gameObject.SetActive(false);
                     // }
 
-                    itm.buyButton.onClick.AddListener(delegate () { Buy(theme); });
+                    itm.buyButton.onClick.AddListener(delegate() { Buy(theme); });
 
                     itm.buyButton.image.sprite = itm.buyButtonSprite;
 
                     RefreshButton(itm, theme);
-                    m_RefreshCallback += delegate () { RefreshButton(itm, theme); };
+                    m_RefreshCallback += delegate() { RefreshButton(itm, theme); };
                 };
             }
         }
@@ -71,28 +75,22 @@ public class ShopThemeList : ShopList
         // {
         //     itm.pricetext.color = Color.black;
         // }
+
+
         bool canBuy = PlayerData.instance.CanAfford(theme.price);
-        if (!canBuy)
-        {
-            itm.buyButton.interactable = false;
-            itm.pricetext.color = Color.red;
-        }
-        else
-        {
-            itm.pricetext.color = Color.black;
-        }
 
-        if (theme.premiumCost > PlayerData.instance.premium)
-        {
-            itm.buyButton.interactable = false;
-            itm.premiumText.color = Color.red;
-        }
-        else
-        {
-            itm.premiumText.color = Color.black;
-        }
 
-        Debug.Log(theme.themeName);
+        // if (theme.premiumCost > PlayerData.instance.premium)
+        // {
+        //     itm.buyButton.interactable = false;
+        //     itm.premiumText.color = Color.red;
+        // }
+        // else
+        // {
+        //     itm.premiumText.color = Color.black;
+        // }
+
+        // Debug.Log(theme.themeName);
         if (PlayerData.instance.themes.Contains(theme.themeName))
         {
             Debug.Log($"I have: {theme.themeName}");
@@ -102,9 +100,18 @@ public class ShopThemeList : ShopList
         }
         else
         {
-
-            itm.buyButton.interactable = true; 
+            itm.buyButton.interactable = true;
             itm.buyButton.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = "Comprar";
+        }
+
+        if (!canBuy)
+        {
+            itm.buyButton.interactable = false;
+            itm.pricetext.color = Color.red;
+        }
+        else
+        {
+            itm.pricetext.color = Color.black;
         }
     }
 

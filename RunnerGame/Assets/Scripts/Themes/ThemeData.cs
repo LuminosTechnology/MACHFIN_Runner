@@ -37,6 +37,8 @@ public class ThemeData : ScriptableObject
     public Mesh skyMesh;
     public Mesh UIGroundMesh;
     public Color fogColor;
+
+    [Header("Visuability")] public bool canShowInStore = true;
 }
 
 [System.Serializable]
