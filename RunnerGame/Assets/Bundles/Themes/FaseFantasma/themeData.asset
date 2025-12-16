@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5397c64509ab92a4b9e8309aebcb66e1, type: 3}
+  m_Name: themeData
+  m_EditorClassIdentifier: 
+  themeName: '?'
+  price:
+  - coinType: 5
+    amount: 5
+  - coinType: 6
+    amount: 3
+  cost: 1
+  premiumCost: 0
+  themeIcon: {fileID: 21300000, guid: 6818dee825abcea4b8f4ae3e3d5cda9f, type: 3}
+  zones:
+  - length: 0
+    prefabList: []
+  collectiblesData:
+  - m_name: Ouro
+    m_CollectiblePrefab: {fileID: 4446606806195557474, guid: ebe1f47633142b94d9844c4223dd44ec,
+      type: 3}
+    m_SpawnChance: 2
+    m_MinLineLength: 1
+    m_MaxLineLength: 3
+    m_Increment: 3
+  - m_name: Dolar
+    m_CollectiblePrefab: {fileID: 9026649906486562854, guid: 79cb4a6434f98e94490222ffc86dff79,
+      type: 3}
+    m_SpawnChance: 15
+    m_MinLineLength: 3
+    m_MaxLineLength: 5
+    m_Increment: 2
+  - m_name: Moeda
+    m_CollectiblePrefab: {fileID: 6029498762936536357, guid: 0992ed5b645317f42ab9b7cfdb6855aa,
+      type: 3}
+    m_SpawnChance: 15
+    m_MinLineLength: 3
+    m_MaxLineLength: 7
+    m_Increment: 2
+  - m_name: Cafe
+    m_CollectiblePrefab: {fileID: 8747537509992210593, guid: e188bf98d2ff66e478dcde59bebb3f49,
+      type: 3}
+    m_SpawnChance: 15
+    m_MinLineLength: 5
+    m_MaxLineLength: 10
+    m_Increment: 2
+  - m_name: Chocolate
+    m_CollectiblePrefab: {fileID: 2196784118034559650, guid: 710aa7c473c13aa4ab8563e0977dc232,
+      type: 3}
+    m_SpawnChance: 15
+    m_MinLineLength: 5
+    m_MaxLineLength: 10
+    m_Increment: 1.5
+  - m_name: Picanha
+    m_CollectiblePrefab: {fileID: 184264, guid: 16cac8b68c4ca6448baecd0680e025f6,
+      type: 3}
+    m_SpawnChance: 100
+    m_MinLineLength: 5
+    m_MaxLineLength: 25
+    m_Increment: 1.5
+  collectiblePrefab: {fileID: 184264, guid: 16cac8b68c4ca6448baecd0680e025f6, type: 3}
+  premiumCollectible: {fileID: 1000010457517272, guid: ac3c86c2382618643bfda6ab3cc81a0b,
+    type: 3}
+  cloudPrefabs: []
+  cloudMinimumDistance: {x: 0, y: 0, z: 0}
+  cloudSpread: {x: 0, y: 0, z: 0}
+  cloudNumber: 0
+  skyMesh: {fileID: 4300002, guid: 0fd40b0b70fef064c9b7e20779b1f8ec, type: 3}
+  UIGroundMesh: {fileID: 4300000, guid: 28288b28edded764b843730ced06fb8c, type: 3}
+  fogColor: {r: 1, g: 0.9988863, b: 0.9198113, a: 1}
+  canShowInStore: 0

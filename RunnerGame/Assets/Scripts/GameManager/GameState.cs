@@ -26,30 +26,44 @@ public class GameState : AState
     public TrackManager trackManager;
 
     public AudioClip gameTheme;
-
-    [Header("UI")] public Text coinText;
+    
+    [Header("CurrencyText")]
+    public Text picanhaText;
+    public Text coinsText;
     public Text premiumText;
+    public Text cashText;
+    public Text chocolateText;
+    public Text coffeeText;
+    public Text goldText; 
+    
+    
+    [Header("UI")]
     public Text scoreText;
     public Text distanceText;
     public Text multiplierText;
     public Text countdownText;
-    public RectTransform powerupZone;
-    public RectTransform lifeRectTransform;
     
+    [Header("Life")]
     //Life UI
+    public RectTransform lifeRectTransform;
     public Color ColorHeartDisable = Color.black;
-
+    
+    
+    [Header("Pause & Whole UI")]
     public RectTransform pauseMenu;
     public RectTransform wholeUI;
     public Button pauseButton;
 
     public Image inventoryIcon;
 
+    [Header("Game Over")]
     public GameObject gameOverPopup;
     public Button premiumForLifeButton;
     public GameObject adsForLifeButton;
     public Text premiumCurrencyOwned;
 
+    [Header("PowerUp")]
+    public RectTransform powerupZone;
     public GameObject poisonOverlay;
 
     [Header("Prefabs")] public GameObject PowerupIconPrefab;
@@ -93,7 +107,8 @@ public class GameState : AState
     protected TrackSegment m_NextValidSegment = null;
     protected int k_ObstacleToClear = 3;
 
-    //Poison
+    protected CharacterInputController Controller;
+
 
 
     public override void Enter(AState from)
@@ -118,6 +133,13 @@ public class GameState : AState
         m_GameoverSelectionDone = false;
         CharacterInputController.onPoisonEffectChanged += SetPoisonOverlay;
         SetPoisonOverlay(false);
+
+        // if (walletZone.TryGetComponent(out WalletUI walletUI))
+        // {
+        //     walletUI.StartRun(trackManager.characterController);
+        // }
+        
+        
         StartGame();
     }
 
@@ -139,12 +161,15 @@ public class GameState : AState
         gameOverPopup.SetActive(false);
 
         //Changes
-        coinText.transform.parent.gameObject.SetActive(false);
-        premiumText.transform.parent.gameObject.SetActive(false);
+        // coinText.transform.parent.gameObject.SetActive(false);
+        // premiumText.transform.parent.gameObject.SetActive(false);
         distanceText.transform.gameObject.SetActive(true);
         scoreText.transform.parent.gameObject.SetActive(true);
 
 
+        //Get Controller
+        Controller = trackManager.characterController;
+        
         sideSlideTuto.SetActive(false);
         upSlideTuto.SetActive(false);
         downSlideTuto.SetActive(false);
@@ -355,8 +380,14 @@ public class GameState : AState
 
     protected void UpdateUI()
     {
-        coinText.text = trackManager.characterController.picanhas.ToString();
-        premiumText.text = trackManager.characterController.premium.ToString();
+        picanhaText.text = Controller.picanhas.ToString();
+        premiumText.text = Controller.premium.ToString();
+        chocolateText.text = Controller.chocolates.ToString();
+        coffeeText.text = Controller.cafe.ToString();
+        goldText.text = Controller.gold.ToString();
+        coinsText.text = Controller.coins.ToString();
+        cashText.text = Controller.cash.ToString();
+        
 
         for (int i = 0; i < 3; ++i)
         {

@@ -1441,7 +1441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabItem:
-    m_AssetGUID: d00b4fe948b1ad641a0b8e1da752c1e2
+    m_AssetGUID: 9d476741bbdd9f546965efd98383c575
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 
@@ -5448,7 +5448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabItem:
-    m_AssetGUID: d00b4fe948b1ad641a0b8e1da752c1e2
+    m_AssetGUID: 9d476741bbdd9f546965efd98383c575
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 

@@ -31,9 +31,14 @@ public class Coin : MonoBehaviour
             case CoinType.Gold:
                 c.gold++;
                 break;
+            case CoinType.Coin:
+                c.coins++;
+                break;
+            
             case CoinType.Premium:
                 c.premium++;
                 break;
+            
             default:
                 break;
             
