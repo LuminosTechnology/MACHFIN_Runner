@@ -35,6 +35,9 @@ public class GameState : AState
     public Text countdownText;
     public RectTransform powerupZone;
     public RectTransform lifeRectTransform;
+    
+    //Life UI
+    public Color ColorHeartDisable = Color.black;
 
     public RectTransform pauseMenu;
     public RectTransform wholeUI;
@@ -138,8 +141,8 @@ public class GameState : AState
         //Changes
         coinText.transform.parent.gameObject.SetActive(false);
         premiumText.transform.parent.gameObject.SetActive(false);
-        distanceText.transform.gameObject.SetActive(false);
-        scoreText.transform.parent.gameObject.SetActive(false);
+        distanceText.transform.gameObject.SetActive(true);
+        scoreText.transform.parent.gameObject.SetActive(true);
 
 
         sideSlideTuto.SetActive(false);
@@ -363,7 +366,7 @@ public class GameState : AState
             }
             else
             {
-                m_LifeHearts[i].color = Color.black;
+                m_LifeHearts[i].color = ColorHeartDisable;
             }
         }
 

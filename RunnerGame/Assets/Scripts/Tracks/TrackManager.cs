@@ -380,6 +380,7 @@ public class TrackManager : MonoBehaviour
 
     public void End()
     {
+        Console.WriteLine($"[TrackManager.End Line 383] - END TRACK");
         foreach (TrackSegment seg in m_Segments)
         {
             Addressables.ReleaseInstance(seg.gameObject);

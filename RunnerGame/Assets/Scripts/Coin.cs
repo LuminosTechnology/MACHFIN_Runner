@@ -14,11 +14,37 @@ public class Coin : MonoBehaviour
 
     public void Collect(CharacterInputController c)
     {
+        switch (coinType)
+        {
+            case CoinType.Picanha:
+                c.picanhas++;
+                break;
+            case CoinType.Cafe:
+                c.cafe++;
+                break;
+            case CoinType.Chocolate:
+                c.chocolates++;
+                break;
+            case CoinType.Cash:
+                c.cash++;
+                break;
+            case CoinType.Gold:
+                c.gold++;
+                break;
+            case CoinType.Premium:
+                c.premium++;
+                break;
+            default:
+                break;
+            
+        }
+        
         // if (collectSound)
         // {
         //     c.powerupSource.clip = collectSound;
         //     c.powerupSource.Play();
         // }
+        
     }
     #if UNITY_EDITOR
     private void OnDrawGizmos()

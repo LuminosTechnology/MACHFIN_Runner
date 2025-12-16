@@ -125,7 +125,7 @@ public class CharacterCollider : MonoBehaviour
 				else
 				{
 					_coin.poolOrigin.Free(c.gameObject);
-
+					_coin.Collect(controller);
 					// Coin.coinPool.Free(c.gameObject);
 					PlayerData.instance.AddCurrency(_coin.coinType,1);
 					// switch (_coin.coinType)

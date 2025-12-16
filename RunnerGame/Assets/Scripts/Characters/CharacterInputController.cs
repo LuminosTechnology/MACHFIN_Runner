@@ -157,6 +157,9 @@ public class CharacterInputController : MonoBehaviour
 
 	public void End()
 	{
+		
+		Debug.Log($"Picanha:{picanhas}, cash:{cash}, cafe:{cafe}");
+		
 		CleanConsumable();
 	}
 
