@@ -24,7 +24,42 @@ MonoBehaviour:
   zones:
   - length: 0
     prefabList:
+    - m_AssetGUID: 4b82373bea38f6b48ab6e1af96ee1d1f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
     - m_AssetGUID: ae3ae57eed8f40f42b9d8d22fcac2bc7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: b50cd2cb2dd4b79408ca1d1cf271ce61
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 4cb6ba83387b36f4aaa985352b6345a7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 65fe4ff541c47294a917d495cff08ce6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: f17244eb45d59194eb85f897181ea682
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: b9900fd6a21fd08428a9b9339465fae5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: e2d3d1a11aa8ab44b8003c470998bb7e
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
@@ -82,3 +117,4 @@ MonoBehaviour:
   skyMesh: {fileID: 4300002, guid: 0fd40b0b70fef064c9b7e20779b1f8ec, type: 3}
   UIGroundMesh: {fileID: 4300000, guid: 28288b28edded764b843730ced06fb8c, type: 3}
   fogColor: {r: 1, g: 0.9988863, b: 0.9198113, a: 1}
+  canShowInStore: 1
