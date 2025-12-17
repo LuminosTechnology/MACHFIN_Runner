@@ -26,8 +26,8 @@ public class GameState : AState
     public TrackManager trackManager;
 
     public AudioClip gameTheme;
-    
-    [Header("CurrencyText")]
+
+    [Header("CurrencyText")] public Transform walletTransform; 
     public Text picanhaText;
     public Text coinsText;
     public Text premiumText;
@@ -163,8 +163,9 @@ public class GameState : AState
         //Changes
         // coinText.transform.parent.gameObject.SetActive(false);
         // premiumText.transform.parent.gameObject.SetActive(false);
-        distanceText.transform.gameObject.SetActive(true);
-        scoreText.transform.parent.gameObject.SetActive(true);
+        walletTransform.gameObject.SetActive(PlayerData.instance.tutorialDone);
+        distanceText.transform.parent.gameObject.SetActive(PlayerData.instance.tutorialDone);
+        scoreText.transform.parent.parent.gameObject.SetActive(PlayerData.instance.tutorialDone);
 
 
         //Get Controller
@@ -189,6 +190,8 @@ public class GameState : AState
 
         if (m_IsTutorial)
         {
+            
+            
             tutorialValidatedObstacles.gameObject.SetActive(true);
             tutorialValidatedObstacles.text = $"0/{k_ObstacleToClear}";
 
@@ -220,6 +223,7 @@ public class GameState : AState
         m_Finished = false;
         m_PowerupIcons.Clear();
 
+        pauseButton.gameObject.SetActive(true);
         StartCoroutine(trackManager.Begin());
     }
 

@@ -37,7 +37,7 @@ public class MissionEntry : MonoBehaviour
 
 			background.color = notCompletedColor;
 
-			progressText.color = Color.black;
+			progressText.color = Color.white;
 			descText.color = completedColor;
 
 			progressText.text = ((int)m.progress) + " / " + ((int)m.max);

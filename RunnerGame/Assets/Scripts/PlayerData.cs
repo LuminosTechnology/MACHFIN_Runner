@@ -363,6 +363,7 @@ public class PlayerData
         // m_Instance.characters.Add("Trash Cat");
         m_Instance.characters.Add("Robo");
         m_Instance.themes.Add("FEIRA do Bairro");
+        m_Instance.themes.Add("?");
         // m_Instance.themes.Add("Supermercado do Bairro");
         // m_Instance.themes.Add("Shopping do Bairro");
 

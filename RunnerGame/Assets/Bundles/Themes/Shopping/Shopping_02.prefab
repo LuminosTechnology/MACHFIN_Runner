@@ -774,12 +774,7 @@ MonoBehaviour:
   collectibleTransform: {fileID: 0}
   hasObstacles: 1
   possibleObstacles:
-  - m_AssetGUID: eec1acc59e96374418cfb825b4ed4fbd
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_SubObjectGUID: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: 2649007a398a8cd4283b27371a56cddf
+  - m_AssetGUID: 4ca02eeb78b3f2546b670a83b5bbab76
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 

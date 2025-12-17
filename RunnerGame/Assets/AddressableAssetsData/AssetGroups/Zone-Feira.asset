@@ -25,6 +25,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 14b80aec84d36bf4f97f6ccf439e3a8d
+    m_Address: Assets/Bundles/Themes/Feira/SuburbsFeira/Feira_02.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1c9f17d203f6e544198d6d3c9b0852ed
     m_Address: "Assets/Models/Feira/Mel\xE2ncia.mat"
     m_ReadOnly: 0
@@ -57,6 +62,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 48a86d6f6fca812408d728a28a940762
     m_Address: Assets/Models/Feira/lona1_tex.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ca02eeb78b3f2546b670a83b5bbab76
+    m_Address: ObstacleAbacaxi
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -150,6 +160,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce6213ad075d07c46819c034c6f156b2
+    m_Address: Assets/Bundles/Themes/Feira/SuburbsFeira/Feira_01.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d385e588814398240ba82948ea388770
     m_Address: barracavazia_prefab
     m_ReadOnly: 0
@@ -157,6 +172,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d5b35865369384d4e8c522f98c6d3597
     m_Address: Assets/Bundles/Themes/Feira/Obstacles/ObstacleRat.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6cf1ff131728184c84414b2ce3d6737
+    m_Address: Assets/Bundles/Themes/Feira/SuburbsFeira/Feira_03.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

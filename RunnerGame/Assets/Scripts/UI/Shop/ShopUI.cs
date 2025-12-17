@@ -45,14 +45,16 @@ public class ShopUI : MonoBehaviour
 #if UNITY_ANALYTICS
         AnalyticsEvent.StoreOpened(StoreType.Soft);
 #endif
-
-#if !UNITY_EDITOR && !DEVELOPMENT_BUILD
-        //Disable cheating on non dev build outside of the editor
-        cheatButton.interactable = false;
-#else
+    
+//         
+// #if !UNITY_EDITOR && !DEVELOPMENT_BUILD
+//         //Disable cheating on non dev build outside of the editor
+//         //TODO: Disable Cheat Button on production Build 
+//         // cheatButton.interactable = false;
+// #else
+//         cheatButton.interactable = true;
+// #endif
         cheatButton.interactable = true;
-#endif
-
         m_OpenList = itemList;
         itemList.Open();
     }
@@ -115,9 +117,10 @@ public class ShopUI : MonoBehaviour
 
     public void CheatCoin()
     {
-#if !UNITY_EDITOR && !DEVELOPMENT_BUILD
-        return ; //you can't cheat in production build
-#endif
+        //TODO: Disable this 
+// #if !UNITY_EDITOR && !DEVELOPMENT_BUILD
+//         return ; //you can't cheat in production build
+// #endif
 
         // PlayerData.instance.picanha += k_CheatCoins;
         foreach (CoinType coin in System.Enum.GetValues(typeof(CoinType)))

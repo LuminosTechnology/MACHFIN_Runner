@@ -254,8 +254,9 @@ public class LoadoutState : AState
 
         if (!t.canShowInStore)
         { 
-            runButton.interactable = false;
             _canRun = false;
+            runButton.interactable = false;
+            // Debug.Log("??");
         }
         else
         {
@@ -442,5 +443,12 @@ public class LoadoutState : AState
         leaderboard.displayPlayer = false;
         leaderboard.forcePlayerDisplay = false;
         leaderboard.Open();
+    }
+
+    public void CloseAllPopups()
+    {
+        leaderboard.Close();
+        missionPopup.Close();
+        
     }
 }

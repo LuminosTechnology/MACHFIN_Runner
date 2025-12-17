@@ -19,58 +19,19 @@ MonoBehaviour:
   themeIcon: {fileID: 21300000, guid: 76b01f50d90678743acf9c99c34b9355, type: 3}
   themeBackground: {fileID: 21300000, guid: 750afdc23a58cb14894cbadb67b8d677, type: 3}
   zones:
-  - length: 500
+  - length: 0
     prefabList:
-    - m_AssetGUID: 696f68ce4fc7d1343b5a904a36c51922
+    - m_AssetGUID: ce6213ad075d07c46819c034c6f156b2
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
-    - m_AssetGUID: 8595417d97b7954468a838bf179404c8
+    - m_AssetGUID: 14b80aec84d36bf4f97f6ccf439e3a8d
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
-    - m_AssetGUID: 5143c15768494d24da2eba0d63ac3df4
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-  - length: 500
-    prefabList:
-    - m_AssetGUID: e14c5f5cae90a7f4db8afb9513bd824d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    - m_AssetGUID: 696f68ce4fc7d1343b5a904a36c51922
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    - m_AssetGUID: 8595417d97b7954468a838bf179404c8
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-  - length: 500
-    prefabList:
-    - m_AssetGUID: 66ae0075b6938234f9b1527aa9301f6a
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    - m_AssetGUID: 696f68ce4fc7d1343b5a904a36c51922
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    - m_AssetGUID: 8595417d97b7954468a838bf179404c8
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_SubObjectGUID: 
-      m_EditorAssetChanged: 0
-    - m_AssetGUID: 5143c15768494d24da2eba0d63ac3df4
+    - m_AssetGUID: d6cf1ff131728184c84414b2ce3d6737
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 

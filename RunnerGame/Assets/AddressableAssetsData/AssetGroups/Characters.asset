@@ -185,6 +185,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9900fd6a21fd08428a9b9339465fae5
+    m_Address: Assets/Bundles/Themes/Shopping/Shopping_07.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c650b5e8bad5d264b9956279eefc7610
     m_Address: Robo Vermelho
     m_ReadOnly: 0

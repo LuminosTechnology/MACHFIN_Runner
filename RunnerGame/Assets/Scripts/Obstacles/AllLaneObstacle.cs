@@ -6,6 +6,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class AllLaneObstacle: Obstacle
 {
+	private float checkRadius = 2f;
 	public override IEnumerator Spawn(TrackSegment segment, float t)
 	{
 		Vector3 position;
@@ -25,5 +26,13 @@ public class AllLaneObstacle: Obstacle
         Vector3 oldPos = obj.transform.position;
         obj.transform.position += Vector3.back;
         obj.transform.position = oldPos;
+        
+        var cols = Physics.OverlapSphere(obj.transform.position, checkRadius, 1 << 8);
+
+        if (cols.Length > 0)
+        {
+	        // Debug.Log($"Im ${obj.name} and im overlaping a coin at ${obj.transform.position}");
+	        Addressables.ReleaseInstance(obj); 
+        }
     }
 }

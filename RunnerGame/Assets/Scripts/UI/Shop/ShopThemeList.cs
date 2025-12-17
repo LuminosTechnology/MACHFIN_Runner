@@ -104,15 +104,7 @@ public class ShopThemeList : ShopList
             itm.buyButton.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = "Comprar";
         }
 
-        if (!canBuy)
-        {
-            itm.buyButton.interactable = false;
-            itm.pricetext.color = Color.red;
-        }
-        else
-        {
-            itm.pricetext.color = Color.black;
-        }
+        
     }
 
 

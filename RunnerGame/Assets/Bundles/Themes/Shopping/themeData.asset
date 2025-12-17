@@ -30,6 +30,36 @@ MonoBehaviour:
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
+    - m_AssetGUID: 4b82373bea38f6b48ab6e1af96ee1d1f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: b50cd2cb2dd4b79408ca1d1cf271ce61
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 4cb6ba83387b36f4aaa985352b6345a7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: 65fe4ff541c47294a917d495cff08ce6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: f17244eb45d59194eb85f897181ea682
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: b9900fd6a21fd08428a9b9339465fae5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
   collectiblesData:
   - m_name: Ouro
     m_CollectiblePrefab: {fileID: 4446606806195557474, guid: ebe1f47633142b94d9844c4223dd44ec,
