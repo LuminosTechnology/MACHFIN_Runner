@@ -73,8 +73,11 @@ public class LoadoutState : AState
     protected int k_UILayer;
     protected readonly Quaternion k_FlippedYAxisRotation = Quaternion.Euler(0f, 180f, 0f);
 
+    private bool _canRun = true;
+
     public override void Enter(AState from)
     {
+        _canRun = true;
         tutorialBlocker.SetActive(!PlayerData.instance.tutorialDone);
         tutorialPrompt.SetActive(false);
 
@@ -160,7 +163,7 @@ public class LoadoutState : AState
 
     public override void Tick()
     {
-        if (!runButton.interactable)
+        if (!runButton.interactable && _canRun)
         {
             bool interactable = ThemeDatabase.loaded && CharacterDatabase.loaded;
             if (interactable)
@@ -248,6 +251,17 @@ public class LoadoutState : AState
 
         skyMeshFilter.sharedMesh = t.skyMesh;
         UIGroundFilter.sharedMesh = t.UIGroundMesh;
+
+        if (!t.canShowInStore)
+        { 
+            runButton.interactable = false;
+            _canRun = false;
+        }
+        else
+        {
+            runButton.interactable = true;
+        }
+        
     }
 
     public IEnumerator PopulateCharacters()
