@@ -623,7 +623,7 @@ public class GameState : AState
         {
             Resume();
         }
-
+        tutorialValidatedObstacles.gameObject.SetActive(!value);
         switch (trackManager.characterController.currentTutorialLevel)
         {
             case 0:
