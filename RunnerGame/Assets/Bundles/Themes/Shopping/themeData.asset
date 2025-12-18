@@ -23,7 +23,7 @@ MonoBehaviour:
   themeIcon: {fileID: 21300000, guid: 87245dc33f93d40459447888a601bbfe, type: 3}
   themeBackground: {fileID: 21300000, guid: 554c087e44351c64d8dda6a015496671, type: 3}
   zones:
-  - length: 0
+  - length: 500
     prefabList:
     - m_AssetGUID: ae3ae57eed8f40f42b9d8d22fcac2bc7
       m_SubObjectName: 

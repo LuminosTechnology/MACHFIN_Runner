@@ -63,7 +63,7 @@ public class TrackManager : MonoBehaviour
 
     [Header("Objects")] public ConsumableDatabase consumableDatabase;
     public MeshFilter skyMeshFilter;
-    [SerializeField] private LayerMask _coinsLayerMask = 1 << 8;
+     
     [SerializeField] private LayerMask _obstacleLayerMask = 1 << 9;
 
 
@@ -757,16 +757,31 @@ public class TrackManager : MonoBehaviour
             for (int i = 0; i < segment.obstaclePositions.Length; ++i)
             {
                 AssetReference assetRef = segment.possibleObstacles[Random.Range(0, segment.possibleObstacles.Length)];
-                if (!IsObstacleAreaFree(segment, i))
-                {
-                    return; // impede o spawn
-                }
+                // if (!IsObstacleAreaFree(segment, i))
+                // {
+                //     ClearSpawnArea(segment,i);
+                // }
 
                 StartCoroutine(SpawnFromAssetReference(assetRef, segment, i));
             }
         }
 
         StartCoroutine(SpawnCoinAndPowerup(segment));
+    }
+
+    public void ClearSpawnArea(TrackSegment segment, float obstacleT)
+    {
+        Vector3 pos;
+        Quaternion rot;
+        segment.GetPointAt(obstacleT, out pos, out rot );
+
+        float radius = segment.obstacleCheckRadius;
+        
+        Collider[] obstacles =  Physics.OverlapSphere(pos, radius);
+        foreach (Collider obstacle in obstacles)
+        {
+            Destroy(obstacle.gameObject);
+        }
     }
 
     private IEnumerator SpawnFromAssetReference(AssetReference reference, TrackSegment segment, int posIndex)
@@ -838,7 +853,7 @@ public class TrackManager : MonoBehaviour
                         // --- INÍCIO DA VERIFICAÇÃO ---
                         // Verifica se há colisoes numa esfera nessa posição.
                         // Se o array retornado tiver comprimento 0, o espaço está livre.
-                        if (Physics.OverlapSphere(pos, 0.5f, 1<<8).Length == 0)
+                        if (Physics.OverlapSphere(pos, 0.5f,_obstacleLayerMask).Length == 0)
                         {
                             // Espaço livre -> Pode spawnar
                             GameObject toUse = pool.Get(pos, rot);

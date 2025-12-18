@@ -657,7 +657,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   objectRoot: {fileID: 0}
   collectibleTransform: {fileID: 0}
-  hasObstacles: 0
+  hasObstacles: 1
   possibleObstacles:
   - m_AssetGUID: cb9237f38c166354ea22cf7f8443b8c0
     m_SubObjectName: 
@@ -676,7 +676,7 @@ MonoBehaviour:
     m_EditorAssetChanged: 0
   obstacleCheckRadius: 1.5
   obstaclePositions:
-  - 0.5
+  - 0.19
 --- !u!1 &4259086051382104570
 GameObject:
   m_ObjectHideFlags: 0

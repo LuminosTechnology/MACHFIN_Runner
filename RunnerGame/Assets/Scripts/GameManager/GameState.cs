@@ -465,9 +465,10 @@ public class GameState : AState
 
     public void OpenGameOverPopup()
     {
-        premiumForLifeButton.interactable = PlayerData.instance.premium >= 3;
+        int premium = PlayerData.instance.GetCoin(coinType: CoinType.Premium);
+        premiumForLifeButton.interactable = premium >= 3;
 
-        premiumCurrencyOwned.text = PlayerData.instance.premium.ToString();
+        premiumCurrencyOwned.text = premium.ToString();
 
         ClearPowerup();
 

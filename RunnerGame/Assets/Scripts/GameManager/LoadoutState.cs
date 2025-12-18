@@ -235,7 +235,10 @@ public class LoadoutState : AState
     public IEnumerator PopulateTheme()
     {
         if (!PlayerData.instance.tutorialDone)
+        {
+            themeNameDisplay.text = "Tutorial";
             yield break;
+        }
 
 
         ThemeData t = null;

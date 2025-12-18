@@ -195,9 +195,15 @@ MonoBehaviour:
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
+  - m_AssetGUID: bdf1591de076d9444bdb077602989c80
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   obstacleCheckRadius: 1.5
   obstaclePositions:
   - 0.5
+  - 1
 --- !u!1 &1000011894887870
 GameObject:
   m_ObjectHideFlags: 0

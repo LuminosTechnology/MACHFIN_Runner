@@ -25,7 +25,7 @@ public class MissionEntry : MonoBehaviour
 			background.color = completedColor;
 
 			progressText.color = Color.white;
-			descText.color = Color.white;
+			// descText.color = Color.white;
 			rewardText.color = Color.white;
 
 			claimButton.onClick.AddListener(delegate { owner.Claim(m); } );
