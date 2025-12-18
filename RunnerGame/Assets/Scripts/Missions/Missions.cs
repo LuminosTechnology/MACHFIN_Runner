@@ -87,7 +87,7 @@ public class SingleRunMission : MissionBase
 
 	public override string GetMissionDesc()
     {
-        return "Corra " + ((int)max) + "metros em uma única corrida";
+        return "Corra " + ((int)max) + " metros em uma única corrida";
     }
 
     public override MissionType GetMissionType()
