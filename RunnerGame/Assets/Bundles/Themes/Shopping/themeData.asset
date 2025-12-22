@@ -23,14 +23,14 @@ MonoBehaviour:
   themeIcon: {fileID: 21300000, guid: 87245dc33f93d40459447888a601bbfe, type: 3}
   themeBackground: {fileID: 21300000, guid: 554c087e44351c64d8dda6a015496671, type: 3}
   zones:
-  - length: 500
+  - length: 0
     prefabList:
-    - m_AssetGUID: ae3ae57eed8f40f42b9d8d22fcac2bc7
+    - m_AssetGUID: 4b82373bea38f6b48ab6e1af96ee1d1f
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
-    - m_AssetGUID: 4b82373bea38f6b48ab6e1af96ee1d1f
+    - m_AssetGUID: ae3ae57eed8f40f42b9d8d22fcac2bc7
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
@@ -56,6 +56,11 @@ MonoBehaviour:
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
     - m_AssetGUID: b9900fd6a21fd08428a9b9339465fae5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    - m_AssetGUID: e2d3d1a11aa8ab44b8003c470998bb7e
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 

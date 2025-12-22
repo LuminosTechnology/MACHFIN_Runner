@@ -114,11 +114,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7dae29cfedaa2ad47b8dcb7eb6780ab6
-    m_Address: Assets/Bundles/Themes/Lojas/Lojas/Lojas_05_vazio.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85ad2ef091ab5f843b0be9cbbfe33594
     m_Address: Assets/Bundles/Themes/Mercado/Mercado_06.prefab
     m_ReadOnly: 0
@@ -203,6 +198,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d7ecb2ecffb7dad41b0c65d438c85c32
     m_Address: Assets/Bundles/Themes/Mercado/Mercado_02.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2d3d1a11aa8ab44b8003c470998bb7e
+    m_Address: Assets/Bundles/Themes/Shopping/Shopping_08.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
