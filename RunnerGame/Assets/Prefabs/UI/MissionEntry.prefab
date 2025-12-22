@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pegar Recompensa
+  m_Text: Pegar
 --- !u!1 &1000010383696034
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 224000012411279648}
   - component: {fileID: 222000012123571140}
   - component: {fileID: 114000012481184826}
+  - component: {fileID: 3873234623596119086}
   m_Layer: 5
   m_Name: RewardText
   m_TagString: Untagged
@@ -262,6 +263,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 1
+--- !u!114 &3873234623596119086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010405509364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0.2784314, g: 0.43137258, b: 0.63529414, a: 1}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1000010519617868
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +302,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010519617868}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -370,6 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   descText: {fileID: 114000012858281854}
   rewardText: {fileID: 114000012481184826}
+  spaceElement: {fileID: 114000010557650902}
   claimButton: {fileID: 114000011400906510}
   progressText: {fileID: 114000011396073396}
   background: {fileID: 114000010879049528}
@@ -524,9 +541,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 224000011567939944}
   - {fileID: 224000012086791512}
   - {fileID: 224000014071725854}
+  - {fileID: 224000011567939944}
   - {fileID: 224000011963959830}
   - {fileID: 224000012411279648}
   m_Father: {fileID: 224000012462533530}
@@ -806,9 +823,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
-  m_MinWidth: 300
+  m_MinWidth: 250
   m_MinHeight: 70
-  m_PreferredWidth: 450
+  m_PreferredWidth: 250
   m_PreferredHeight: 92
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
@@ -979,11 +996,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 37b6756a5cc350840a57651f75926591, type: 3}
-    m_FontSize: 48
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 12
-    m_MaxSize: 48
+    m_MinSize: 3
+    m_MaxSize: 42
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1

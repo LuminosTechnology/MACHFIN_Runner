@@ -5,6 +5,7 @@ public class MissionEntry : MonoBehaviour
 {
     public Text descText;
     public Text rewardText;
+    public LayoutElement spaceElement;
     public Button claimButton;
     public Text progressText;
 	public Image background;
@@ -20,7 +21,12 @@ public class MissionEntry : MonoBehaviour
         if (m.isComplete)
         {
             claimButton.gameObject.SetActive(true);
-            progressText.gameObject.SetActive(false);
+            // progressText.gameObject.SetActive(false);
+            
+            progressText.text = ((int)m.max) + " / " + ((int)m.max);
+            progressText.fontSize = 28;
+            progressText.resizeTextMaxSize = 28;
+            spaceElement.flexibleWidth = 1;
 
 			background.color = completedColor;
 
@@ -38,6 +44,7 @@ public class MissionEntry : MonoBehaviour
 			background.color = notCompletedColor;
 
 			progressText.color = Color.white;
+			rewardText.color = Color.white;
 			descText.color = completedColor;
 
 			progressText.text = ((int)m.progress) + " / " + ((int)m.max);

@@ -27,12 +27,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - themeData
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 571dde089bf1ad948a364ac01160f5c5
-    m_Address: themeDataFantasma
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - themeData
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bda444c6e37fcb340894afd927ea24f2
     m_Address: themeData
     m_ReadOnly: 0
